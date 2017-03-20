@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android Browser," />
+  <meta name="keywords" content="Android Camera," />
 
 
 
@@ -87,22 +87,22 @@
 
 
 
-<meta name="description" content="Android Browser打开网页出现源码有这样的现象，使用数据流量打开网页会出现网页源码的现象，而使用WIFI打开网页则正常显示，使用WIFI后再用数据流量打开，也能正常显示。
-这样的现象多半是因为数据传输时出现中断等情况，导致网页没有加载完整，所以显示异常。
-还有的是因为GMS版本用的是google webview，原生的webview不支持WML页面，这个现象是正常的。现在已经极少有WM">
+<meta name="description" content="Android Camera SnxxDrogxxCamera预览大小和照片大小预览大小和照片大小是在CameraSettings，
+初始化相机预览大小
+1234567891011121314151617181920212223242526272829303132333435   // 初始化相机预览大小public static void initialCameraPreviewSize(Con">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android Browser打开网页为源码原因分析">
-<meta property="og:url" content="http://www.ningshuran.tech/2016/03/29/Android-Browser打开网页为源码原因分析/index.html">
+<meta property="og:title" content="Android Camera SnxxDrogxxCamera预览大小和照片大小">
+<meta property="og:url" content="http://www.ningshuran.tech/2017/03/20/Android-Camera-SnxxDrogxxCamera预览大小和照片大小/index.html">
 <meta property="og:site_name" content="ningshuran@一行白鹭">
-<meta property="og:description" content="Android Browser打开网页出现源码有这样的现象，使用数据流量打开网页会出现网页源码的现象，而使用WIFI打开网页则正常显示，使用WIFI后再用数据流量打开，也能正常显示。
-这样的现象多半是因为数据传输时出现中断等情况，导致网页没有加载完整，所以显示异常。
-还有的是因为GMS版本用的是google webview，原生的webview不支持WML页面，这个现象是正常的。现在已经极少有WM">
-<meta property="og:updated_time" content="2016-04-28T14:17:41.640Z">
+<meta property="og:description" content="Android Camera SnxxDrogxxCamera预览大小和照片大小预览大小和照片大小是在CameraSettings，
+初始化相机预览大小
+1234567891011121314151617181920212223242526272829303132333435   // 初始化相机预览大小public static void initialCameraPreviewSize(Con">
+<meta property="og:updated_time" content="2017-03-20T15:34:49.914Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android Browser打开网页为源码原因分析">
-<meta name="twitter:description" content="Android Browser打开网页出现源码有这样的现象，使用数据流量打开网页会出现网页源码的现象，而使用WIFI打开网页则正常显示，使用WIFI后再用数据流量打开，也能正常显示。
-这样的现象多半是因为数据传输时出现中断等情况，导致网页没有加载完整，所以显示异常。
-还有的是因为GMS版本用的是google webview，原生的webview不支持WML页面，这个现象是正常的。现在已经极少有WM">
+<meta name="twitter:title" content="Android Camera SnxxDrogxxCamera预览大小和照片大小">
+<meta name="twitter:description" content="Android Camera SnxxDrogxxCamera预览大小和照片大小预览大小和照片大小是在CameraSettings，
+初始化相机预览大小
+1234567891011121314151617181920212223242526272829303132333435   // 初始化相机预览大小public static void initialCameraPreviewSize(Con">
 
 
 
@@ -130,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://www.ningshuran.tech/2016/03/29/Android-Browser打开网页为源码原因分析/"/>
+  <link rel="canonical" href="http://www.ningshuran.tech/2017/03/20/Android-Camera-SnxxDrogxxCamera预览大小和照片大小/"/>
 
 
 
 
 
-  <title> Android Browser打开网页为源码原因分析 | ningshuran@一行白鹭 </title>
+  <title> Android Camera SnxxDrogxxCamera预览大小和照片大小 | ningshuran@一行白鹭 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -285,7 +285,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.ningshuran.tech/2016/03/29/Android-Browser打开网页为源码原因分析/">
+    <link itemprop="mainEntityOfPage" href="http://www.ningshuran.tech/2017/03/20/Android-Camera-SnxxDrogxxCamera预览大小和照片大小/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="shuranning@163.com">
@@ -306,7 +306,7 @@
             
             
               
-                Android Browser打开网页为源码原因分析
+                Android Camera SnxxDrogxxCamera预览大小和照片大小
               
             
           </h1>
@@ -321,8 +321,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-29T21:32:40+08:00">
-                2016-03-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T23:14:10+08:00">
+                2017-03-20
               </time>
             
 
@@ -344,8 +344,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android-Browser/" itemprop="url" rel="index">
-                    <span itemprop="name">Android Browser</span>
+                  <a href="/categories/Android-Camera/" itemprop="url" rel="index">
+                    <span itemprop="name">Android Camera</span>
                   </a>
                 </span>
 
@@ -362,8 +362,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/03/29/Android-Browser打开网页为源码原因分析/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/29/Android-Browser打开网页为源码原因分析/" itemprop="commentCount"></span>
+                <a href="/2017/03/20/Android-Camera-SnxxDrogxxCamera预览大小和照片大小/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/20/Android-Camera-SnxxDrogxxCamera预览大小和照片大小/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -394,11 +394,19 @@
       
 
       
-        <h2 id="Android-Browser打开网页出现源码"><a href="#Android-Browser打开网页出现源码" class="headerlink" title="Android Browser打开网页出现源码"></a>Android Browser打开网页出现源码</h2><p>有这样的现象，使用数据流量打开网页会出现网页源码的现象，而使用WIFI打开网页则正常显示，使用WIFI后再用数据流量打开，也能正常显示。</p>
-<p>这样的现象多半是因为数据传输时出现中断等情况，导致网页没有加载完整，所以显示异常。</p>
-<p>还有的是因为GMS版本用的是google webview，原生的webview不支持WML页面，这个现象是正常的。<br>现在已经极少有WML的网站。使用支持WML页面的webview则能正常显示。</p>
-<p>Wifi上网，服务器返回html网页；gprs上网，服务器返回wml网页；<br>这是移动门户网站的处理，网站并没有考虑到不支持wml网页的情况。</p>
-
+        <h2 id="Android-Camera-SnxxDrogxxCamera预览大小和照片大小"><a href="#Android-Camera-SnxxDrogxxCamera预览大小和照片大小" class="headerlink" title="Android Camera SnxxDrogxxCamera预览大小和照片大小"></a>Android Camera SnxxDrogxxCamera预览大小和照片大小</h2><p>预览大小和照片大小是在CameraSettings，</p>
+<p>初始化相机预览大小</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">   // 初始化相机预览大小</div><div class="line">public static void initialCameraPreviewSize(Context context,</div><div class="line">		Parameters parameters) &#123;</div><div class="line">	// When launching the camera app first time, we will set the picture</div><div class="line">	// size to the first one in the list defined in &quot;arrays.xml&quot; and is also</div><div class="line">	// supported by the driver.</div><div class="line">	// 当第一次启动相机应用程序时，我们将将预览图片大小设置为“xml”中定义的列表中的第一个，并由驱动程序支持。</div><div class="line">	String previewSize = ComboPreferences.get(context).getString(</div><div class="line">			CameraSettings.KEY_PREVIEW_SIZE, null);</div><div class="line">	// 第一次设预览大小为&quot;1920x1080&quot;</div><div class="line">	if (previewSize == null) &#123;</div><div class="line">		previewSize = &quot;1920x1080&quot;;</div><div class="line">		SharedPreferences.Editor editor = ComboPreferences.get(context)</div><div class="line">				.edit();</div><div class="line">		editor.putString(KEY_PREVIEW_SIZE, previewSize);</div><div class="line">		editor.apply();</div><div class="line">	&#125;</div><div class="line">	// 获得可支持的预览大小</div><div class="line">	List&lt;Size&gt; supported = parameters.getSupportedPreviewSizes();</div><div class="line">	if (supported == null)</div><div class="line">		return;</div><div class="line">	// 获取可支持列表</div><div class="line">	// for (String candidate : context.getResources().getStringArray(</div><div class="line">	// R.array.pref_camera_previewsize_entryvalues)) &#123;</div><div class="line">	// 匹配支持列表，设置为列表第一个</div><div class="line">	if (setCameraPreviewSize(previewSize, supported, parameters)) &#123;</div><div class="line">		// SharedPreferences.Editor editor = ComboPreferences</div><div class="line">		// .get(context).edit();</div><div class="line">		// editor.putString(KEY_PREVIEW_SIZE, candidate);</div><div class="line">		// editor.apply();</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	// &#125;</div><div class="line">	Log.e(TAG, &quot;No supported preview size found&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>这里强制设置第一次进入到相机的预览界面为1920x1080，但如果设备不支持的话是按array定义的第一个，其中List<size> supported = parameters.getSupportedPreviewSizes();可以获得设备支持的预览大小，而context.getResources().getStringArray(<br>R.array.pref_camera_previewsize_entryvalues) 可以获得array定义的预览大小列表，这是有区别的。</size></p>
+<p>初始化拍照后图片的大小</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">// 初始化拍照后图片的大小</div><div class="line">public static void initialCameraPictureSize(Context context,</div><div class="line">		Parameters parameters) &#123;</div><div class="line">	// When launching the camera app first time, we will set the picture</div><div class="line">	// size to the first one in the list defined in &quot;arrays.xml&quot; and is also</div><div class="line">	// supported by the driver.</div><div class="line">	// 当第一次启动相机应用程序时，我们将将图片大小设置为“xml”中定义的列表中的第一个，并由驱动程序支持</div><div class="line">	List&lt;Size&gt; supported = parameters.getSupportedPictureSizes();</div><div class="line">	for (String candidate : context.getResources().getStringArray(</div><div class="line">			R.array.pref_camera_picturesize_entryvalues)) &#123;</div><div class="line">		if (setCameraPictureSize(candidate, supported, parameters)) &#123;</div><div class="line">			SharedPreferences.Editor editor = ComboPreferences.get(context)</div><div class="line">					.edit();</div><div class="line">			editor.putString(KEY_PICTURE_SIZE, candidate);</div><div class="line">			editor.apply();</div><div class="line">			return;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	Log.e(TAG, &quot;No supported picture size found&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>List<size> supported = parameters.getSupportedPictureSizes();先获取支持的图片大小，<br>再遍历array列表，再通过setCameraPictureSize(candidate, supported, parameters)匹配设备可支持的，第一次匹配则return,达到设置array列表第一个的效果。</size></p>
+<p>判断是否匹配支持列表，并且设置相机预览大小</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">// 判断是否匹配支持列表，并且设置相机预览大小</div><div class="line">public static boolean setCameraPreviewSize(String candidate,</div><div class="line">		List&lt;Size&gt; supported, Parameters parameters) &#123;</div><div class="line">	// 传入备选大小 ，获得x位置索引</div><div class="line">	int index = candidate.indexOf(&apos;x&apos;);</div><div class="line">	if (index == NOT_FOUND)</div><div class="line">		return false;</div><div class="line">	int width = Integer.parseInt(candidate.substring(0, index));</div><div class="line">	int height = Integer.parseInt(candidate.substring(index + 1));</div><div class="line">	// 匹配支持列表</div><div class="line">	for (Size size : supported) &#123;</div><div class="line">		if (size.width == width &amp;&amp; size.height == height) &#123;</div><div class="line">			//匹配则设置预览大小</div><div class="line">			parameters.setPreviewSize(width, height);				</div><div class="line">			return true;</div><div class="line"></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return false;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>这个返回的是一个boolean值，这样写有一个好处，一个可以用来做判断是否可以匹配列表，再一个可以设置相机预览大小。candidate是传入的一个字符串的”1920x1080”这样的字符串。</p>
+<p>判断是否匹配支持列表，并且设置相机预览大小</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//判断是否匹配支持列表，并且设置相机预览大小</div><div class="line">public static boolean setCameraPictureSize(String candidate,</div><div class="line">		List&lt;Size&gt; supported, Parameters parameters) &#123;</div><div class="line">	int index = candidate.indexOf(&apos;x&apos;);</div><div class="line">	if (index == NOT_FOUND)</div><div class="line">		return false;</div><div class="line">	int width = Integer.parseInt(candidate.substring(0, index));</div><div class="line">	int height = Integer.parseInt(candidate.substring(index + 1));</div><div class="line">	for (Size size : supported) &#123;</div><div class="line">		if (size.width == width &amp;&amp; size.height == height) &#123;</div><div class="line">			parameters.setPictureSize(width, height);				</div><div class="line">			return true;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return false;</div></pre></td></tr></table></figure>
+</code></pre>
       
     </div>
 
@@ -421,7 +429,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android-Browser/" rel="tag"># Android Browser</a>
+            <a href="/tags/Android-Camera/" rel="tag"># Android Camera</a>
           
         </div>
       
@@ -434,8 +442,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/28/Android-Browser页面字体设置过大时，字体重叠/" rel="next" title="Android Browser页面字体设置过大时，字体重叠">
-                <i class="fa fa-chevron-left"></i> Android Browser页面字体设置过大时，字体重叠
+              <a href="/2017/03/20/Andorid-Anroid_N_动态壁纸列表为空/" rel="next" title="Android N 动态壁纸列表为空？">
+                <i class="fa fa-chevron-left"></i> Android N 动态壁纸列表为空？
               </a>
             
           </div>
@@ -443,10 +451,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/01/Android-Browser打开多个窗口进行切换会闪烁/" rel="prev" title="Android Browser打开多个窗口进行切换会闪烁">
-                Android Browser打开多个窗口进行切换会闪烁 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -461,10 +465,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/03/29/Android-Browser打开网页为源码原因分析/"
-     data-title="Android Browser打开网页为源码原因分析"
+        <div class="ds-share flat" data-thread-key="2017/03/20/Android-Camera-SnxxDrogxxCamera预览大小和照片大小/"
+     data-title="Android Camera SnxxDrogxxCamera预览大小和照片大小"
      data-content=""
-     data-url="http://www.ningshuran.tech/2016/03/29/Android-Browser打开网页为源码原因分析/">
+     data-url="http://www.ningshuran.tech/2017/03/20/Android-Camera-SnxxDrogxxCamera预览大小和照片大小/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -491,8 +495,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/29/Android-Browser打开网页为源码原因分析/"
-           data-title="Android Browser打开网页为源码原因分析" data-url="http://www.ningshuran.tech/2016/03/29/Android-Browser打开网页为源码原因分析/">
+      <div class="ds-thread" data-thread-key="2017/03/20/Android-Camera-SnxxDrogxxCamera预览大小和照片大小/"
+           data-title="Android Camera SnxxDrogxxCamera预览大小和照片大小" data-url="http://www.ningshuran.tech/2017/03/20/Android-Camera-SnxxDrogxxCamera预览大小和照片大小/">
       </div>
     
   </div>
@@ -598,7 +602,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Browser打开网页出现源码"><span class="nav-number">1.</span> <span class="nav-text">Android Browser打开网页出现源码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Camera-SnxxDrogxxCamera预览大小和照片大小"><span class="nav-number">1.</span> <span class="nav-text">Android Camera SnxxDrogxxCamera预览大小和照片大小</span></a></li></ol></div>
             
 
           </div>
