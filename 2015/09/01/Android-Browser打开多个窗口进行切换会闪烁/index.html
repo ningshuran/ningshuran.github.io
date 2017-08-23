@@ -1,0 +1,790 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android Browser," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Android Browser打开多个窗口进行切换会闪烁原因分析浏览器的多标签切换功能, 还需要一个用户交互界面, 这个界面在Android Browser中就是NavScreen了
+在Android Browser中 用以和用户打交道的功能基本都被限制在了BaseUI中, 在手机上它的实现就是PhoneUI
+12345678910111213141516171819202122232425262">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Browser打开多个窗口进行切换会闪烁">
+<meta property="og:url" content="http://www.ningshuran.tech/2015/09/01/Android-Browser打开多个窗口进行切换会闪烁/index.html">
+<meta property="og:site_name" content="ningshuran@一号线">
+<meta property="og:description" content="Android Browser打开多个窗口进行切换会闪烁原因分析浏览器的多标签切换功能, 还需要一个用户交互界面, 这个界面在Android Browser中就是NavScreen了
+在Android Browser中 用以和用户打交道的功能基本都被限制在了BaseUI中, 在手机上它的实现就是PhoneUI
+12345678910111213141516171819202122232425262">
+<meta property="og:updated_time" content="2017-08-23T10:18:02.223Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android Browser打开多个窗口进行切换会闪烁">
+<meta name="twitter:description" content="Android Browser打开多个窗口进行切换会闪烁原因分析浏览器的多标签切换功能, 还需要一个用户交互界面, 这个界面在Android Browser中就是NavScreen了
+在Android Browser中 用以和用户打交道的功能基本都被限制在了BaseUI中, 在手机上它的实现就是PhoneUI
+12345678910111213141516171819202122232425262">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.ningshuran.tech/2015/09/01/Android-Browser打开多个窗口进行切换会闪烁/"/>
+
+
+
+
+
+  <title> Android Browser打开多个窗口进行切换会闪烁 | ningshuran@一号线 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5300d14831bc5e9bfe868dcbe7297295";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ningshuran@一号线</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">上青天</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.ningshuran.tech/2015/09/01/Android-Browser打开多个窗口进行切换会闪烁/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shuranning@163.com">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ningshuran@一号线">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android Browser打开多个窗口进行切换会闪烁
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-01T22:27:40+08:00">
+                2015-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android-Browser/" itemprop="url" rel="index">
+                    <span itemprop="name">Android Browser</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/09/01/Android-Browser打开多个窗口进行切换会闪烁/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/01/Android-Browser打开多个窗口进行切换会闪烁/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Android-Browser打开多个窗口进行切换会闪烁原因分析"><a href="#Android-Browser打开多个窗口进行切换会闪烁原因分析" class="headerlink" title="Android Browser打开多个窗口进行切换会闪烁原因分析"></a>Android Browser打开多个窗口进行切换会闪烁原因分析</h2><p>浏览器的多标签切换功能, 还需要一个用户交互界面, 这个界面在Android Browser中就是NavScreen了</p>
+<p>在Android Browser中 用以和用户打交道的功能基本都被限制在了BaseUI中, 在手机上它的实现就是PhoneUI</p>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//点击按钮显示多窗口列表</span></div><div class="line">	 <span class="function"><span class="keyword">void</span> <span class="title">showNavScreen</span><span class="params">()</span> </span>&#123;</div><div class="line">     mUiController.setBlockEvents(<span class="keyword">true</span>); <span class="comment">//拦截多窗口外的其他操作</span></div><div class="line">     <span class="keyword">if</span> (mNavScreen == <span class="keyword">null</span>) &#123;</div><div class="line">         mNavScreen = <span class="keyword">new</span> NavScreen(mActivity, mUiController, <span class="keyword">this</span>);</div><div class="line">         mCustomViewContainer.addView(mNavScreen, COVER_SCREEN_PARAMS);</div><div class="line">     &#125; <span class="keyword">else</span> &#123;</div><div class="line">         mNavScreen.setVisibility(View.VISIBLE);</div><div class="line">         mNavScreen.setAlpha(<span class="number">1f</span>);</div><div class="line">         mNavScreen.refreshAdapter();</div><div class="line">     &#125;</div><div class="line">     mActiveTab.capture();</div><div class="line">     <span class="keyword">if</span> (mAnimScreen == <span class="keyword">null</span>) &#123;</div><div class="line">         <span class="comment">//这是动画的视图 ,多标签窗口切换的动画是phoneui来实现的而不是 navscreen ,也就是说我点击一个tab 剩下的看到的其实是</span></div><div class="line">         <span class="comment">//真正的web窗口</span></div><div class="line">         mAnimScreen = <span class="keyword">new</span> AnimScreen(mActivity);</div><div class="line">     &#125; <span class="keyword">else</span> &#123;</div><div class="line">         mAnimScreen.mMain.setAlpha(<span class="number">1f</span>);</div><div class="line">         mAnimScreen.mTitle.setAlpha(<span class="number">1f</span>);</div><div class="line">         mAnimScreen.setScaleFactor(<span class="number">1f</span>);</div><div class="line">     &#125;</div><div class="line">     <span class="comment">//设置动画需要截图的view</span></div><div class="line">     mAnimScreen.set(getTitleBar(), getWebView());</div><div class="line">     <span class="keyword">if</span> (mAnimScreen.mMain.getParent() == <span class="keyword">null</span>) &#123;</div><div class="line">         <span class="comment">//如果animscreen 的main没有父亲, 说明是执行了 全屏模式</span></div><div class="line">         mCustomViewContainer.addView(mAnimScreen.mMain, COVER_SCREEN_PARAMS);</div><div class="line">     &#125;</div><div class="line">     mCustomViewContainer.setVisibility(View.VISIBLE);</div><div class="line">     mCustomViewContainer.bringToFront();<span class="comment">//把这个view放到顶层</span></div><div class="line">     mAnimScreen.mMain.layout(<span class="number">0</span>, <span class="number">0</span>, mContentView.getWidth(),</div><div class="line">             mContentView.getHeight()); <span class="comment">//动画的宽度和contentview一样大</span></div><div class="line">     <span class="keyword">int</span> fromLeft = <span class="number">0</span>;</div><div class="line">     <span class="keyword">int</span> fromTop = getTitleBar().getHeight();</div><div class="line">     <span class="keyword">int</span> fromRight = mContentView.getWidth();</div><div class="line">     <span class="keyword">int</span> fromBottom = mContentView.getHeight();</div><div class="line">     <span class="keyword">int</span> width = mActivity.getResources().getDimensionPixelSize(R.dimen.nav_tab_width);</div><div class="line">     <span class="keyword">int</span> height = mActivity.getResources().getDimensionPixelSize(R.dimen.nav_tab_height);</div><div class="line">     <span class="keyword">int</span> ntth = mActivity.getResources().getDimensionPixelSize(R.dimen.nav_tab_titleheight);</div><div class="line">     <span class="keyword">int</span> toLeft = (mContentView.getWidth() - width) / <span class="number">2</span>;</div><div class="line">     <span class="keyword">int</span> toTop = ((fromBottom - (ntth + height)) / <span class="number">2</span> + ntth);</div><div class="line">     <span class="keyword">int</span> toRight = toLeft + width;</div><div class="line">     <span class="keyword">int</span> toBottom = toTop + height;</div><div class="line">     <span class="keyword">float</span> scaleFactor = width / (<span class="keyword">float</span>) mContentView.getWidth();</div><div class="line">     detachTab(mActiveTab);</div><div class="line">     mContentView.setVisibility(View.GONE);</div><div class="line">     AnimatorSet set1 = <span class="keyword">new</span> AnimatorSet();</div><div class="line">     AnimatorSet inanim = <span class="keyword">new</span> AnimatorSet();</div><div class="line">     <span class="comment">//使用上下左右的位置 使得  tab的运动轨迹 从整个屏幕 位置缩小到tab,无论当前tab在哪里</span></div><div class="line">     ObjectAnimator tx = ObjectAnimator.ofInt(mAnimScreen.mContent, <span class="string">"left"</span>,</div><div class="line">             fromLeft, toLeft);</div><div class="line">     ObjectAnimator ty = ObjectAnimator.ofInt(mAnimScreen.mContent, <span class="string">"top"</span>,</div><div class="line">             fromTop, toTop);</div><div class="line">     ObjectAnimator tr = ObjectAnimator.ofInt(mAnimScreen.mContent, <span class="string">"right"</span>,</div><div class="line">             fromRight, toRight);</div><div class="line">     ObjectAnimator tb = ObjectAnimator.ofInt(mAnimScreen.mContent, <span class="string">"bottom"</span>,</div><div class="line">             fromBottom, toBottom);</div><div class="line">     ObjectAnimator title = ObjectAnimator.ofFloat(mAnimScreen.mTitle, <span class="string">"alpha"</span>,</div><div class="line">             <span class="number">1f</span>, <span class="number">0f</span>);</div><div class="line">     ObjectAnimator sx = ObjectAnimator.ofFloat(mAnimScreen, <span class="string">"scaleFactor"</span>,</div><div class="line">             <span class="number">1f</span>, scaleFactor);</div><div class="line">     <span class="comment">//这个动画是透明动画</span></div><div class="line">     ObjectAnimator blend1 = ObjectAnimator.ofFloat(mAnimScreen.mMain,</div><div class="line">             <span class="string">"alpha"</span>, <span class="number">1f</span>, <span class="number">0f</span>);</div><div class="line">     blend1.setDuration(<span class="number">100</span>);</div><div class="line"></div><div class="line">     inanim.playTogether(tx, ty, tr, tb, sx, title);</div><div class="line">     inanim.setDuration(<span class="number">200</span>);</div><div class="line">     set1.addListener(<span class="keyword">new</span> AnimatorListenerAdapter() &#123;</div><div class="line">         <span class="meta">@Override</span></div><div class="line">         <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationEnd</span><span class="params">(Animator anim)</span> </span>&#123;</div><div class="line">             mCustomViewContainer.removeView(mAnimScreen.mMain);</div><div class="line">             finishAnimationIn();</div><div class="line">             mUiController.setBlockEvents(<span class="keyword">false</span>);</div><div class="line">         &#125;</div><div class="line">     &#125;);</div><div class="line">     set1.playSequentially(inanim, blend1);<span class="comment">//inanim播放ok后播放 blend1 也就是先缩放然后在透明 </span></div><div class="line">     set1.start();</div><div class="line"> 		&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>看了代码，发现动画有个透明效果的动画。研究之后才发现，其实浏览器切换并不是“闪烁”，而是一个透明动画，这个动画造成了“闪烁”的现象，把这个动画去掉后，可以发现闪烁的现象没有了，而且切换窗口的时候更加平滑。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android-Browser/" rel="tag"># Android Browser</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/09/29/Android-Browser打开网页为源码原因分析/" rel="prev" title="Android Browser打开网页为源码原因分析">
+                Android Browser打开网页为源码原因分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/09/01/Android-Browser打开多个窗口进行切换会闪烁/"
+     data-title="Android Browser打开多个窗口进行切换会闪烁"
+     data-content=""
+     data-url="http://www.ningshuran.tech/2015/09/01/Android-Browser打开多个窗口进行切换会闪烁/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/09/01/Android-Browser打开多个窗口进行切换会闪烁/"
+           data-title="Android Browser打开多个窗口进行切换会闪烁" data-url="http://www.ningshuran.tech/2015/09/01/Android-Browser打开多个窗口进行切换会闪烁/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="shuranning@163.com" />
+          <p class="site-author-name" itemprop="name">shuranning@163.com</p>
+           
+              <p class="site-description motion-element" itemprop="description">锄禾日当午</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Browser打开多个窗口进行切换会闪烁原因分析"><span class="nav-number">1.</span> <span class="nav-text">Android Browser打开多个窗口进行切换会闪烁原因分析</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shuranning@163.com</span>
+</div>
+<!--
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+-->
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"codingpeasanter"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
