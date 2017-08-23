@@ -1,0 +1,892 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="SPM," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="SPM工作流程一 软件项目前期1无手机硬件设备1.1软件的立项会议（立项中包含schedule，项目配置信息，项目干系人，质量标准，风险的评估等）1.2获取平台数据 （开发工具，接口文档等）1.3安排基线负责人编译基线 并保证编译正确。1.4所有的软件研发人员熟悉基线代码。1.5获取三方接口信息；1.6确认客户接口信息；1.7确认认证相关需求。2有手机硬件设备2.1  基线稳定基线原生bug 修复">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SPM">
+<meta property="og:url" content="http://www.ningshuran.tech/2017/03/22/SPM工作流程/index.html">
+<meta property="og:site_name" content="ningshuran@一号线">
+<meta property="og:description" content="SPM工作流程一 软件项目前期1无手机硬件设备1.1软件的立项会议（立项中包含schedule，项目配置信息，项目干系人，质量标准，风险的评估等）1.2获取平台数据 （开发工具，接口文档等）1.3安排基线负责人编译基线 并保证编译正确。1.4所有的软件研发人员熟悉基线代码。1.5获取三方接口信息；1.6确认客户接口信息；1.7确认认证相关需求。2有手机硬件设备2.1  基线稳定基线原生bug 修复">
+<meta property="og:updated_time" content="2017-08-23T15:06:46.964Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SPM">
+<meta name="twitter:description" content="SPM工作流程一 软件项目前期1无手机硬件设备1.1软件的立项会议（立项中包含schedule，项目配置信息，项目干系人，质量标准，风险的评估等）1.2获取平台数据 （开发工具，接口文档等）1.3安排基线负责人编译基线 并保证编译正确。1.4所有的软件研发人员熟悉基线代码。1.5获取三方接口信息；1.6确认客户接口信息；1.7确认认证相关需求。2有手机硬件设备2.1  基线稳定基线原生bug 修复">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.ningshuran.tech/2017/03/22/SPM工作流程/"/>
+
+
+
+
+
+  <title> SPM | ningshuran@一号线 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5300d14831bc5e9bfe868dcbe7297295";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ningshuran@一号线</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">上青天</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.ningshuran.tech/2017/03/22/SPM工作流程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shuranning@163.com">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ningshuran@一号线">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                SPM
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-22T14:14:09+08:00">
+                2017-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SPM/" itemprop="url" rel="index">
+                    <span itemprop="name">SPM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/22/SPM工作流程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/22/SPM工作流程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="SPM工作流程"><a href="#SPM工作流程" class="headerlink" title="SPM工作流程"></a>SPM工作流程</h2><h3 id="一-软件项目前期"><a href="#一-软件项目前期" class="headerlink" title="一 软件项目前期"></a>一 软件项目前期</h3><h3 id="1无手机硬件设备"><a href="#1无手机硬件设备" class="headerlink" title="1无手机硬件设备"></a>1无手机硬件设备</h3><h5 id="1-1软件的立项会议（立项中包含schedule，项目配置信息，项目干系人，质量标准，风险的评估等）"><a href="#1-1软件的立项会议（立项中包含schedule，项目配置信息，项目干系人，质量标准，风险的评估等）" class="headerlink" title="1.1软件的立项会议（立项中包含schedule，项目配置信息，项目干系人，质量标准，风险的评估等）"></a>1.1软件的立项会议（立项中包含schedule，项目配置信息，项目干系人，质量标准，风险的评估等）</h5><h5 id="1-2获取平台数据-（开发工具，接口文档等）"><a href="#1-2获取平台数据-（开发工具，接口文档等）" class="headerlink" title="1.2获取平台数据 （开发工具，接口文档等）"></a>1.2获取平台数据 （开发工具，接口文档等）</h5><h5 id="1-3安排基线负责人编译基线-并保证编译正确。"><a href="#1-3安排基线负责人编译基线-并保证编译正确。" class="headerlink" title="1.3安排基线负责人编译基线 并保证编译正确。"></a>1.3安排基线负责人编译基线 并保证编译正确。</h5><h5 id="1-4所有的软件研发人员熟悉基线代码。"><a href="#1-4所有的软件研发人员熟悉基线代码。" class="headerlink" title="1.4所有的软件研发人员熟悉基线代码。"></a>1.4所有的软件研发人员熟悉基线代码。</h5><h5 id="1-5获取三方接口信息；"><a href="#1-5获取三方接口信息；" class="headerlink" title="1.5获取三方接口信息；"></a>1.5获取三方接口信息；</h5><h5 id="1-6确认客户接口信息；"><a href="#1-6确认客户接口信息；" class="headerlink" title="1.6确认客户接口信息；"></a>1.6确认客户接口信息；</h5><h5 id="1-7确认认证相关需求。"><a href="#1-7确认认证相关需求。" class="headerlink" title="1.7确认认证相关需求。"></a>1.7确认认证相关需求。</h5><h3 id="2有手机硬件设备"><a href="#2有手机硬件设备" class="headerlink" title="2有手机硬件设备"></a>2有手机硬件设备</h3><h5 id="2-1-基线稳定"><a href="#2-1-基线稳定" class="headerlink" title="2.1  基线稳定"></a>2.1  基线稳定</h5><pre><code>基线原生bug 修复 稳定基线。
+</code></pre><h5 id="2-2-项目分支建立流程"><a href="#2-2-项目分支建立流程" class="headerlink" title="2.2  项目分支建立流程"></a>2.2  项目分支建立流程</h5><h4 id="2-2-1-根据软件需求来评估分支的建立方案。"><a href="#2-2-1-根据软件需求来评估分支的建立方案。" class="headerlink" title="#2.2.1 根据软件需求来评估分支的建立方案。"></a>#2.2.1 根据软件需求来评估分支的建立方案。</h4><pre><code>Case 1  理论要求所有的软件分支 是要从主基线上拉分支
+
+Case 2  如果客户要求在原有项目的基础上 再次更新版本那么就从原有项目上
+拉分支
+
+Case 3  如果客户要求在原有项目的基础上 再次更新版本但是由于某些需求的原因例如volte功能 而原有的项目分支无法实现。如果出现这样的情况 请根据实际的项目情况 来评估分支怎么拉合适。
+</code></pre><h5 id="2-2-2-根据软件完成的时间节点评估分支的建立方案"><a href="#2-2-2-根据软件完成的时间节点评估分支的建立方案" class="headerlink" title="2.2.2  根据软件完成的时间节点评估分支的建立方案"></a>2.2.2  根据软件完成的时间节点评估分支的建立方案</h5><pre><code>只有一个原则 根据实际的研发时间和项目的时间来评估软件分支建立方案。
+</code></pre><h3 id="2-3-需求评估流程"><a href="#2-3-需求评估流程" class="headerlink" title="2.3  需求评估流程"></a>2.3  需求评估流程</h3><h5 id="2-3-1-拿到客户的需求文档后-请安排各课长评估具体完成的时间点"><a href="#2-3-1-拿到客户的需求文档后-请安排各课长评估具体完成的时间点" class="headerlink" title="2.3.1 拿到客户的需求文档后 请安排各课长评估具体完成的时间点"></a>2.3.1 拿到客户的需求文档后 请安排各课长评估具体完成的时间点</h5><h5 id="2-3-2-对于简单的需求-最小的时间单位为0-5天。"><a href="#2-3-2-对于简单的需求-最小的时间单位为0-5天。" class="headerlink" title="2.3.2 对于简单的需求 最小的时间单位为0.5天。"></a>2.3.2 对于简单的需求 最小的时间单位为0.5天。</h5><h5 id="2-3-3-对于复杂的需求-研发的时间为3-5-工作日"><a href="#2-3-3-对于复杂的需求-研发的时间为3-5-工作日" class="headerlink" title="2.3.3 对于复杂的需求 研发的时间为3~5 工作日"></a>2.3.3 对于复杂的需求 研发的时间为3~5 工作日</h5><h5 id="2-3-4-对于评估时间大于5个工作日的需求-请协调相关工程师具体研究时间节点-并说明实现的难度和困难点在那里-即风险评估。"><a href="#2-3-4-对于评估时间大于5个工作日的需求-请协调相关工程师具体研究时间节点-并说明实现的难度和困难点在那里-即风险评估。" class="headerlink" title="2.3.4 对于评估时间大于5个工作日的需求 请协调相关工程师具体研究时间节点 并说明实现的难度和困难点在那里 即风险评估。"></a>2.3.4 对于评估时间大于5个工作日的需求 请协调相关工程师具体研究时间节点 并说明实现的难度和困难点在那里 即风险评估。</h5><h5 id="2-3-5-对于无法实现的需求-一定要给出具体的说明来阐述这个需求为什么无法完成。"><a href="#2-3-5-对于无法实现的需求-一定要给出具体的说明来阐述这个需求为什么无法完成。" class="headerlink" title="2.3.5 对于无法实现的需求 一定要给出具体的说明来阐述这个需求为什么无法完成。"></a>2.3.5 对于无法实现的需求 一定要给出具体的说明来阐述这个需求为什么无法完成。</h5><h5 id="2-3-6-所有的需求评估完成后-必须让测试部-提交对应的bug来跟踪。"><a href="#2-3-6-所有的需求评估完成后-必须让测试部-提交对应的bug来跟踪。" class="headerlink" title="2.3.6 所有的需求评估完成后 必须让测试部 提交对应的bug来跟踪。"></a>2.3.6 所有的需求评估完成后 必须让测试部 提交对应的bug来跟踪。</h5><h5 id="2-3-7需求归档备份。"><a href="#2-3-7需求归档备份。" class="headerlink" title="2.3.7需求归档备份。"></a>2.3.7需求归档备份。</h5><h5 id="2-3-8-具体参考需求评估文档。"><a href="#2-3-8-具体参考需求评估文档。" class="headerlink" title="2.3.8 具体参考需求评估文档。"></a>2.3.8 具体参考需求评估文档。</h5><h3 id="2-4-对于TP-LCD-Camera-的调试安排"><a href="#2-4-对于TP-LCD-Camera-的调试安排" class="headerlink" title="2.4  对于TP LCD Camera 的调试安排"></a>2.4  对于TP LCD Camera 的调试安排</h3><h5 id="2-4-1-和项目经理协调-TP-LCD-Camera-资源-每一个必须要2块以上-防止器件损坏-导致无效的工作。"><a href="#2-4-1-和项目经理协调-TP-LCD-Camera-资源-每一个必须要2块以上-防止器件损坏-导致无效的工作。" class="headerlink" title="2.4.1 和项目经理协调 TP LCD Camera 资源 每一个必须要2块以上 防止器件损坏 导致无效的工作。"></a>2.4.1 和项目经理协调 TP LCD Camera 资源 每一个必须要2块以上 防止器件损坏 导致无效的工作。</h5><h5 id="2-4-2-安排驱动部调试-并尽量协调资源来满足工程师的要求。"><a href="#2-4-2-安排驱动部调试-并尽量协调资源来满足工程师的要求。" class="headerlink" title="2.4.2 安排驱动部调试 并尽量协调资源来满足工程师的要求。"></a>2.4.2 安排驱动部调试 并尽量协调资源来满足工程师的要求。</h5><h5 id="2-4-3-每天更新器件调试进展，-block项及时发出并通知给项目经理。"><a href="#2-4-3-每天更新器件调试进展，-block项及时发出并通知给项目经理。" class="headerlink" title="2.4.3 每天更新器件调试进展， block项及时发出并通知给项目经理。"></a>2.4.3 每天更新器件调试进展， block项及时发出并通知给项目经理。</h5><h3 id="2-5-对于MBN-QCN-的调试安排（modem调试）"><a href="#2-5-对于MBN-QCN-的调试安排（modem调试）" class="headerlink" title="2.5  对于MBN QCN 的调试安排（modem调试）"></a>2.5  对于MBN QCN 的调试安排（modem调试）</h3><h5 id="2-5-1-和项目经理-协调资源-安排射频工程师和modem组联调-完成需求要求的频段。"><a href="#2-5-1-和项目经理-协调资源-安排射频工程师和modem组联调-完成需求要求的频段。" class="headerlink" title="2.5.1 和项目经理 协调资源 安排射频工程师和modem组联调 完成需求要求的频段。"></a>2.5.1 和项目经理 协调资源 安排射频工程师和modem组联调 完成需求要求的频段。</h5><h5 id="2-5-2-需要送平台商安排调试验证的-，需要协调软件-硬件-射频资源来准备样机-安排实验室调试。"><a href="#2-5-2-需要送平台商安排调试验证的-，需要协调软件-硬件-射频资源来准备样机-安排实验室调试。" class="headerlink" title="2.5.2 需要送平台商安排调试验证的 ，需要协调软件 硬件 射频资源来准备样机 安排实验室调试。"></a>2.5.2 需要送平台商安排调试验证的 ，需要协调软件 硬件 射频资源来准备样机 安排实验室调试。</h5><h3 id="2-6-根据评估的结果-输出软件版本计划。"><a href="#2-6-根据评估的结果-输出软件版本计划。" class="headerlink" title="2.6 根据评估的结果 输出软件版本计划。"></a>2.6 根据评估的结果 输出软件版本计划。</h3><h3 id="2-7-安排IT-建立对应项目的BUG库"><a href="#2-7-安排IT-建立对应项目的BUG库" class="headerlink" title="2.7 安排IT 建立对应项目的BUG库"></a>2.7 安排IT 建立对应项目的BUG库</h3><h3 id="2-8-协调项目经理-给出测试部的接口人。"><a href="#2-8-协调项目经理-给出测试部的接口人。" class="headerlink" title="2.8 协调项目经理 给出测试部的接口人。"></a>2.8 协调项目经理 给出测试部的接口人。</h3><h3 id="2-9-提醒项目经理-安排工具组输出对应的BT-FT-工具。"><a href="#2-9-提醒项目经理-安排工具组输出对应的BT-FT-工具。" class="headerlink" title="2.9 提醒项目经理 安排工具组输出对应的BT FT 工具。"></a>2.9 提醒项目经理 安排工具组输出对应的BT FT 工具。</h3><h3 id="二-软件项目中期"><a href="#二-软件项目中期" class="headerlink" title="二 软件项目中期"></a>二 软件项目中期</h3><h3 id="1需求沟通"><a href="#1需求沟通" class="headerlink" title="1需求沟通"></a>1需求沟通</h3><h3 id="1-1需求不明确"><a href="#1-1需求不明确" class="headerlink" title="1.1需求不明确"></a>1.1需求不明确</h3><pre><code>对于不明确的需求 务必让工程师具体提出不明确的点 以邮件的方式通知SPM, SPM 
+负责和客户的需求经理或者是接口人来确认具体的需求。需求明确后务必请接口人更新需求文档 或者SPM 要备份沟通的结果，并在相应的bug中添加comment 说明沟通的结果。
+</code></pre><h3 id="1-2需求明确"><a href="#1-2需求明确" class="headerlink" title="1.2需求明确"></a>1.2需求明确</h3><h5 id="1-2-1可以修改的"><a href="#1-2-1可以修改的" class="headerlink" title="1.2.1可以修改的"></a>1.2.1可以修改的</h5><pre><code>安排工程师给出具体的完成时间点并跟踪完成情况。
+</code></pre><h5 id="1-2-2不可以修改的（理论上都可以完成-关键在于研发的时间）"><a href="#1-2-2不可以修改的（理论上都可以完成-关键在于研发的时间）" class="headerlink" title="1.2.2不可以修改的（理论上都可以完成 关键在于研发的时间）"></a>1.2.2不可以修改的（理论上都可以完成 关键在于研发的时间）</h5><pre><code>请工程师给出具体的风险评估文档。或者邮件说明完成的困难点 风险点。SPM 负责和需求接口人来沟通。如果无法说服客户 就延长研发的时间 让工程师有更多的时间来完成此需求，如果需求的实现对项目计划有影响需要和项目经理进行确认。
+</code></pre><h3 id="2需求类bug跟踪"><a href="#2需求类bug跟踪" class="headerlink" title="2需求类bug跟踪"></a>2需求类bug跟踪</h3><pre><code>每天定时check bug 修改情况，对于关心的问题必要时通过邮件跟踪。
+</code></pre><h3 id="3版本号控制原则"><a href="#3版本号控制原则" class="headerlink" title="3版本号控制原则"></a>3版本号控制原则</h3><h3 id="3-1-版本号命名原则："><a href="#3-1-版本号命名原则：" class="headerlink" title="3.1 版本号命名原则："></a>3.1 版本号命名原则：</h3><pre><code>Case 1 hiapd 内部版本号命名 需要有项目组 开会讨论后决定 目前没有相关的命名文档
+Case 2 客户内部版本号  需要和客户沟通确认 必须邮件沟通确认
+Case 3 外部版本号   需要和客户沟通确认 必须邮件沟通确认
+</code></pre><h3 id="3-2-内部版本号递增原则："><a href="#3-2-内部版本号递增原则：" class="headerlink" title="3.2 内部版本号递增原则："></a>3.2 内部版本号递增原则：</h3><pre><code>Case 1 客户认可或者归档的B01版本后 再次释放版本需要+1（B02）
+Case 2 客户送测后 即送国外运行商（TA 版本） 或者是国内的送测后 再次释放版本需要+1 （比如 送测版本是B11 但是后续TA 反馈问题 我们修改后再次送测就需+1 即B12版本）
+Case 3 关于内部版本号的变更 有的地区在送测期间 可以随时更换版本 对于这样的情况 必须在版本释放前需要和客户邮件确认是否需要修改版本号。
+</code></pre><h3 id="3-3-外部版本号递增原则："><a href="#3-3-外部版本号递增原则：" class="headerlink" title="3.3 外部版本号递增原则："></a>3.3 外部版本号递增原则：</h3><pre><code>Case 1 在没有释放量产版本前 保持不变（客户特殊要求除外）
+Case 2 国内CTA 版本 和国外的TA 版本 理论上外部版本号不变 但是释放版本时请和客户再次确认。
+Case 3 后续通过FOTA 升级的版本 需要+1 （和客户邮件确认） 
+Case 4 MR版本（售后版本）必须+1.
+</code></pre><h3 id="3-4-备注："><a href="#3-4-备注：" class="headerlink" title="3.4 备注："></a>3.4 备注：</h3><pre><code>版本号尽量控制在10个版本之内。
+</code></pre><h3 id="4编译和释放版本"><a href="#4编译和释放版本" class="headerlink" title="4编译和释放版本"></a>4编译和释放版本</h3><h3 id="4-1-编译版本："><a href="#4-1-编译版本：" class="headerlink" title="4.1 编译版本："></a>4.1 编译版本：</h3><h5 id="4-1-1-根据要求输出编译脚本-并上传SVN"><a href="#4-1-1-根据要求输出编译脚本-并上传SVN" class="headerlink" title="4.1.1 根据要求输出编译脚本 并上传SVN"></a>4.1.1 根据要求输出编译脚本 并上传SVN</h5><h5 id="4-1-2-在10-10-1-6-建立存放版本的文件夹-说明：目前脚本中不能自动新建文件夹-必须手动在-6服务器上创建文件夹。"><a href="#4-1-2-在10-10-1-6-建立存放版本的文件夹-说明：目前脚本中不能自动新建文件夹-必须手动在-6服务器上创建文件夹。" class="headerlink" title="4.1.2 在10.10.1.6 建立存放版本的文件夹 说明：目前脚本中不能自动新建文件夹 必须手动在.6服务器上创建文件夹。"></a>4.1.2 在10.10.1.6 建立存放版本的文件夹 说明：目前脚本中不能自动新建文件夹 必须手动在.6服务器上创建文件夹。</h5><h5 id="4-1-3-软件开始研发后-如果每日比较多-每天晚上需要编译版本即daily-build-如果每日修改比较少-可以-2-3天编译版本-SPM-根据实际情况自行决定。"><a href="#4-1-3-软件开始研发后-如果每日比较多-每天晚上需要编译版本即daily-build-如果每日修改比较少-可以-2-3天编译版本-SPM-根据实际情况自行决定。" class="headerlink" title="4.1.3 软件开始研发后 如果每日比较多 每天晚上需要编译版本即daily_build 如果每日修改比较少 可以 2~3天编译版本 SPM 根据实际情况自行决定。"></a>4.1.3 软件开始研发后 如果每日比较多 每天晚上需要编译版本即daily_build 如果每日修改比较少 可以 2~3天编译版本 SPM 根据实际情况自行决定。</h5><h3 id="4-2-释放版本："><a href="#4-2-释放版本：" class="headerlink" title="4.2 释放版本："></a>4.2 释放版本：</h3><h5 id="4-2-1-临时版本释放"><a href="#4-2-1-临时版本释放" class="headerlink" title="4.2.1 临时版本释放"></a>4.2.1 临时版本释放</h5><pre><code>临时版本的释放 多数情况下是为了解决某一个或者是多个问题 响应客户的要求释放的，这样的版本可以不经过测试部的测试。就可以释放给客户，但是需要SPM 或者测试同事简单的验证而且必须保证可以正常开机。并务必在邮件中明确说明这个是临时的版本 测试部没有系统测试的字样来告知客户。
+临时的版本升级要了解客户手里的机器是什么状态的机器（器件是否有差异，版本信息）确认用户可以正常升级。
+</code></pre><h5 id="4-2-2-正式版本释放"><a href="#4-2-2-正式版本释放" class="headerlink" title="4.2.2 正式版本释放"></a>4.2.2 正式版本释放</h5><pre><code>Case 1 非生产版本 对于非生产版本 必须经过软件测试部的测试即提交软件测试流程 并根据测试反馈的结果 来评估是否可以释放给客户。
+Case 2 试产版本  是指要在产线上用于试产的版本 
+试产前提醒项目经理组织每次试产前做change list 评审（在试产回来每次验证中有可能需要软件配合修改的地方
+这类版本必须经过软件测试部，硬件测试部，工作组的测试 并提交相应的测试流程，测试完成后评估是否可以用于生产 如果可以并上传DCC 系统下发工厂。
+Case 3 量产版本 是在客户接受软件可以用于生产 
+量产前 请和项目经理确认是否有物料的变更 如果存在物料变更 需要软件调整并压力测试。还有需要明确量产软件的烧写方式。
+这类软件必须 保证 CTS GTS 测试通过 （国内外通用）必须经过软件测试部，硬件测试部，工作组的测试 并提交相应的测试流程，测试完成后评估是否可以用于生产，如果可以并上传DCC系统下发工厂。
+</code></pre><h3 id="5安排测试部测试"><a href="#5安排测试部测试" class="headerlink" title="5安排测试部测试"></a>5安排测试部测试</h3><h3 id="5-1-需求测试"><a href="#5-1-需求测试" class="headerlink" title="5.1 需求测试"></a>5.1 需求测试</h3><pre><code>Case 1 在正式的B01版本发布前，即每天编译的版本进行测试。
+Case 2 正式的B01版本 验证
+Case 3 如果需要在B02 版本也请安排测试
+</code></pre><h3 id="5-2-bug-回归"><a href="#5-2-bug-回归" class="headerlink" title="5.2 bug 回归"></a>5.2 bug 回归</h3><pre><code>正式运行OA 流程提交的测试版本均需要安排此项测试。
+</code></pre><h3 id="5-3-CTS-GTS-测试"><a href="#5-3-CTS-GTS-测试" class="headerlink" title="5.3 CTS GTS 测试"></a>5.3 CTS GTS 测试</h3><pre><code>Case 1 在提交客户版本前 必须安排测试一次 即摸底的测试
+Case 2 正式外发给客户的版本 必须安排测试。
+Case 3 基线有重大升级后安排测试
+Case 4 google 要求调整测试包 即CTS GTS 测试脚本变更 必须安排测试。   
+</code></pre><h3 id="5-4-monkey-测试："><a href="#5-4-monkey-测试：" class="headerlink" title="5.4 monkey 测试："></a>5.4 monkey 测试：</h3><pre><code>Case 1 正式B01     安排测试。
+Case 2 软件中集成比较多的三方apk 后请安排测试。
+Case 3 版本有重大修改 比如基线调整 安排测试。
+Case 4 送测的版本（TA版本） 请安排测试
+</code></pre><h3 id="5-5-FOTA-测试："><a href="#5-5-FOTA-测试：" class="headerlink" title="5.5 FOTA 测试："></a>5.5 FOTA 测试：</h3><pre><code>正式外发的版本 均要求测试。
+</code></pre><h3 id="5-6-系统测试（系统全用例）"><a href="#5-6-系统测试（系统全用例）" class="headerlink" title="5.6 系统测试（系统全用例）"></a>5.6 系统测试（系统全用例）</h3><pre><code>正式外发的版本 均要求测试。
+</code></pre><h3 id="5-7-续航测试"><a href="#5-7-续航测试" class="headerlink" title="5.7 续航测试"></a>5.7 续航测试</h3><pre><code>Case 1  量产前的软件版本 必须安排一次测试
+Case 2  软件基线调整 安排测试
+Case 3  添加大量三方apk 后 请安排测试。
+</code></pre><h3 id="5-8-待机电流测试"><a href="#5-8-待机电流测试" class="headerlink" title="5.8 待机电流测试"></a>5.8 待机电流测试</h3><pre><code>正式的外发版本必须安排测试
+</code></pre><h3 id="5-9-信令连接测试"><a href="#5-9-信令连接测试" class="headerlink" title="5.9 信令连接测试"></a>5.9 信令连接测试</h3><pre><code>正式的外发版本必须安排测试
+</code></pre><h3 id="5-10-射频测试"><a href="#5-10-射频测试" class="headerlink" title="5.10 射频测试"></a>5.10 射频测试</h3><pre><code>量产前的版本 必须安排一次测试。
+</code></pre><h3 id="5-11-工具组测试"><a href="#5-11-工具组测试" class="headerlink" title="5.11 工具组测试"></a>5.11 工具组测试</h3><pre><code>正式的外发版本必须安排测试
+</code></pre><h3 id="5-12-场测"><a href="#5-12-场测" class="headerlink" title="5.12 场测"></a>5.12 场测</h3><pre><code>场测前需要软件项目经理将启动场测的邮件发给项目相关成员，测试工程师将抓log的方法发出，让研发工程师进行确认。
+</code></pre><h3 id="6-UE-版本"><a href="#6-UE-版本" class="headerlink" title="6 UE 版本"></a>6 UE 版本</h3><pre><code>如果有UE 版本需求 请安排释放UE 版本
+UE 释放要求
+Case 1 基线基本稳定 没有重点的问题存在
+Case 2 UE需求明确 
+</code></pre><h3 id="7-CTA-版本"><a href="#7-CTA-版本" class="headerlink" title="7 CTA 版本"></a>7 CTA 版本</h3><pre><code>如果有CTA版本需求 请安排释放CTA版本
+</code></pre><h3 id="7-1-CTA-版本需求"><a href="#7-1-CTA-版本需求" class="headerlink" title="7.1 CTA 版本需求"></a>7.1 CTA 版本需求</h3><pre><code>合入已知CTA问题，解决前期个别问题
+</code></pre><h3 id="7-2-CTA-准备工作"><a href="#7-2-CTA-准备工作" class="headerlink" title="7.2 CTA 准备工作"></a>7.2 CTA 准备工作</h3><pre><code>Case 1 测试用例确认
+Case 2 确认资料 准备样机和配件
+</code></pre><h3 id="8外发客户B01版本-首个版本"><a href="#8外发客户B01版本-首个版本" class="headerlink" title="8外发客户B01版本(首个版本)"></a>8外发客户B01版本(首个版本)</h3><h3 id="8-1-根据软件版本计划-在计划时间点提交客户B01版本"><a href="#8-1-根据软件版本计划-在计划时间点提交客户B01版本" class="headerlink" title="8.1 根据软件版本计划 在计划时间点提交客户B01版本"></a>8.1 根据软件版本计划 在计划时间点提交客户B01版本</h3><h3 id="8-2-在提交B01-版本时-必须保证所有的需求修改完成-如果还存在需求未完成的-请SPM-和客户沟通来确认是否B01版本"><a href="#8-2-在提交B01-版本时-必须保证所有的需求修改完成-如果还存在需求未完成的-请SPM-和客户沟通来确认是否B01版本" class="headerlink" title="8.2 在提交B01 版本时 必须保证所有的需求修改完成 如果还存在需求未完成的 请SPM 和客户沟通来确认是否B01版本."></a>8.2 在提交B01 版本时 必须保证所有的需求修改完成 如果还存在需求未完成的 请SPM 和客户沟通来确认是否B01版本.</h3><h3 id="8-3-必须安排相关的测试-，并取得测试报告后-有项目组来评估是否可以释放给客户。"><a href="#8-3-必须安排相关的测试-，并取得测试报告后-有项目组来评估是否可以释放给客户。" class="headerlink" title="8.3 必须安排相关的测试 ，并取得测试报告后 有项目组来评估是否可以释放给客户。"></a>8.3 必须安排相关的测试 ，并取得测试报告后 有项目组来评估是否可以释放给客户。</h3><h3 id="9处理客户反馈的问题"><a href="#9处理客户反馈的问题" class="headerlink" title="9处理客户反馈的问题"></a>9处理客户反馈的问题</h3><h3 id="9-1-国内反馈"><a href="#9-1-国内反馈" class="headerlink" title="9.1 国内反馈"></a>9.1 国内反馈</h3><h5 id="9-1-1-客户测试team-反馈："><a href="#9-1-1-客户测试team-反馈：" class="headerlink" title="9.1.1 客户测试team 反馈："></a>9.1.1 客户测试team 反馈：</h5><pre><code>Case 1 安排hiapd测试部 同步客户反馈问题提交到我们BUG库
+Case 2 跟踪反馈问题 对bug 描述不明确的请协助工程师沟通。
+</code></pre><h5 id="9-1-2-客户邮件反馈："><a href="#9-1-2-客户邮件反馈：" class="headerlink" title="9.1.2 客户邮件反馈："></a>9.1.2 客户邮件反馈：</h5><pre><code>接到反馈邮件后 请安排测试部的同事复现 如果可以复现请安排测试部提交bug。如果无法复现的问题 请spm和客户沟通确认问题。  
+</code></pre><h3 id="9-2-国外反馈"><a href="#9-2-国外反馈" class="headerlink" title="9.2 国外反馈"></a>9.2 国外反馈</h3><pre><code>国外的反馈 一般都是在国内无法测试的问题。SPM务必整理备份。问题主要集
+中在 协议组和modem组
+</code></pre><h5 id="9-2-1-协议组问题："><a href="#9-2-1-协议组问题：" class="headerlink" title="9.2.1  协议组问题："></a>9.2.1  协议组问题：</h5><pre><code>务必请客户提供adb log ，qxdm log，视频或者是截图并提供对比机的测
+试情况 对于短彩信问题请客户提供短信数据库文件，对比机apn 参数。 
+</code></pre><h5 id="9-2-2-modem组问题："><a href="#9-2-2-modem组问题：" class="headerlink" title="9.2.2  modem组问题："></a>9.2.2  modem组问题：</h5><pre><code>务必请客户提供adb log ，qxdm log，视频或者是截图 和qcn文件。对比
+机的测试情况。
+</code></pre><h3 id="10外发TA-版本："><a href="#10外发TA-版本：" class="headerlink" title="10外发TA 版本："></a>10外发TA 版本：</h3><h3 id="10-1-时间点："><a href="#10-1-时间点：" class="headerlink" title="10.1 时间点："></a>10.1 时间点：</h3><pre><code>取决于软件版本计划。如果客户不认可版本计划，必须和项目经理沟通后 再和   客户讨论并邮件确认时间点。
+</code></pre><h3 id="10-2-处理TA-反馈问题："><a href="#10-2-处理TA-反馈问题：" class="headerlink" title="10.2 处理TA 反馈问题："></a>10.2 处理TA 反馈问题：</h3><h5 id="10-2-1-问题反馈："><a href="#10-2-1-问题反馈：" class="headerlink" title="10.2.1 问题反馈："></a>10.2.1 问题反馈：</h5><pre><code>请客户提交相关的资源 即log 视频等 安排测试部复现 并提交bug 安排工程师分析。
+</code></pre><h5 id="10-2-2-新增需求："><a href="#10-2-2-新增需求：" class="headerlink" title="10.2.2 新增需求："></a>10.2.2 新增需求：</h5><pre><code>参考需求评估流程来确认时间点 并和项目经理确认是否需要完成。Spm 没有权利答复客户。
+</code></pre><h3 id="三-软件项目后期"><a href="#三-软件项目后期" class="headerlink" title="三 软件项目后期"></a>三 软件项目后期</h3><h3 id="1了解客户测试流程"><a href="#1了解客户测试流程" class="headerlink" title="1了解客户测试流程"></a>1了解客户测试流程</h3><h2 id="1-1中兴客户："><a href="#1-1中兴客户：" class="headerlink" title="1.1中兴客户："></a>1.1中兴客户：</h2><pre><code>通过的标准应该是5A 40B，除此之外，A类Bug,如果分值高的话，是一票否决的，出现这种分值高的bug,要格外注意，尽快处理。模拟用户的标准应该是B类不超过12%，非问题bug及不重要的bug,尽早沟通关闭或降级。
+</code></pre><h3 id="1-2联想客户："><a href="#1-2联想客户：" class="headerlink" title="1.2联想客户："></a>1.2联想客户：</h3><h3 id="1-3中国移动："><a href="#1-3中国移动：" class="headerlink" title="1.3中国移动："></a>1.3中国移动：</h3><h3 id="2-bug-评审机制："><a href="#2-bug-评审机制：" class="headerlink" title="2 bug 评审机制："></a>2 bug 评审机制：</h3><pre><code>在项目量产前 需要项目组相关人员和研发课长 来评估所有bug 的风险，确定修改的方案。修改的时间点等信息。对于不做修改的问题统一降级为4级。
+</code></pre><h3 id="3外发量产版本："><a href="#3外发量产版本：" class="headerlink" title="3外发量产版本："></a>3外发量产版本：</h3><h3 id="3-1前提条件："><a href="#3-1前提条件：" class="headerlink" title="3.1前提条件："></a>3.1前提条件：</h3><pre><code>Case 1 客户必须TA 或者是明确邮件确认软件可以量产。
+Case 2 现有存在的bug  符合客户的量产标准。
+Case 3 工程模式中没有严重的问题。
+Case 4  CTS GTS 测试没有fail项。
+</code></pre><h3 id="3-2测试安排："><a href="#3-2测试安排：" class="headerlink" title="3.2测试安排："></a>3.2测试安排：</h3><pre><code>务必启动量产软件外发流程。
+</code></pre><h3 id="3-3主要事项："><a href="#3-3主要事项：" class="headerlink" title="3.3主要事项："></a>3.3主要事项：</h3><pre><code>Case 1 注意客户拿到量产软件的时间点。
+Case 2 CTS GTS 测试。
+Case 3 工具组测试。
+Case 4 FOTA 版本必须生成和验证。
+</code></pre><h3 id="4书写项目总结"><a href="#4书写项目总结" class="headerlink" title="4书写项目总结"></a>4书写项目总结</h3><pre><code>项目量产后 请务必输出项目总结。
+</code></pre><h3 id="四-软件项目维护"><a href="#四-软件项目维护" class="headerlink" title="四 软件项目维护"></a>四 软件项目维护</h3><pre><code>是指项目已经量产，主要是由于售后问题客户要求我们更新软件。对于这些软件我们称MR 版本。
+MR 版本生成要做到最小的修改。即将风险降到最低。
+MR 版本生成原则
+</code></pre><h3 id="1-1只安排修改客户反馈的问题。"><a href="#1-1只安排修改客户反馈的问题。" class="headerlink" title="1.1只安排修改客户反馈的问题。"></a>1.1只安排修改客户反馈的问题。</h3><h3 id="1-2对于一些必要的功能-进行升级例如AFW-功能和-CTS-GTS-的问题。"><a href="#1-2对于一些必要的功能-进行升级例如AFW-功能和-CTS-GTS-的问题。" class="headerlink" title="1.2对于一些必要的功能 进行升级例如AFW 功能和 CTS GTS 的问题。"></a>1.2对于一些必要的功能 进行升级例如AFW 功能和 CTS GTS 的问题。</h3><h3 id="1-3FOTA-版本必须验证-（例如-量产软件是B12，售后反馈问题我们出B13-那么FOTA-必须验证-B12-B13-B13B14-2个版本）"><a href="#1-3FOTA-版本必须验证-（例如-量产软件是B12，售后反馈问题我们出B13-那么FOTA-必须验证-B12-B13-B13B14-2个版本）" class="headerlink" title="1.3FOTA 版本必须验证 （例如 量产软件是B12，售后反馈问题我们出B13  那么FOTA 必须验证 B12 B13,B13B14 2个版本）"></a>1.3FOTA 版本必须验证 （例如 量产软件是B12，售后反馈问题我们出B13  那么FOTA 必须验证 B12 B13,B13B14 2个版本）</h3><h3 id="1-4MR-版本的测试也要符合量产软件测试标准。"><a href="#1-4MR-版本的测试也要符合量产软件测试标准。" class="headerlink" title="1.4MR 版本的测试也要符合量产软件测试标准。"></a>1.4MR 版本的测试也要符合量产软件测试标准。</h3><h3 id="五-沟通的注意事项"><a href="#五-沟通的注意事项" class="headerlink" title="五 沟通的注意事项"></a>五 沟通的注意事项</h3><h3 id="1一定要第一时间响应客户提出的各种问题。"><a href="#1一定要第一时间响应客户提出的各种问题。" class="headerlink" title="1一定要第一时间响应客户提出的各种问题。"></a>1一定要第一时间响应客户提出的各种问题。</h3><h3 id="2对于一些问题的沟通-如果有工程师介入-尽量发给相关的人员不要全部回复。"><a href="#2对于一些问题的沟通-如果有工程师介入-尽量发给相关的人员不要全部回复。" class="headerlink" title="2对于一些问题的沟通 如果有工程师介入 尽量发给相关的人员不要全部回复。"></a>2对于一些问题的沟通 如果有工程师介入 尽量发给相关的人员不要全部回复。</h3><h3 id="3对于客户要求确认时间点的邮件-务必需要和项目经理沟通后再回复。"><a href="#3对于客户要求确认时间点的邮件-务必需要和项目经理沟通后再回复。" class="headerlink" title="3对于客户要求确认时间点的邮件 务必需要和项目经理沟通后再回复。"></a>3对于客户要求确认时间点的邮件 务必需要和项目经理沟通后再回复。</h3><h3 id="4对于一些需求功能的确认-一定要和相关的工程师沟通后再回复。"><a href="#4对于一些需求功能的确认-一定要和相关的工程师沟通后再回复。" class="headerlink" title="4对于一些需求功能的确认 一定要和相关的工程师沟通后再回复。"></a>4对于一些需求功能的确认 一定要和相关的工程师沟通后再回复。</h3><h3 id="六-软件需求评估"><a href="#六-软件需求评估" class="headerlink" title="六 软件需求评估"></a>六 软件需求评估</h3><pre><code>项目各阶段客户需求评估策略
+序号    项目阶段    客户需求评估策略    备注
+1    立项前    尽量满足客户需求，根据实际评估情况给出风险预估，资源需求，进度安排。对于不能实现或部分实现的需求要提交客户确认。    SPM要全面收集客户需求，避免遗漏
+2    立项EVT    满足客户合理需求，根据实际评估情况给出风险预估，资源需求，进度安排。    SPM作需求变更记录
+3    EVT DVT    满足客户合理的小型需求，对于工作量和难度较大的需求，需要在进度评估和风险评估的基础上与客户沟通。    SPM作需求变更记录
+4    DVT PVT    通常不再接收新的客户需求。特殊情况需要客户对进度做出让步，风险共担。    SPM作需求变更记录
+5    PVT MP    不再接收新的客户需求。客户强烈要求的，给出风险评估和进度评估，在此基础上要求客户风险共担。    SPM作需求变更记录
+6    MP    不再接收新的客户需求。客户如有要求，根据工作量评估进度，并且要提报PM成本增加。新需求不影响原有量产进度情况下作为后续维护升级需求开发。    SPM作需求变更记录
+6.3运营商软件需求评估流程
+6.3.1运营商的需求由公司产品认证部及时更新到SPM
+6.3.2 SPM根据运营商需求的时效和产品类别，确认本项目是否需要导入评估
+6.3.3对于需要导入的运营商需求直接启动开发流程
+6.4公司内软件需求评估流程
+6.4.1公司内的软件需求是由公司内其他部门提出，给到SPM
+6.4.2SPM启动软件需求评估流程
+6.4.3SPM根据实际评估结果决定是否在项目中实施
+6.4.4若SPM判定不实施该需求，需与提出需求部门沟通说明原因
+6.4.5如有分歧意见，双方给出各自理由，由PM决断。
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SPM/" rel="tag"># SPM</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/20/Android-修改默认亮度太暗/" rel="next" title="Android 修改默认亮度太暗">
+                <i class="fa fa-chevron-left"></i> Android 修改默认亮度太暗
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/24/Android-长按Home键没有弹出最近任务页面/" rel="prev" title="Android 长按Home键没有弹出最近任务页面">
+                Android 长按Home键没有弹出最近任务页面 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/03/22/SPM工作流程/"
+     data-title="SPM"
+     data-content=""
+     data-url="http://www.ningshuran.tech/2017/03/22/SPM工作流程/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/22/SPM工作流程/"
+           data-title="SPM" data-url="http://www.ningshuran.tech/2017/03/22/SPM工作流程/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="shuranning@163.com" />
+          <p class="site-author-name" itemprop="name">shuranning@163.com</p>
+           
+              <p class="site-description motion-element" itemprop="description">锄禾日当午</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SPM工作流程"><span class="nav-number">1.</span> <span class="nav-text">SPM工作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-软件项目前期"><span class="nav-number">1.1.</span> <span class="nav-text">一 软件项目前期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1无手机硬件设备"><span class="nav-number">1.2.</span> <span class="nav-text">1无手机硬件设备</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1软件的立项会议（立项中包含schedule，项目配置信息，项目干系人，质量标准，风险的评估等）"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">1.1软件的立项会议（立项中包含schedule，项目配置信息，项目干系人，质量标准，风险的评估等）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2获取平台数据-（开发工具，接口文档等）"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">1.2获取平台数据 （开发工具，接口文档等）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3安排基线负责人编译基线-并保证编译正确。"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">1.3安排基线负责人编译基线 并保证编译正确。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4所有的软件研发人员熟悉基线代码。"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">1.4所有的软件研发人员熟悉基线代码。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-5获取三方接口信息；"><span class="nav-number">1.2.0.5.</span> <span class="nav-text">1.5获取三方接口信息；</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-6确认客户接口信息；"><span class="nav-number">1.2.0.6.</span> <span class="nav-text">1.6确认客户接口信息；</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-7确认认证相关需求。"><span class="nav-number">1.2.0.7.</span> <span class="nav-text">1.7确认认证相关需求。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2有手机硬件设备"><span class="nav-number">1.3.</span> <span class="nav-text">2有手机硬件设备</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-基线稳定"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">2.1  基线稳定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-项目分支建立流程"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">2.2  项目分支建立流程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-根据软件需求来评估分支的建立方案。"><span class="nav-number">1.3.1.</span> <span class="nav-text">#2.2.1 根据软件需求来评估分支的建立方案。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-2-根据软件完成的时间节点评估分支的建立方案"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">2.2.2  根据软件完成的时间节点评估分支的建立方案</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-需求评估流程"><span class="nav-number">1.4.</span> <span class="nav-text">2.3  需求评估流程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-1-拿到客户的需求文档后-请安排各课长评估具体完成的时间点"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">2.3.1 拿到客户的需求文档后 请安排各课长评估具体完成的时间点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-2-对于简单的需求-最小的时间单位为0-5天。"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">2.3.2 对于简单的需求 最小的时间单位为0.5天。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-3-对于复杂的需求-研发的时间为3-5-工作日"><span class="nav-number">1.4.0.3.</span> <span class="nav-text">2.3.3 对于复杂的需求 研发的时间为3~5 工作日</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-4-对于评估时间大于5个工作日的需求-请协调相关工程师具体研究时间节点-并说明实现的难度和困难点在那里-即风险评估。"><span class="nav-number">1.4.0.4.</span> <span class="nav-text">2.3.4 对于评估时间大于5个工作日的需求 请协调相关工程师具体研究时间节点 并说明实现的难度和困难点在那里 即风险评估。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-5-对于无法实现的需求-一定要给出具体的说明来阐述这个需求为什么无法完成。"><span class="nav-number">1.4.0.5.</span> <span class="nav-text">2.3.5 对于无法实现的需求 一定要给出具体的说明来阐述这个需求为什么无法完成。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-6-所有的需求评估完成后-必须让测试部-提交对应的bug来跟踪。"><span class="nav-number">1.4.0.6.</span> <span class="nav-text">2.3.6 所有的需求评估完成后 必须让测试部 提交对应的bug来跟踪。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-7需求归档备份。"><span class="nav-number">1.4.0.7.</span> <span class="nav-text">2.3.7需求归档备份。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-8-具体参考需求评估文档。"><span class="nav-number">1.4.0.8.</span> <span class="nav-text">2.3.8 具体参考需求评估文档。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-对于TP-LCD-Camera-的调试安排"><span class="nav-number">1.5.</span> <span class="nav-text">2.4  对于TP LCD Camera 的调试安排</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-1-和项目经理协调-TP-LCD-Camera-资源-每一个必须要2块以上-防止器件损坏-导致无效的工作。"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">2.4.1 和项目经理协调 TP LCD Camera 资源 每一个必须要2块以上 防止器件损坏 导致无效的工作。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-2-安排驱动部调试-并尽量协调资源来满足工程师的要求。"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">2.4.2 安排驱动部调试 并尽量协调资源来满足工程师的要求。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-3-每天更新器件调试进展，-block项及时发出并通知给项目经理。"><span class="nav-number">1.5.0.3.</span> <span class="nav-text">2.4.3 每天更新器件调试进展， block项及时发出并通知给项目经理。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-对于MBN-QCN-的调试安排（modem调试）"><span class="nav-number">1.6.</span> <span class="nav-text">2.5  对于MBN QCN 的调试安排（modem调试）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-5-1-和项目经理-协调资源-安排射频工程师和modem组联调-完成需求要求的频段。"><span class="nav-number">1.6.0.1.</span> <span class="nav-text">2.5.1 和项目经理 协调资源 安排射频工程师和modem组联调 完成需求要求的频段。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-5-2-需要送平台商安排调试验证的-，需要协调软件-硬件-射频资源来准备样机-安排实验室调试。"><span class="nav-number">1.6.0.2.</span> <span class="nav-text">2.5.2 需要送平台商安排调试验证的 ，需要协调软件 硬件 射频资源来准备样机 安排实验室调试。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-根据评估的结果-输出软件版本计划。"><span class="nav-number">1.7.</span> <span class="nav-text">2.6 根据评估的结果 输出软件版本计划。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-安排IT-建立对应项目的BUG库"><span class="nav-number">1.8.</span> <span class="nav-text">2.7 安排IT 建立对应项目的BUG库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8-协调项目经理-给出测试部的接口人。"><span class="nav-number">1.9.</span> <span class="nav-text">2.8 协调项目经理 给出测试部的接口人。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-9-提醒项目经理-安排工具组输出对应的BT-FT-工具。"><span class="nav-number">1.10.</span> <span class="nav-text">2.9 提醒项目经理 安排工具组输出对应的BT FT 工具。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-软件项目中期"><span class="nav-number">1.11.</span> <span class="nav-text">二 软件项目中期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1需求沟通"><span class="nav-number">1.12.</span> <span class="nav-text">1需求沟通</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1需求不明确"><span class="nav-number">1.13.</span> <span class="nav-text">1.1需求不明确</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2需求明确"><span class="nav-number">1.14.</span> <span class="nav-text">1.2需求明确</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-1可以修改的"><span class="nav-number">1.14.0.1.</span> <span class="nav-text">1.2.1可以修改的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-2不可以修改的（理论上都可以完成-关键在于研发的时间）"><span class="nav-number">1.14.0.2.</span> <span class="nav-text">1.2.2不可以修改的（理论上都可以完成 关键在于研发的时间）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2需求类bug跟踪"><span class="nav-number">1.15.</span> <span class="nav-text">2需求类bug跟踪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3版本号控制原则"><span class="nav-number">1.16.</span> <span class="nav-text">3版本号控制原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-版本号命名原则："><span class="nav-number">1.17.</span> <span class="nav-text">3.1 版本号命名原则：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-内部版本号递增原则："><span class="nav-number">1.18.</span> <span class="nav-text">3.2 内部版本号递增原则：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-外部版本号递增原则："><span class="nav-number">1.19.</span> <span class="nav-text">3.3 外部版本号递增原则：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-备注："><span class="nav-number">1.20.</span> <span class="nav-text">3.4 备注：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4编译和释放版本"><span class="nav-number">1.21.</span> <span class="nav-text">4编译和释放版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-编译版本："><span class="nav-number">1.22.</span> <span class="nav-text">4.1 编译版本：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-1-根据要求输出编译脚本-并上传SVN"><span class="nav-number">1.22.0.1.</span> <span class="nav-text">4.1.1 根据要求输出编译脚本 并上传SVN</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-2-在10-10-1-6-建立存放版本的文件夹-说明：目前脚本中不能自动新建文件夹-必须手动在-6服务器上创建文件夹。"><span class="nav-number">1.22.0.2.</span> <span class="nav-text">4.1.2 在10.10.1.6 建立存放版本的文件夹 说明：目前脚本中不能自动新建文件夹 必须手动在.6服务器上创建文件夹。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-3-软件开始研发后-如果每日比较多-每天晚上需要编译版本即daily-build-如果每日修改比较少-可以-2-3天编译版本-SPM-根据实际情况自行决定。"><span class="nav-number">1.22.0.3.</span> <span class="nav-text">4.1.3 软件开始研发后 如果每日比较多 每天晚上需要编译版本即daily_build 如果每日修改比较少 可以 2~3天编译版本 SPM 根据实际情况自行决定。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-释放版本："><span class="nav-number">1.23.</span> <span class="nav-text">4.2 释放版本：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-1-临时版本释放"><span class="nav-number">1.23.0.1.</span> <span class="nav-text">4.2.1 临时版本释放</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-2-正式版本释放"><span class="nav-number">1.23.0.2.</span> <span class="nav-text">4.2.2 正式版本释放</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5安排测试部测试"><span class="nav-number">1.24.</span> <span class="nav-text">5安排测试部测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-需求测试"><span class="nav-number">1.25.</span> <span class="nav-text">5.1 需求测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-bug-回归"><span class="nav-number">1.26.</span> <span class="nav-text">5.2 bug 回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-CTS-GTS-测试"><span class="nav-number">1.27.</span> <span class="nav-text">5.3 CTS GTS 测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-monkey-测试："><span class="nav-number">1.28.</span> <span class="nav-text">5.4 monkey 测试：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-FOTA-测试："><span class="nav-number">1.29.</span> <span class="nav-text">5.5 FOTA 测试：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-6-系统测试（系统全用例）"><span class="nav-number">1.30.</span> <span class="nav-text">5.6 系统测试（系统全用例）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-7-续航测试"><span class="nav-number">1.31.</span> <span class="nav-text">5.7 续航测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-8-待机电流测试"><span class="nav-number">1.32.</span> <span class="nav-text">5.8 待机电流测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-9-信令连接测试"><span class="nav-number">1.33.</span> <span class="nav-text">5.9 信令连接测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-10-射频测试"><span class="nav-number">1.34.</span> <span class="nav-text">5.10 射频测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-11-工具组测试"><span class="nav-number">1.35.</span> <span class="nav-text">5.11 工具组测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-12-场测"><span class="nav-number">1.36.</span> <span class="nav-text">5.12 场测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-UE-版本"><span class="nav-number">1.37.</span> <span class="nav-text">6 UE 版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-CTA-版本"><span class="nav-number">1.38.</span> <span class="nav-text">7 CTA 版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-CTA-版本需求"><span class="nav-number">1.39.</span> <span class="nav-text">7.1 CTA 版本需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-CTA-准备工作"><span class="nav-number">1.40.</span> <span class="nav-text">7.2 CTA 准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8外发客户B01版本-首个版本"><span class="nav-number">1.41.</span> <span class="nav-text">8外发客户B01版本(首个版本)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-根据软件版本计划-在计划时间点提交客户B01版本"><span class="nav-number">1.42.</span> <span class="nav-text">8.1 根据软件版本计划 在计划时间点提交客户B01版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-在提交B01-版本时-必须保证所有的需求修改完成-如果还存在需求未完成的-请SPM-和客户沟通来确认是否B01版本"><span class="nav-number">1.43.</span> <span class="nav-text">8.2 在提交B01 版本时 必须保证所有的需求修改完成 如果还存在需求未完成的 请SPM 和客户沟通来确认是否B01版本.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-必须安排相关的测试-，并取得测试报告后-有项目组来评估是否可以释放给客户。"><span class="nav-number">1.44.</span> <span class="nav-text">8.3 必须安排相关的测试 ，并取得测试报告后 有项目组来评估是否可以释放给客户。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9处理客户反馈的问题"><span class="nav-number">1.45.</span> <span class="nav-text">9处理客户反馈的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-国内反馈"><span class="nav-number">1.46.</span> <span class="nav-text">9.1 国内反馈</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#9-1-1-客户测试team-反馈："><span class="nav-number">1.46.0.1.</span> <span class="nav-text">9.1.1 客户测试team 反馈：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-1-2-客户邮件反馈："><span class="nav-number">1.46.0.2.</span> <span class="nav-text">9.1.2 客户邮件反馈：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-国外反馈"><span class="nav-number">1.47.</span> <span class="nav-text">9.2 国外反馈</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#9-2-1-协议组问题："><span class="nav-number">1.47.0.1.</span> <span class="nav-text">9.2.1  协议组问题：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-2-2-modem组问题："><span class="nav-number">1.47.0.2.</span> <span class="nav-text">9.2.2  modem组问题：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10外发TA-版本："><span class="nav-number">1.48.</span> <span class="nav-text">10外发TA 版本：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1-时间点："><span class="nav-number">1.49.</span> <span class="nav-text">10.1 时间点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-处理TA-反馈问题："><span class="nav-number">1.50.</span> <span class="nav-text">10.2 处理TA 反馈问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#10-2-1-问题反馈："><span class="nav-number">1.50.0.1.</span> <span class="nav-text">10.2.1 问题反馈：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-2-2-新增需求："><span class="nav-number">1.50.0.2.</span> <span class="nav-text">10.2.2 新增需求：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-软件项目后期"><span class="nav-number">1.51.</span> <span class="nav-text">三 软件项目后期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1了解客户测试流程"><span class="nav-number">1.52.</span> <span class="nav-text">1了解客户测试流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1中兴客户："><span class="nav-number">2.</span> <span class="nav-text">1.1中兴客户：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2联想客户："><span class="nav-number">2.1.</span> <span class="nav-text">1.2联想客户：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3中国移动："><span class="nav-number">2.2.</span> <span class="nav-text">1.3中国移动：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-bug-评审机制："><span class="nav-number">2.3.</span> <span class="nav-text">2 bug 评审机制：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3外发量产版本："><span class="nav-number">2.4.</span> <span class="nav-text">3外发量产版本：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1前提条件："><span class="nav-number">2.5.</span> <span class="nav-text">3.1前提条件：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2测试安排："><span class="nav-number">2.6.</span> <span class="nav-text">3.2测试安排：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3主要事项："><span class="nav-number">2.7.</span> <span class="nav-text">3.3主要事项：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4书写项目总结"><span class="nav-number">2.8.</span> <span class="nav-text">4书写项目总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-软件项目维护"><span class="nav-number">2.9.</span> <span class="nav-text">四 软件项目维护</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1只安排修改客户反馈的问题。"><span class="nav-number">2.10.</span> <span class="nav-text">1.1只安排修改客户反馈的问题。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2对于一些必要的功能-进行升级例如AFW-功能和-CTS-GTS-的问题。"><span class="nav-number">2.11.</span> <span class="nav-text">1.2对于一些必要的功能 进行升级例如AFW 功能和 CTS GTS 的问题。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3FOTA-版本必须验证-（例如-量产软件是B12，售后反馈问题我们出B13-那么FOTA-必须验证-B12-B13-B13B14-2个版本）"><span class="nav-number">2.12.</span> <span class="nav-text">1.3FOTA 版本必须验证 （例如 量产软件是B12，售后反馈问题我们出B13  那么FOTA 必须验证 B12 B13,B13B14 2个版本）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4MR-版本的测试也要符合量产软件测试标准。"><span class="nav-number">2.13.</span> <span class="nav-text">1.4MR 版本的测试也要符合量产软件测试标准。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五-沟通的注意事项"><span class="nav-number">2.14.</span> <span class="nav-text">五 沟通的注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1一定要第一时间响应客户提出的各种问题。"><span class="nav-number">2.15.</span> <span class="nav-text">1一定要第一时间响应客户提出的各种问题。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2对于一些问题的沟通-如果有工程师介入-尽量发给相关的人员不要全部回复。"><span class="nav-number">2.16.</span> <span class="nav-text">2对于一些问题的沟通 如果有工程师介入 尽量发给相关的人员不要全部回复。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3对于客户要求确认时间点的邮件-务必需要和项目经理沟通后再回复。"><span class="nav-number">2.17.</span> <span class="nav-text">3对于客户要求确认时间点的邮件 务必需要和项目经理沟通后再回复。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4对于一些需求功能的确认-一定要和相关的工程师沟通后再回复。"><span class="nav-number">2.18.</span> <span class="nav-text">4对于一些需求功能的确认 一定要和相关的工程师沟通后再回复。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六-软件需求评估"><span class="nav-number">2.19.</span> <span class="nav-text">六 软件需求评估</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shuranning@163.com</span>
+</div>
+<!--
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+-->
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"codingpeasanter"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

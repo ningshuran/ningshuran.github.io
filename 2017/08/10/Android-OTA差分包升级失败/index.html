@@ -93,7 +93,7 @@
 <meta property="og:url" content="http://www.ningshuran.tech/2017/08/10/Android-OTA差分包升级失败/index.html">
 <meta property="og:site_name" content="ningshuran@一号线">
 <meta property="og:description" content="Android-解决OTA差分包升级失败每次编译版本make之后都要执行make otapackage命令，make otapackage就是生成ota包的，一个完整包，一个中间包。每次编译完版本后都要保存这两个包，否则就不能做OTA升级。今天./build/tools/releasetools/ota_from_target_files –block -i -v old_target.zip n">
-<meta property="og:updated_time" content="2017-08-23T10:26:04.310Z">
+<meta property="og:updated_time" content="2017-08-23T10:36:36.942Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android-OTA差分包升级失败">
 <meta name="twitter:description" content="Android-解决OTA差分包升级失败每次编译版本make之后都要执行make otapackage命令，make otapackage就是生成ota包的，一个完整包，一个中间包。每次编译完版本后都要保存这两个包，否则就不能做OTA升级。今天./build/tools/releasetools/ota_from_target_files –block -i -v old_target.zip n">
@@ -391,8 +391,7 @@
         <h2 id="Android-解决OTA差分包升级失败"><a href="#Android-解决OTA差分包升级失败" class="headerlink" title="Android-解决OTA差分包升级失败"></a>Android-解决OTA差分包升级失败</h2><p>每次编译版本make之后都要执行make otapackage命令，make otapackage就是生成ota包的，一个完整包，一个中间包。每次编译完版本后都要保存这两个包，否则就不能做OTA升级。<br>今天./build/tools/releasetools/ota_from_target_files –block -i -v old_target.zip new_target.zip update.zip<br>生成的差分包发现不能升级。从之前编完版本保留下来的build.prop和今天保留的build.prop发现里面的recovery_id不一样，说明make之后没有再执行make otapackage，而发去出的版本正是这个没有make otapackage的版本，那完蛋了，这下怎么办了，用户买了手机今后不能升级了。</p>
 <p>差分包大致是根据新老版本中间包去做差异对比的，./build/tools/releasetools/ota_from_target_files –block -i -v old_target.zip new_target.zip update.zip<br>此命令如果不添加 –block 参数，意思是拿out/…/system目录下的…/app/，…/priv-app/来做对比，如果加了–block参数，则是用out/…/system.img做差异。</p>
 <p>目前情况是,发出的版本是v1.0版本，然后在此版本上make之后没有make otapackage，保留的是make后的整包和差分包，相当于保留的包是v1.1的版本，而今天出的才是v1.1版本的。</p>
-<p>####解决方法</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1,用发出去的版本的system.img替换没有make otapackage的中间包的system.img</div><div class="line">2,用发出去的版本的out/.../system目录下的.../app/，.../priv-app/的APK替换没有make otapackage的中间包APK</div></pre></td></tr></table></figure>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1,用发出去的版本的system.img替换没有make otapackage的中间包的system.img</div><div class="line">2,用发出去的版本的out/.../system目录下的.../app/，.../priv-app/的APK替换没有make otapackage的中间包APK</div></pre></td></tr></table></figure>
 </code></pre><p>但是目前添加–block很不稳定，很有可能不能生成差分包。<br>那尝试替换APK的方法，首先根据差分包升级报错的APK用adb pull system/app/xxx.apk D:/out 发出版本的APK从手机pull出来， 一个一个替换没有make otapackage的中间包的APK。</p>
 <p>然而中途发现，user版本有些文件是没有权限提取出来的！这可如何是好！</p>
 <p>就展讯平台来说，每个版本都打包一个.PAC包,此包里面包含各种.img的文件。</p>
@@ -436,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/22/get √/" rel="next" title="I get you">
-                <i class="fa fa-chevron-left"></i> I get you
+              <a href="/2017/06/02/Android-姓名过长的联系人无法复制到SIM/" rel="next" title="Android-姓名过长的联系人无法复制到SIM">
+                <i class="fa fa-chevron-left"></i> Android-姓名过长的联系人无法复制到SIM
               </a>
             
           </div>
@@ -445,6 +444,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/22/Android-CTS认证测试/" rel="prev" title="Android-CTS认证测试">
+                Android-CTS认证测试 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -539,7 +542,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -550,7 +553,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -561,7 +564,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -596,7 +599,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-解决OTA差分包升级失败"><span class="nav-number">1.</span> <span class="nav-text">Android-解决OTA差分包升级失败</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-解决OTA差分包升级失败"><span class="nav-number">1.</span> <span class="nav-text">Android-解决OTA差分包升级失败</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方法"><span class="nav-number">1.0.1.</span> <span class="nav-text">解决方法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
