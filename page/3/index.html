@@ -424,8 +424,9 @@
         
           
           Android Email的简单分析我看的是5.0Email的源码，看了几天AndroidEmail,不知道这些小图标是哪个类提供的
-搜索了好久都没有找到，网上对Email的分析也少。最后我才发现这些小图标，包括下拉刷新等都是UnifiedEmail提供的，相当于UI就是邮件的一些界面，收件箱，抽屉
-          ...
+搜索了好久都没有找到，网上对Email的分析也少。最后我才发现这些小图标，包括下拉刷新等都是UnifiedEmail提供的，相当于UI就是邮件的一些界面，收件箱，抽屉实现，还有详细信息显示，编辑邮箱界面都在这里面，相当于一个jar包。还有一个Exchange里面是Email的一些服务。Email最重要的就是账户信息的处理和协议方面。Email引用Unified是通过Android.mk引用的。
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/04/20/Android-Email的简单分析/#more" rel="contents">
@@ -581,7 +582,13 @@
         
           
           Android Browser 字体重叠Browser在设置-辅助功能-文子缩放和字体大小下限设置为最大时，会导致字体重叠显示不全。
-原因分析：网页文字出现重叠的主要是网页排版的原因，网页CSS样式限定了行高，当宽度不够或字体较大情况下，显示区域就会重叠。由于浏览器无法对写死的的行高进行调整，所以在
+原因分析：网页文字出现重叠的主要是网页排版的原因，网页CSS样式限定了行高，当宽度不够或字体较大情况下，显示区域就会重叠。由于浏览器无法对写死的的行高进行调整，所以在行高限定的网页中字体过大出现显示问题是正常的。这不是浏览器的问题。 
+解决方案：当需要调小字体时，在BrowserSettings.java syncStaticSettings中，可以设置默认字体大小， 
+settings.setDefaultFontSize(16); 
+settings.setDefaultFixedFontSize(13); 
+可以修改减小参数， 
+当需要调小字体缩放 
+1234567891011121314private Runnable mSetup = new Runnable() &#123;&#125;   switch (getTextSize()) &#123;                case SMALLEST:                 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -738,7 +745,7 @@
         
           
           Android Browser网络状态的判断NetworkStateHandler的构造方法里面就有网络状态的判断
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455public class NetworkStateHandler &#123;   Activity mActivity;   Controller mController;   // monitor platform changes   private IntentFilter mNetworkStateChangedFilter;   private BroadcastReceiver mNetworkStateIntentReceiver;   private boolean mIsNetworkUp;   public NetworkStateHandler(Activity activity, Controller controller) &#123;      
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -896,8 +903,10 @@
           
           Android Browser打开网页出现源码有这样的现象，使用数据流量打开网页会出现网页源码的现象，而使用WIFI打开网页则正常显示，使用WIFI后再用数据流量打开，也能正常显示。
 这样的现象多半是因为数据传输时出现中断等情况，导致网页没有加载完整，所以显示异常。
-还有的是因为GMS版本用的是go
-          ...
+还有的是因为GMS版本用的是google webview，原生的webview不支持WML页面，这个现象是正常的。现在已经极少有WML的网站。使用支持WML页面的webview则能正常显示。
+Wifi上网，服务器返回html网页；gprs上网，服务器返回wml网页；这是移动门户网站的处理，网站并没有考虑到不支持wml网页的情况。
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2015/09/29/Android-Browser打开网页为源码原因分析/#more" rel="contents">
@@ -1053,7 +1062,8 @@
         
           
           Android Browser打开多个窗口进行切换会闪烁原因分析浏览器的多标签切换功能, 还需要一个用户交互界面, 这个界面在Android Browser中就是NavScreen了
-在Android Browser中 用以和用户打交道的功能基本都被限制在了BaseUI中, 在手机上它的实现就是Ph
+在Android Browser中 用以和用户打交道的功能基本都被限制在了BaseUI中, 在手机上它的实现就是PhoneUI
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778//点击按钮显示多窗口列表	 void showNavScreen() &#123;     mUiController.setBlockEvents(true); //拦截多窗口外的其他操作     if (mNavScreen == null) &#123;         mNavScreen = new NavScreen(mActivity, mUiController, this
           ...
           <!--noindex-->
           <div class="post-button text-center">
