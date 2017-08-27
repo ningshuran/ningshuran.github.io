@@ -426,14 +426,7 @@
           Android-CTS认证测试一、什么是CTSGoogle GSM 认证测试组成
 CTS 为 Compatibility Test Suite（兼容性测试）
 CTS的目的就是让各种Android（如手机）开发商能够开发出兼容性更好的Android设备。 
-GTS为 GMS Test Suite（GMS测试用例包）
-GTS的目的是让各种Android设备上的原生Google GSM 应用能稳定的运行和使用。
-ctsVerifier 即ctsVerifier.apk(包含其配套测试资源)，补充CTS测试，安装到Android
-设备上逐条手动测试，有些测试需要用到外设（如USB Microphone和Audio）配合测试。
-二、获取CTS/GTS/ctsVerifier测试资源1、CTS官方下载地址 (翻墙网络环境)：http://source.android.com/compatibility/downloads.html 
-下载对应Android 7.0 版本下的最新arm架构的CTS测试包，
-展讯9861平台使用x86架构的CTS测试包。
-2、GTS客户需要和google签约，获取Li
+GTS为 GMS Test Suite（GM
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -589,8 +582,7 @@ ctsVerifier 即ctsVerifier.apk(包含其配套测试资源)，补充CTS测试，
       
         
           
-          Android-解决OTA差分包升级失败每次编译版本make之后都要执行make otapackage命令，make otapackage就是生成ota包的，一个完整包，一个中间包。每次编译完版本后都要保存这两个包，否则就不能做OTA升级。今天./build/tools/releasetools/ota_from_target_files –block -i -v old_target.zip new_target.zip update.zip生成的差分包发现不能升级。从之前编完版本保留下来的build.prop和今天保留的build.prop发现里面的recovery_id不一样，说明make之后没有再执行make otapackage，而发去出的版本正是这个没有make otapackage的版本，那完蛋了，这下怎么办了，用户买了手机今后不能升级了。
-差分包大致是根据新老版本中间包去做差异对比的，./build/tools/releasetools/ota_from_target_files –block -i -v old_target.zip new_target.zip up
+          Android-解决OTA差分包升级失败每次编译版本make之后都要执行make otapackage命令，make otapackage就是生成ota包的，一个完整包，一个中间包。每次编译完版本后都要保存这两个包，否则就不能做OTA升级。今天./build/tools/releasetools/o
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -746,11 +738,8 @@ ctsVerifier 即ctsVerifier.apk(包含其配套测试资源)，补充CTS测试，
       
         
           
-          Android-姓名过长的联系人无法复制到SIMSIM卡联系人姓名字段的长度是有限制的，这跟SIM卡的设据原理有关（根据SIM卡设计原理，能存储在SIM卡的单个联系人长度为28个字符，14个字符用于存储号码，另外14个字符用于存储联系人姓名），若为汉字，最多11个，若为英文字母，最多14个，是无法进行修改的。
-http://blog.csdn.net/wds1181977/article/details/40620141
-如果对名字字符串截取,是否考虑名字保存不完全的情况,从用户角度来看，也属于BUG，对名字截取个人觉得没有必要，人都是外号的，小明小红什么的，就算是英文也不会写全名，毕竟sim卡已经有限定。
-
-          
+          Android-姓名过长的联系人无法复制到SIMSIM卡联系人姓名字段的长度是有限制的，这跟SIM卡的设据原理有关（根据SIM卡设计原理，能存储在SIM卡的单个联系人长度为28个字符，14个字符用于存储号码，另外14个字符用于存储联系人姓名），若为汉字，最多11个，若为英文字母，最多14个，是无法进
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/06/02/Android-姓名过长的联系人无法复制到SIM/#more" rel="contents">
@@ -891,17 +880,8 @@ https://www.zhihu.com/question/39501641
 
 为什么轻易得到的东西（或者人）就不会珍惜？
 
-https://www.zhihu.com/question/20866485
-
-接吻有哪些小技巧？
-
-https://www.zhihu.com/question/28333998
-
-太快确定关系的感情是不是也容易太快夭折？
-
-
-
-          
+https://www.zhihu.
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/22/get √/#more" rel="contents">
@@ -1034,7 +1014,7 @@ https://www.zhihu.com/question/28333998
       
         
           
-          Neko 我喜欢你 那天我匆匆忙忙出门，大概快到9点的时候，我赶到了A栋一楼，好长队伍。    我第一次看见你，就是在队伍转弯处，迎面走过去，正好你也转过头来，也看着我。这瞬间，这感觉，是被电到了吗，心里砰砰跳，好漂亮，这女孩不错。 从那时候起，我喜欢上你了，之后连续几天都在电梯口看见你，然后开始关注你，知道你名字是因为你打开在我前面，我故意走慢一点的，哈哈，是不是心机boy，然后云通信知道了你的手机号码，想着试下你微信是不是这个号码，一搜果然是！想方设法想和你套近乎，无奈你我没工作交集，直接加你微信吧，你会不会对我印象不好，会不会太唐突了。然后各种途径了解你的信息，天天偷偷看你，关注你，我都感觉自己是不是太猥琐了，大概快有两月吧，太煎熬了，又不知道你单身不单身，有没有男朋友，不管了，先加微信看朋友圈。没想到，拒绝了！你拒绝了！心里瞬间一凉，跟针扎了一下，心疼！报上名字你才肯加我。果断赶紧翻朋友圈啊，我看到了个男的抱着你！瞬间世界都暗了，心灰意冷，好难受，好想哭。幸亏我点开了评论~ 至今你什么都是拒绝我，我想你有你故事，我知道你对我不了解，到现在也是简单聊了几天，别说感情，这么无趣的人
+          Neko 我喜欢你 那天我匆匆忙忙出门，大概快到9点的时候，我赶到了A栋一楼，好长队伍。    我第一次看见你，就是在队伍转弯处，迎面走过去，正好你也转过头来，也看着我。这瞬间，这感觉，是被电到了吗，心里砰砰跳，好漂亮，这女孩不错。 从那时候起，我喜欢上你了，之后连续几天都在电梯口看见你，然后开始关
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1196,16 +1176,7 @@ https://www.zhihu.com/question/28333998
 应用是可以卸载
 第三种：/system/preloadapp
 应用用户可以卸载，但是恢复出厂设置时可以还原
-二、如何预置无源码APK使得用户可以卸载1、将apk拷贝到vendor/sprd/partner/prebuilt_apps/下
-2、在vendor/sprd/partner/prebuilt_apps/目录下添加mk文件，在mk文件中添加apk的定义，apk按照下面的例子添加（此处以Test.apk为例）
-include $(CLEAR_VARS)
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE := Test
-LOCAL_MODULE_CLASS := APPS
-LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_MODULE_PATH := $(TARGET_OUT_DATA_APPS)（最终apk所放的目录）
-LOCAL_SRC_FILES := Test.apk
-i
+二、如何预置无源码APK使得用户可以卸载1、
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1363,7 +1334,7 @@ i
           
           Android Camera SnxxDrogxxCamera预览大小和照片大小预览大小和照片大小是在CameraSettings，
 初始化相机预览大小
-1234567891011121314151617181920212223242526272829303132333435   // 初始化相机预览大小public static void initialCameraPreviewSize(Context context,		Parameters parameters) &#123;	// When launching the camera app first time, we will set the picture	// size to the first one in the list defined in &quot;arrays.xml&quot; and is also	// supported by the driver.	// 当第一次启动相机应用程序时，我们将将预览图片大小设置为“xml”中定义的列表中的第一个，并由驱动程序支持。	String previewSize
+1234567891011121314151617181920212223242526272829303132333435   // 初始化相机预
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1519,7 +1490,7 @@ i
       
         
           
-          Android Launcher3预置文件夹、快捷方式、桌面小部件一预置文件夹、快捷方式、网页桌面快捷方式123456789101112131415161718192021222324&lt;folder       launcher:screen=&quot;0&quot;   	\\第几个页面，0是最中间的页面       launcher:x=&quot;0&quot;		  	\\放在横向的哪个位置	       launcher:y=&quot;4&quot;			\\放在竖向的哪个位置	       launcher:title=&quot;@string/built_in_folder_toolkit&quot;&gt;           /*文件夹里面的应用图标*/		&lt;favorite               launcher:packageName=&quot;com.android.calculator2&quot; 	//包名               launcher:className=&quot;com.android.calculator2
+          Android Launcher3预置文件夹、快捷方式、桌面小部件一预置文件夹、快捷方式、网页桌面快捷方式123456789101112131415161718192021222324&lt;folder       launcher:screen=&quot;0&quot;   	\\第几个页面，
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1678,14 +1649,8 @@ i
           Android N 动态壁纸列表为空？原因分析：   google 在7.0上去掉了动态壁纸，但保留了动态壁纸的框架。
    google移除该功能可能是考虑到动态壁纸功能对手机的性能功耗等影响。
 解决方法：   如果没有对壁纸的特殊需求，建议保持原生设计。
-   如果需要添加动态壁纸，请预置相应动态壁纸app即可。
-   例如，可以编译Android 6.0版本的动态壁纸app：
-   packages/wallpapers/Galaxy4
-   packages/wallpapers/HoloSpiral
-   packages/wallpapers/MagicSmoke   …
-   编译之后预置到版本中即可(与预置其他第三方apk一样)
-
-          
+   如果需要添加动态壁纸，请预置相应动
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/03/27/Andorid-AnroidN动态壁纸列表为空/#more" rel="contents">
@@ -1842,12 +1807,8 @@ i
           
           Android 长按Home键没有弹出最近任务页面5.1上默认打开最近任务的按键键值是KEYCODE_APP_SWITCH，可以采取以下两种方案
 1.增加对应KEYCODE_APP_SWITCH键值的按键
-2.修改frameworks/base/core/res/res/values/config.xml中
-&lt;integer name=&quot;config_longPressOnHomeBehavior&quot;&gt;0&lt;/integer&gt;
-0的值至1
-修改此项有可能会引起CTS不过。
-
-          
+2.修改frameworks/base/core/res/res/values/config.
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/03/24/Android-长按Home键没有弹出最近任务页面/#more" rel="contents">

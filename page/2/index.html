@@ -423,15 +423,7 @@
       
         
           
-          SPM工作流程一 软件项目前期1无手机硬件设备1.1软件的立项会议（立项中包含schedule，项目配置信息，项目干系人，质量标准，风险的评估等）1.2获取平台数据 （开发工具，接口文档等）1.3安排基线负责人编译基线 并保证编译正确。1.4所有的软件研发人员熟悉基线代码。1.5获取三方接口信息；1.6确认客户接口信息；1.7确认认证相关需求。2有手机硬件设备2.1  基线稳定基线原生bug 修复 稳定基线。
-2.2  项目分支建立流程2.2.1 根据软件需求来评估分支的建立方案。Case 1  理论要求所有的软件分支 是要从主基线上拉分支
-
-Case 2  如果客户要求在原有项目的基础上 再次更新版本那么就从原有项目上
-拉分支
-
-Case 3  如果客户要求在原有项目的基础上 再次更新版本但是由于某些需求的原因例如volte功能 而原有的项目分支无法实现。如果出现这样的情况 请根据实际的项目情况 来评估分支怎么拉合适。
-2.2.2  根据软件完成的时间节点评估分支的建立方案只有一个原则 根据实际的研发时间和项目的时间来评估软件分支建立方案。
-2.3  需求评估流程2.3.1 拿到客户
+          SPM工作流程一 软件项目前期1无手机硬件设备1.1软件的立项会议（立项中包含schedule，项目配置信息，项目干系人，质量标准，风险的评估等）1.2获取平台数据 （开发工具，接口文档等）1.3安排基线负责人编译基线 并保证编译正确。1.4所有的软件研发人员熟悉基线代码。1.5获取三方接口信息；1
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -588,11 +580,7 @@ Case 3  如果客户要求在原有项目的基础上 再次更新版本但是�
         
           
           Android 修改默认亮度太暗修改屏幕默认亮度frameworks\base\packages\SettingsProvider\res\values\defaults.xml
-&lt;integer name=&quot;def_screen_brightness&quot;&gt;102&lt;/integer&gt;
-这个值的取值范围为0~255，按照实际需求修改”def_screen_brightness”的值。
-很多项目会在/device/对应平台/对应工程/overlay/frameworks/base/packages/SettingsProvider/res/values/defaults.xml  overlay 这个xml文件，所以会导致只修改frameworks中的值并不会起作用。因此，需要优先检查是否存在overlay的情况。
-修改最小,最大亮度值，以及开机启动的默认亮度值最小值，不得小于0：
-&lt;integer name=&quot;config_screenBrightnessSettingMinimum&quot;&gt;30&lt;/integer
+&lt;integer name=&quot;def_screen_brightness&quot;&gt;102&lt
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -750,10 +738,8 @@ Case 3  如果客户要求在原有项目的基础上 再次更新版本但是�
           
           adb命令Android adb你真的会用吗?http://www.jianshu.com/p/5980c8c282ef
 adb基本命令https://my.oschina.net/atearsan/blog/342954
-Awesome Adb——一份超全超详细的 ADB 用法大全https://github.com/mzlogin/awesome-adb
-ADB用法大全http://www.tuicool.com/articles/2MFJri6
-
-          
+Awesome Adb——一份超全超详细的 ADB 用法大全https://
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/02/26/adb命令/#more" rel="contents">
@@ -914,15 +900,7 @@ svn checkout path（path是服务器上的目录）
 简写：svn co 
 2、 往版本库中添加新的文件
 svn add file 
-例如：svn add test.php(添加test.php)
-svn add * .php(添加当前目录下所有的php文件)
-3、 将改动的文件提交到版本库
-svn commit -m &quot; LogMessage &quot; [ -N ] [ --no-unlock ] PATH (如果选择了保持锁，就使用--no-unlock开关)
-例如：svn commit -m &quot; add test file for my test &quot; test.php
-简写：svn ci
-4、 加锁/解锁
-svn lock -m &quot; LockMessage &quot; [ --force ] PATH
-例如：svn lock -m &quot; lock test fil
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1080,13 +1058,8 @@ svn lock -m &quot; LockMessage &quot; [ --force ] PATH
           
           Android Browser 甩动手势Android Browser在设置-辅助功能里面有个甩动手势功能，有时候甩动却发现没有效果。
 实现这个甩动手势的有一个类ShakeDetector，它是实现了SensorEventListener这个类。
-覆盖重写了onSensorChanged（SensorEvent event）这个方法，研究这个类和这个方法，可以发现，甩动跟方向和加速度，甩动时间有关。
-而出现甩动没有效果，可能还跟重力传感器有关，有些重力传感器本身就是不支持横屏的。
-我研究到后来发现一个初始参数
-final float SHAKE_THRESHOLD = 6.0f;
-当把它调小后，甩动效果更灵敏了。
-
-          
+覆盖重写了onSensorChanged（Senso
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/10/15/Android-Browser辅助功能甩动手势前进后退功能研究/#more" rel="contents">
@@ -1241,8 +1214,7 @@ final float SHAKE_THRESHOLD = 6.0f;
       
         
           
-          Android Email登陆邮箱后，清除邮箱数据后，再进入邮箱，邮箱会闪退After viewing the video and analyzing the logs provided for the scenario, it looks like the reported behavior is not an issue. It is the expected flow.
-Email app getting notified that App data and settings were cleared, which will further trigger to remove all Email accounts in the account manager and Account Manager notifying Email application back that the account has been deleted : - All these actions occur asynchronously. Hence the timing of the broadCas
+          Android Email登陆邮箱后，清除邮箱数据后，再进入邮箱，邮箱会闪退After viewing the video and analyzing the logs provided for the scenario, it looks like the reported behavior is
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1399,7 +1371,7 @@ Email app getting notified that App data and settings were cleared, which will f
         
           
           Android HTMLViewer 打开.txt显示乱码   具体修改如下
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210310410510610710810911011111211311411511611711811912012112212312412512612712812913013113213313413513613713813914014114214314414514614714814915015115215315415515615715815916016116216316416516616716816917017117217317417517617717817918018118218318418518618718818919
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1556,9 +1528,8 @@ Email app getting notified that App data and settings were cleared, which will f
         
           
           Android Email com.android.email.service.EmailBroadcastProcessorService模块MemLeak异常从源码上分析，服务已经是解绑了，为什么还会报这个异常，确实很奇怪
-解决结论：EmailBroadcastProcessorService是一个IntentService，在这个service中尝试绑定到EasService 并获得返回值,随后启动了一个异步线程执行后台任务，当后台任务执行完成后，会调用unbindservie。IntentService在handlerintent 执行完成后立即销毁，并检查是否有依然绑定的服务，如果有则unbind,并打印警告，由于异步线程此时尚未执行完成，因此打印出了问题描述中的LOG。实际业务流程中，并不会再次用到绑定的服务。因此这个警告不会造成实际的影响(泄露或其他问题)。建议不做修改。
-
-          
+解决结论：EmailBroadcastProcessorService是
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/04/30/Android-Email-com-android-email-service-EmailBroadcastProcessorService模块MemLeak异常/#more" rel="contents">
@@ -1713,10 +1684,7 @@ Email app getting notified that App data and settings were cleared, which will f
       
         
           
-          Android Downloaded files doesnot store in SD card[Current status]Open Setting &gt; Storage and USB &gt; select the SD card storage. Downloaded files doesnot store in SD card.[Expected result]It should be needed to store in Sd card when selected. 
-Google kK版本之后是不允许第三方app 写外置sdcard的，所以自然app 无法download 到sdcard上。
-(在setting中的默认存储设定为SD card，为MTK扩展的功能，只能影响到内置AP，比如说内置Camera,而Chrome属于3rd party apk，他并不会去拿storageManagerEx中扩展接口获取default storage path)
-project 是否需要过cts？如果要过cts，就不能改，因为cts 会测这个case，cts 不允许3rd a
+          Android Downloaded files doesnot store in SD card[Current status]Open Setting &gt; Storage and USB &gt; select the SD card storage. Downloaded files d
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1874,10 +1842,8 @@ project 是否需要过cts？如果要过cts，就不能改，因为cts 会测�
           
           Android Email附件丢失问题进入qq邮箱转发有附件的邮件到163邮箱，手机端丢失附件，电脑端显示有
 1，附件同名，大小不同或者附件不同名，大小不同，QQ邮箱都可以完整接收附件2，附件同名，大小不同163邮箱不能完整接收，只能显示一个，丢失一个。附件不同名，163邮箱可以完整接收。
-本问题是google原生设计如此，结合问题描述分析如下：1） QQ邮箱可以完整接收相同附件      — 目前QQ邮箱默认以imap方式登陆，email端对imap类型的邮箱没有做附件去重处理，故而能全部接收2） 163邮箱不能完整接收      — 目前163邮箱默认pop3方式登陆，对与pop3类型的邮箱，email端会对附件做去重处理，通过判断其FileName，MimeType，ContentId，及Location是否相同来断定是否为相同的附件，通过判断的条件可以看出没有对附件大小进行判断，所以测试中同名而大小不一的附件不会视为同一附件，故而能全部接收
-解决方案：舍去pop3的附件去重处理
-
-          
+本问题是
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/04/25/Android-Email附件丢失/#more" rel="contents">
