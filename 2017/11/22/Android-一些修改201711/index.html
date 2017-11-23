@@ -93,22 +93,25 @@
 
 
 
-<meta name="description" content="Android 编译环境初始化Android源代码在编译之前，要先对编译环境进行初始化，其中最主要就是指定编译的类型和目标设备的型号。Android的编译类型主要有eng、userdebug和user三种，而支持的目标设备型号则是不确定的，它们由当前的源码配置情况所决定。
-首先第一步就是加载envsetup.sh脚本，执行路径source build/envsetup.sh
-打开envsetup.">
+<meta name="description" content="Android 一些修改201711[QUESTION]
+[时钟]设置5秒以内的倒计时,时间到后都会在第5秒开始响铃
+[ANSWER]
+这是因为倒计时开始之后，要等待接收AlarmManager的timers_up广播，而5.1原生AlarmManager的设计“5秒之内的都会调整到5秒的时间点上”上层闹钟应用在设置一个action = times_up 的定时器下来的时候，到Framework层">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android-编译环境初始化">
-<meta property="og:url" content="http://www.ningshuran.tech/2017/08/28/Android-编译环境初始化/index.html">
+<meta property="og:title" content="Android-一些修改201711">
+<meta property="og:url" content="http://www.ningshuran.tech/2017/11/22/Android-一些修改201711/index.html">
 <meta property="og:site_name" content="ningshuran@一号线">
-<meta property="og:description" content="Android 编译环境初始化Android源代码在编译之前，要先对编译环境进行初始化，其中最主要就是指定编译的类型和目标设备的型号。Android的编译类型主要有eng、userdebug和user三种，而支持的目标设备型号则是不确定的，它们由当前的源码配置情况所决定。
-首先第一步就是加载envsetup.sh脚本，执行路径source build/envsetup.sh
-打开envsetup.">
-<meta property="og:updated_time" content="2017-09-13T16:16:04.918Z">
+<meta property="og:description" content="Android 一些修改201711[QUESTION]
+[时钟]设置5秒以内的倒计时,时间到后都会在第5秒开始响铃
+[ANSWER]
+这是因为倒计时开始之后，要等待接收AlarmManager的timers_up广播，而5.1原生AlarmManager的设计“5秒之内的都会调整到5秒的时间点上”上层闹钟应用在设置一个action = times_up 的定时器下来的时候，到Framework层">
+<meta property="og:updated_time" content="2017-11-23T02:35:21.166Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android-编译环境初始化">
-<meta name="twitter:description" content="Android 编译环境初始化Android源代码在编译之前，要先对编译环境进行初始化，其中最主要就是指定编译的类型和目标设备的型号。Android的编译类型主要有eng、userdebug和user三种，而支持的目标设备型号则是不确定的，它们由当前的源码配置情况所决定。
-首先第一步就是加载envsetup.sh脚本，执行路径source build/envsetup.sh
-打开envsetup.">
+<meta name="twitter:title" content="Android-一些修改201711">
+<meta name="twitter:description" content="Android 一些修改201711[QUESTION]
+[时钟]设置5秒以内的倒计时,时间到后都会在第5秒开始响铃
+[ANSWER]
+这是因为倒计时开始之后，要等待接收AlarmManager的timers_up广播，而5.1原生AlarmManager的设计“5秒之内的都会调整到5秒的时间点上”上层闹钟应用在设置一个action = times_up 的定时器下来的时候，到Framework层">
 
 
 
@@ -136,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://www.ningshuran.tech/2017/08/28/Android-编译环境初始化/"/>
+  <link rel="canonical" href="http://www.ningshuran.tech/2017/11/22/Android-一些修改201711/"/>
 
 
 
 
 
-  <title> Android-编译环境初始化 | ningshuran@一号线 </title>
+  <title> Android-一些修改201711 | ningshuran@一号线 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -325,7 +328,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.ningshuran.tech/2017/08/28/Android-编译环境初始化/">
+    <link itemprop="mainEntityOfPage" href="http://www.ningshuran.tech/2017/11/22/Android-一些修改201711/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="shuranning@163.com">
@@ -346,7 +349,7 @@
             
             
               
-                Android-编译环境初始化
+                Android-一些修改201711
               
             
           </h1>
@@ -361,8 +364,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-28T20:14:09+08:00">
-                2017-08-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-22T22:27:40+08:00">
+                2017-11-22
               </time>
             
 
@@ -402,8 +405,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/28/Android-编译环境初始化/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/28/Android-编译环境初始化/" itemprop="commentCount"></span>
+                <a href="/2017/11/22/Android-一些修改201711/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/11/22/Android-一些修改201711/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -434,252 +437,256 @@
       
 
       
-        <h2 id="Android-编译环境初始化"><a href="#Android-编译环境初始化" class="headerlink" title="Android 编译环境初始化"></a>Android 编译环境初始化</h2><p>Android源代码在编译之前，要先对编译环境进行初始化，其中最主要就是指定编译的类型和目标设备的型号。Android的编译类型主要有eng、userdebug和user三种，而支持的目标设备型号则是不确定的，它们由当前的源码配置情况所决定。</p>
-<p>首先第一步就是加载envsetup.sh脚本，执行路径source build/envsetup.sh</p>
-<p>打开envsetup.sh，第一个就是函数function hmm()</p>
-<pre><code>function hmm() {
-cat &lt;&lt;EOF
-Invoke &quot;. build/envsetup.sh&quot; from your shell to add the following functions to your environment:
-- lunch:     lunch &lt;product_name&gt;-&lt;build_variant&gt;
-- tapas:     tapas [&lt;App1&gt; &lt;App2&gt; ...] [arm|x86|mips|armv5|arm64|x86_64|mips64] [eng|userdebug|user]
-- croot:     Changes directory to the top of the tree.
-- m:         Makes from the top of the tree.
-- mm:        Builds all of the modules in the current directory, but not their dependencies.
-- mmm:       Builds all of the modules in the supplied directories, but not their dependencies.
-To limit the modules being built use the syntax: mmm dir/:target1,target2.
-- mma:       Builds all of the modules in the current directory, and their dependencies.
-- mmma:      Builds all of the modules in the supplied directories, and their dependencies.
-- provision: Flash device with all required partitions. Options will be passed on to fastboot.
-- cgrep:     Greps on all local C/C++ files.
-- ggrep:     Greps on all local Gradle files.
-- jgrep:     Greps on all local Java files.
-- resgrep:   Greps on all local res/*.xml files.
-- mangrep:   Greps on all local AndroidManifest.xml files.
-- mgrep:     Greps on all local Makefiles files.
-- sepgrep:   Greps on all local sepolicy files.
-- sgrep:     Greps on all local source files.
-- godir:     Go to the directory containing a file.
-Environment options:
-- SANITIZE_HOST: Set to &apos;true&apos; to use ASAN for all host modules. Note that
-             ASAN_OPTIONS=detect_leaks=0 will be set by default until the
-             build is leak-check clean.
-
-Look at the source to view more functions. The complete list is:
-EOF
-    # 查找编译环境根目录
-    T=$(gettop)
-    local A
-    A=&quot;&quot;
-    for i in `cat $T/build/envsetup.sh | sed -n &quot;/^[[:blank:]]*function /s/function \([a-z_]*\).*/\1/p&quot; | sort | uniq`; do
-      A=&quot;$A $i&quot;
-    done
-    echo $A
+        <h2 id="Android-一些修改201711"><a href="#Android-一些修改201711" class="headerlink" title="Android 一些修改201711"></a>Android 一些修改201711</h2><p>[QUESTION]</p>
+<p>[<strong>时钟</strong>]设置5秒以内的倒计时,时间到后都会在第5秒开始响铃</p>
+<p>[ANSWER]</p>
+<p>这是因为倒计时开始之后，要等待接收AlarmManager的timers_up广播，而5.1原生AlarmManager的设计“5秒之内的都会调整到5秒的时间点上”<br>上层闹钟应用在设置一个action = times_up 的定时器下来的时候，到Framework层，会有相关判断</p>
+<p>在AlarmManagerService.java中</p>
+<pre><code>final long nowElapsed = SystemClock.elapsedRealtime();
+final long nominalTrigger = convertToElapsed(triggerAtTime, type);
+// Try to prevent spamming by making sure we aren&apos;t firing alarms in the immediate future
+final long minTrigger = nowElapsed + MIN_FUTURITY; //MIN_FUTURITY =5 ×1000
+final long triggerElapsed = (nominalTrigger &gt; minTrigger) ? nominalTrigger : minTrigger;
+</code></pre><p>这段代码说明，如果当前设置的alarm时间点低于5s的时候，会以最小的5s作为触发事件设置到底层。</p>
+<p>所以会出现上层alarm应用：即使设置小于5s的定时器，触发的时间同样是5s</p>
+<p>[SOLUTION]</p>
+<p>\frameworks\base\services\core\java\com\android\server\AlarmManagerService.java</p>
+<pre><code>// Try to prevent spamming by making sure we aren&apos;t firing alarms in the immediate future
+//去掉MIN_FUTURITY5秒
+final long minTrigger = nowElapsed ; 
+</code></pre><hr>
+<p>[QUESTION]</p>
+<p>[<strong>记事本</strong>]编辑记事本时低电至自动关机，开机后列表中有个空的记事本</p>
+<p>[ANSWER]</p>
+<p>NoteEditor.java每次进去编辑模式都会插入一条空的数据</p>
+<pre><code>onCreate(){
+    // Sets the Activity state to INSERT, gets the general note URI, and
+    // inserts an
+    // empty record in the provider
+    mState = STATE_INSERT;
+    //onCreate 每次进去都会向数据库插入一条空数据
+    mUri = getContentResolver().insert(intent.getData(), null);
+    setResult(RESULT_OK, (new Intent()).setAction(mUri.toString()));
+    Log.d(TAG, &quot;SetResult for EditNote&quot;);
 }
-</code></pre><p>执行hmm()，这方法就是打印两个EOF之间内容，提示可以执行的命令，命令有什么作用，还有列出所有函数的列表，for循环就是，读取build/envsetup.sh文件，并通过sed操作获取其中定义的函数，并进行排序输出，存放到变量$A中。</p>
-<p>其中gettop函数从指定的$TOP目录或当前目录开始查找build/core/envsetup.mk文件，并将能找到该文件的目录返回给调用函数作为操作的根目录</p>
-<pre><code>function gettop
+</code></pre><p>所以在编辑还没更新数据时都会保存一条空的数据</p>
+<p>[SOLUTION]</p>
+<p>NotesList.java</p>
+<pre><code>public void UpdateAdapterData()
 {
-    local TOPFILE=build/core/envsetup.mk
-    # 如果编译环境已经设置了$TOP，就检查$TOP/build/core/envsetup.mk文件是否存在
-    if [ -n &quot;$TOP&quot; -a -f &quot;$TOP/$TOPFILE&quot; ] ; then
-        # The following circumlocution ensures we remove symlinks from TOP.
-        # 转到$TOP目录，通过命令`/bin/pwd`将$TOP目录指向的真实路径存放到PWD中
-        (cd $TOP; PWD= /bin/pwd)
-    else
-        # 如果当前路径下能够找到build/core/envsetup.mk文件，
-        # 则将当前目录的真实路径存放到PWD中
-        if [ -f $TOPFILE ] ; then
-            # The following circumlocution (repeated below as well) ensures
-            # that we record the true directory name and not one that is
-            # faked up with symlink names.
-            PWD= /bin/pwd
-        else
-            # 如果当前目录下无法找到build/core/envsetup.mk文件，
-            # 则不断返回到外层目录查找，直到到达根目录/为止
 
-            # 保存查找操作前的路径
-            local HERE=$PWD
-            T=
-            while [ \( ! \( -f $TOPFILE \) \) -a \( $PWD != &quot;/&quot; \) ]; do
-                # 转到外层目录
-                \cd ..
-                # 将当前路径保存到T中                    
-                T=`PWD= /bin/pwd -P`
-            done
-            # 查找完后恢复操作前的路径
-            \cd $HERE
-            # 如果目录T包含build/core/envsetup.mk，说明是T是编译的根目录
-            if [ -f &quot;$T/$TOPFILE&quot; ]; then
-                # 输出$T中保存的路径作为gettop的返回值
-                echo $T
-            fi
-        fi
-    fi
+    StringBuilder path = new StringBuilder();
+    muri = Uri.withAppendedPath(Notes.CONTENT_URI, path.toString());
+
+    if (mCursorNotepad != null) {
+        mCursorNotepad.close();
+        mCursorNotepad = null;
+    }
+    //begin modified  查询数据库时只要是COLUMN_NAME_NOTE是“ ”就不显示出来，在这里过滤掉
+    mCursorNotepad = getContentResolver().query(muri, PROJECTION, Notes.COLUMN_NAME_NOTE+&quot;!=&apos;&apos;&quot;, null, null);
+    //end  modified 
+
+    if (mCursorNotepad != null) {
+        mListAdapter = new MyListViewAdapter(this, mCursorNotepad);
+        mListView.setAdapter(mListAdapter);
+    }
 }
-</code></pre><p>source build/envsetup.sh之后就是lunch，lunch操作根据传入参数选项设置TARGET_PRODUCT, TARGET_BUILD_VARIANT和TARGET_BUILD_TYPE</p>
-<pre><code>function lunch()
-{
-    local answer
+</code></pre><hr>
+<p>[QUESTION]</p>
+<p>[<strong>多媒体</strong>]开机后打开音乐加载MP3过慢</p>
+<p>[ANSWER]</p>
+<p>frameworks\base\media\java\android\media\MediaScanner.java:</p>
+<pre><code>public void scanDirectories(String[] directories, String volumeName) {
 
-    # 获取lunch操作的参数
-    if [ &quot;$1&quot; ] ; then
-    answer=$1
-    else
-    # lunch操作不带参数，则先显示lunch menu，然后读取用户输入
-    print_lunch_menu
-    echo -n &quot;Which would you like? [aosp_arm-eng] &quot;
-    read answer
-    fi
+            ...
+            // create MediaInserter for bulk inserts
+            mMediaInserter = new MediaInserter(mMediaProvider, mPackageName, 500);
 
-    local selection=
+            //收集到500条数据，MediaInserter批量插入一次
 
-    # lunch操作得到的结果为空（例如用户直接在lunch要求输入时回车的情况）
-    # 则将选项默认为&quot;aosp_arm-eng&quot;
-    if [ -z &quot;$answer&quot; ]
-    then
-    selection=aosp_arm-eng
-    # lunch操作得到的输入是数字，则将数字转换为LUNCH_MENU_CHOICES中的字符串
-    elif (echo -n $answer | grep -q -e &quot;^[0-9][0-9]*$&quot;)
-    then
-    if [ $answer -le ${#LUNCH_MENU_CHOICES[@]} ]
-    then
-    selection=${LUNCH_MENU_CHOICES[$(($answer-1))]}
-    fi
-    # lunch操作得到的是字符串，直接将字符串保存到selection中  
-    elif (echo -n $answer | grep -q -e &quot;^[^\-][^\-]*-[^\-][^\-]*$&quot;)
-    then
-    selection=$answer
-    fi
+            ...
+         }
+</code></pre><p>frameworks\base\media\java\android\media\MediaInserter.java</p>
+<pre><code>private void insert(Uri tableUri, ContentValues values, boolean priority) throws RemoteException {
 
-    # 检查selection的值是否正常
-    # 例如选择了一个LUNCH_MENU_CHOICES中不存在的索引，则selection就为空
-    if [ -z &quot;$selection&quot; ]
-    then
-    echo
-    echo &quot;Invalid lunch combo: $answer&quot;
-    return 1
-    fi
-
-    export TARGET_BUILD_APPS=
-
-    #
-    # 分离selection字符串，例如：aosp_fugu-userdebug
-    #
-    # 获取第一个&apos;-&apos;后的部分，这里即userdebug，保存到variant
-    local variant=$(echo -n $selection | sed -e &quot;s/^[^\-]*-//&quot;)
-    # 检查variant是否合法，即是否选项(user, userdebug, eng)之一，如果不是，输出提示
-    check_variant $variant
-    if [ $? -ne 0 ]
-    then
-    echo
-    echo &quot;** Invalid variant: &apos;$variant&apos;&quot;
-    echo &quot;** Must be one of ${VARIANT_CHOICES[@]}&quot;
-    variant=
-    fi
-
-    # 获取最后一个&apos;-&apos;前的部分，这里即aosp_fugu，保存到product
-    local product=$(echo -n $selection | sed -e &quot;s/-.*$//&quot;)
-
-    # 设置TARGET_PRODUCT和TARGET_BUILD_VARIANT
-    TARGET_PRODUCT=$product \
-    TARGET_BUILD_VARIANT=$variant \
-    # 根据前面的设置，更新编译环境相关变量
-    build_build_var_cache
-    if [ $? -ne 0 ]
-    then
-    echo
-    echo &quot;** Don&apos;t have a product spec for: &apos;$product&apos;&quot;
-    echo &quot;** Do you have the right repo manifest?&quot;
-    product=
-    fi
-
-    # product或variant为空的情况下，退出函数
-    if [ -z &quot;$product&quot; -o -z &quot;$variant&quot; ]
-    then
-    echo
-    return 1
-    fi
-
-    # export 编译选项TARGET_PRODUCT, TARGET_BUILD_VARIANT和TARGET_BUILD_TYPE三元组
-    export TARGET_PRODUCT=$product
-    export TARGET_BUILD_VARIANT=$variant
-    export TARGET_BUILD_TYPE=release
-
-    echo
-
-    # 设置其他环境变量，如PROMPT_COMMAND，编译toolchain和tools相关的路径等
-    set_stuff_for_environment
-    # 输出当前的设置选项
-    printconfig
-    # 清空环境变量
-    destroy_build_var_cache
+    ......
+    if (list.size() &gt;= mBufferSizePerUri) { // mBufferSizePerUri即为500，当存放数据的list不小于500时，执行批量插入
+        flushAllPriority();
+        flush(tableUri, list);
+    }
 }
-</code></pre><p>第三步choosevariant，读取用户输入设置TARGET_BUILD_VARIANT为user,userdebug或eng</p>
-<pre><code>function choosevariant()
-{
-    echo &quot;Variant choices are:&quot;
-    local index=1
-    local v
-    # 从1开始，循环显示VARIANT_CHOICES数组的内容，效果如下：
-    # $ choosevariant
-    # Variant choices are:
-    #      1. user
-    #      2. userdebug
-    #      3. eng
-    # Which would you like? [eng]
-    #
-    for v in ${VARIANT_CHOICES[@]}
-    do
-        # The product name is the name of the directory containing
-        # the makefile we found, above.
-        echo &quot;     $index. $v&quot;
-        index=$(($index+1))
-    done
+</code></pre><p>当音乐文件总数小于500时，音乐文件的插入将在扫描的最后执行。导致在扫描过程中，音乐列表不显示音乐文件。</p>
+<p>此时可以减小每次批量插入的数量，较早地插入数据库，音乐列表较早得到数据。</p>
+<p>[SOLUTION]</p>
+<p>frameworks\base\media\java\android\media\MediaInserter.java</p>
+<pre><code>//add **********
+private final Uri mAudioUri = Audio.Media.getContentUri(&quot;external&quot;);
+private final Uri mVideoUri = Video.Media.getContentUri(&quot;external&quot;);
+private final Uri mImagesUri = Images.Media.getContentUri(&quot;external&quot;);
+...
+private void insert(Uri tableUri, ContentValues values, boolean priority) throws RemoteException {
+...
+//begin add **********
+if (mAudioUri.equals(tableUri ) || mVideoUri.equals(tableUri )) {
+        if (list.size() &gt;= 100) {
+            Log.v(&quot;mediaInserter&quot;, &quot;list.size() &gt;= 100&quot;);
+            flushAllPriority();
+            flush(tableUri, list);
+        }
+    } else if (mImagesUri.equals(tableUri)) {
+        if (list.size() &gt;= 200) {
+            Log.v(&quot;mediaInserter&quot;, &quot;list.size() &gt;= 200&quot;);
+            flushAllPriority();
+            flush(tableUri, list);
+        }
+//end add **********
+    } else if (list.size() &gt;= mBufferSizePerUri) {
+        flushAllPriority();
+        flush(tableUri, list);
+    }
+...
 
-    local default_value=eng
-    local ANSWER
-
-    export TARGET_BUILD_VARIANT=
-    # 交互读取TARGET_BUILD_VARIANT设置
-    while [ -z &quot;$TARGET_BUILD_VARIANT&quot; ]
-    do
-           # 读取用户输入，默认为[eng]
-        echo -n &quot;Which would you like? [$default_value] &quot;
-        if [ -z &quot;$1&quot; ] ; then
-            read ANSWER
-        else
-            # 如果choosevariant有带参数，则直接用保存参数
-            echo $1
-            ANSWER=$1
-        fi
-
-        # 如果 ANSWER 长度为0，即用户直接回车输入的情况
-        if [ -z &quot;$ANSWER&quot; ] ; then
-            export TARGET_BUILD_VARIANT=$default_value
-        # 将ANSWER的数值转换为VARIANT_CHOICES数组中的字符串
-        elif (echo -n $ANSWER | grep -q -e &quot;^[0-9][0-9]*$&quot;) ; then
-            if [ &quot;$ANSWER&quot; -le &quot;${#VARIANT_CHOICES[@]}&quot; ] ; then
-                export TARGET_BUILD_VARIANT=${VARIANT_CHOICES[$(($ANSWER-1))]}
-            fi
-        else
-        # 调用check_variant是否为有效值
-            if check_variant $ANSWER
-            then
-                export TARGET_BUILD_VARIANT=$ANSWER
-            else
-                echo &quot;** Not a valid variant: $ANSWER&quot;
-            fi
-        fi
-        # 如果choosevariant带了参数，则不再读取输入，跳出循环
-        if [ -n &quot;$1&quot; ] ; then
-            break
-        fi
-    done
 }
-</code></pre><p>编译环境初始化后完成了以下三点：</p>
-<pre><code>1. 将vendor和device目录下的vendorsetup.sh文件加载到了当前终端；
-2. 新增了lunch、m、mm和mmm等命令；
-3. 通过执行lunch命令设置好了TARGET_PRODUCT、TARGET_BUILD_VARIANT、TARGET_BUILD_TYPE和TARGET_BUILD_APPS等环境变量。  
+</code></pre><hr>
+<p>[QUESTION]</p>
+<p>[<strong>相机</strong>]内存空间已满，进入相机报停</p>
+<p>[ANSWER]</p>
+<p>java.io.IOException: write failed: ENOSPC (No space left on device)</p>
+<p>[SOLUTION]</p>
+<pre><code>onCreate｛
+
+    //begin modified
+    //获得可用内存 
+    StorageManager storageManager = this.getSystemService(StorageManager.class);
+    final List&lt;VolumeInfo&gt; volumes = storageManager.getVolumes();  
+    long privateFreeBytes = 0;            
+    for (VolumeInfo info : volumes) {
+        if (info.getType() != VolumeInfo.TYPE_PUBLIC
+            &amp;&amp; info.getType() != VolumeInfo.TYPE_PRIVATE) {
+             continue;
+         }
+        final File path = info.getPath();
+        privateFreeBytes = path.getFreeSpace();            
+    }
+    Log.d(TAG,&quot;add for hipad -----&quot;+privateFreeBytes+&quot;-----&quot;);
+    //LOW_STORAGE_THRESHOLD_BYTES 原为5000000 可根据实际修改
+    if (privateFreeBytes &lt;= Storage.LOW_STORAGE_THRESHOLD_BYTES) {
+        //弹出提示
+        final AlertDialog.Builder alertdialog = new AlertDialog.Builder(this);
+            alertdialog.setTitle(R.string.dialog_low_storage_title);
+            alertdialog.setMessage(R.string.dialog_low_storage_message);                                 
+            alertdialog.setCancelable(false);
+            alertdialog.setPositiveButton(R.string.dialog_low_storage_ok, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {  
+                    //点击确定直接finish                     
+                    finish();
+                }
+            });
+         alertdialog.show();                
+
+    }
+    //end modified 
+
+｝
+</code></pre><hr>
+<p>[QUESTION]</p>
+<p>[<strong>设置</strong>]受损的音频能设置为来电铃声</p>
+<p>[SOLUTION]</p>
+<p>\packages\providers\MediaProvider\src\com\android\providers\media\SdcardRingtonePickerActivity.java</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">//add</div><div class="line">private boolean mCanPlay = true;</div><div class="line"></div><div class="line">private DialogInterface.OnClickListener mRingtoneClickListener =</div><div class="line">           new DialogInterface.OnClickListener() &#123;</div><div class="line"></div><div class="line">       /*</div><div class="line">        * On item clicked</div><div class="line">        */</div><div class="line">       public void onClick(DialogInterface dialog, int which) &#123;</div><div class="line"></div><div class="line">	...</div><div class="line">	if(title2.equals(title))&#123;</div><div class="line">		//begin modified **************</div><div class="line">               MediaPlayer mediaPlayer = new MediaPlayer();</div><div class="line">               try &#123;</div><div class="line">                   mediaPlayer.setDataSource(mContext, uri);</div><div class="line">                   mediaPlayer.prepare();</div><div class="line">                   ringtone.play();</div><div class="line">                   mCanPlay = true;</div><div class="line">               &#125; catch (Exception e) &#123;</div><div class="line">                   mCanPlay = false;</div><div class="line">                   Toast toast = Toast.makeText(this, R.string.ringtone_default_message,Toast.LENGTH_SHORT);</div><div class="line">                   toast.show();</div><div class="line">               &#125; finally &#123;</div><div class="line">                   mediaPlayer.reset();</div><div class="line">                   mediaPlayer.release();</div><div class="line">                   mediaPlayer = null;</div><div class="line">               &#125;</div><div class="line">		//end modified **************</div><div class="line">           &#125; else &#123;</div><div class="line">              Toast toast = Toast.makeText(this, R.string.ringtone_default_message, Toast.LENGTH_SHORT);</div><div class="line">               toast.setGravity(Gravity.CENTER, 0, 0);</div><div class="line">               toast.show();</div><div class="line">           &#125;</div></pre></td></tr></table></figure>
+</code></pre><p>并且让弹出的对话框点击确定不让设置</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> /*</div><div class="line">    * On click of Ok/Cancel buttons</div><div class="line">    */</div><div class="line">   public void onClick(DialogInterface dialog, int which) &#123;</div><div class="line">       boolean positiveResult = which == DialogInterface.BUTTON_POSITIVE;</div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line"> else &#123;</div><div class="line">               uri = mRingtoneManager.getCustomeRingtoneUri(getRingtoneManagerPosition(mClickedPos));</div><div class="line">           &#125;</div><div class="line"></div><div class="line">		//begin add  **************</div><div class="line">           if (mClickedPos != -1 &amp;&amp; mCanPlay &amp;&amp; uri != null) &#123;</div><div class="line">           resultIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI, uri);</div><div class="line">           setResult(RESULT_OK, resultIntent);</div><div class="line">           &#125; else &#123;              </div><div class="line">               Toast toast = Toast.makeText(this, R.string.ringtone_default_message,Toast.LENGTH_SHORT);</div><div class="line">               toast.show();</div><div class="line">               setResult(RESULT_CANCELED);</div><div class="line">           &#125;</div><div class="line">           //end add  **************</div><div class="line">       &#125; else &#123;</div><div class="line">           setResult(RESULT_CANCELED);</div><div class="line">       &#125;</div></pre></td></tr></table></figure>
+</code></pre><hr>
+<p>[QUESTION]</p>
+<p>[<strong>时钟</strong>]通话中倒计时铃声的声音不停止</p>
+<p>[SOLUTION]</p>
+<p>\packages\apps\DeskClock\src\com\android\deskclock\AsyncRingtonePlayer.java</p>
+<pre><code>    //modified**************
+      mAudioManager.requestAudioFocus(mAudioFocusListener, AudioManager.STREAM_ALARM,
+                AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+        mRingtone.play();
+
+        return scheduleVolumeAdjustment;
+    }
+
+    /**
+     * Sets the volume of the ringtone.
+     *
+     * @param volume a raw scalar in range 0.0 to 1.0, where 0.0 mutes this player, and 1.0
+     *               corresponds to no attenuation being applied.
+     */
+    private void setRingtoneVolume(float volume) {
+        try {
+            mSetVolumeMethod.invoke(mRingtone, volume);
+        } catch (Exception e) {
+            LogUtils.e(TAG, &quot;Unable to set volume for android.media.Ringtone&quot;, e);
+        }
+    }
+
+    /**
+     * Stops the playback of the ringtone. Executes on the ringtone-thread.
+     */
+    @Override
+    public void stop(Context context) {
+        checkAsyncRingtonePlayerThread();
+
+        LogUtils.i(TAG, &quot;Stop ringtone via android.media.Ringtone.&quot;);
+
+        mCrescendoDuration = 0;
+        mCrescendoStopTime = 0;
+
+        if (mRingtone != null &amp;&amp; mRingtone.isPlaying()) {
+            LogUtils.d(TAG, &quot;Ringtone.stop() invoked.&quot;);
+            mRingtone.stop();
+        }
+
+        mRingtone = null;
+
+        if (mAudioManager != null) {
+            //modified**************
+            mAudioManager.abandonAudioFocus(mAudioFocusListener);
+        }
+    }
+
+...
+
+//begin add  **************
+    public OnAudioFocusChangeListener mAudioFocusListener = new OnAudioFocusChangeListener() {
+        public void onAudioFocusChange(int focusChange) {
+            switch (focusChange) {                             
+            case AudioManager.AUDIOFOCUS_LOSS:
+                AsyncRingtonePlayer.this.stop();
+                break;
+            }
+        }
+    };
+
+}
+//end add **************
+</code></pre><hr>
+<p>[QUESTION]</p>
+<p>[<strong>拨号盘</strong>]通话记录紧急呼救号码只显示紧急呼救号码不显示数字</p>
+<p>[SOLUTION]</p>
+<p>packages/apps/Dialer / src/com/android/dialer/calllog/PhoneCallDetailsHelper.java</p>
+<pre><code>setPhoneCallDetails（）｛
+...
+ if (TextUtils.isEmpty(details.getPreferredName())) {
+    //begin add **********
+        if (!TextUtils.isEmpty(phoneNum) &amp;&amp; PhoneNumberUtils.isEmergencyNumber(phoneNum)) {
+
+            nameText =  mContext.getResources().getString(R.string.emergency_call_dialog_number_for_display);
+
+
+        } else {
+            nameText = displayNumber;
+        }
+    //end add **********
+        // We have a real phone number as &quot;nameView&quot; so make it always LTR
+        views.nameView.setTextDirection(View.TEXT_DIRECTION_LTR);
+...    
+
+｝
 </code></pre>
       
     </div>
@@ -737,8 +744,8 @@ EOF
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/22/Android-CTS认证测试/" rel="next" title="Android-CTS认证测试">
-                <i class="fa fa-chevron-left"></i> Android-CTS认证测试
+              <a href="/2017/08/28/Android-编译环境初始化/" rel="next" title="Android-编译环境初始化">
+                <i class="fa fa-chevron-left"></i> Android-编译环境初始化
               </a>
             
           </div>
@@ -746,10 +753,6 @@ EOF
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/22/Android-一些修改201711/" rel="prev" title="Android-一些修改201711">
-                Android-一些修改201711 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -802,8 +805,8 @@ EOF
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/08/28/Android-编译环境初始化/"
-           data-title="Android-编译环境初始化" data-url="http://www.ningshuran.tech/2017/08/28/Android-编译环境初始化/">
+      <div class="ds-thread" data-thread-key="2017/11/22/Android-一些修改201711/"
+           data-title="Android-一些修改201711" data-url="http://www.ningshuran.tech/2017/11/22/Android-一些修改201711/">
       </div>
     
   </div>
@@ -909,7 +912,7 @@ EOF
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-编译环境初始化"><span class="nav-number">1.</span> <span class="nav-text">Android 编译环境初始化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-一些修改201711"><span class="nav-number">1.</span> <span class="nav-text">Android 一些修改201711</span></a></li></ol></div>
             
 
           </div>
