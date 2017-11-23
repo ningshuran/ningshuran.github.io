@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android Browser," />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -93,22 +93,25 @@
 
 
 
-<meta name="description" content="Android Browser打开多个窗口进行切换会闪烁原因分析浏览器的多标签切换功能, 还需要一个用户交互界面, 这个界面在Android Browser中就是NavScreen了
-在Android Browser中 用以和用户打交道的功能基本都被限制在了BaseUI中, 在手机上它的实现就是PhoneUI
-12345678910111213141516171819202122232425262">
+<meta name="description" content="Android 一些修改201711[QUESTION]
+[时钟]设置5秒以内的倒计时,时间到后都会在第5秒开始响铃
+[ANSWER]
+这是因为倒计时开始之后，要等待接收AlarmManager的timers_up广播，而5.1原生AlarmManager的设计“5秒之内的都会调整到5秒的时间点上”上层闹钟应用在设置一个action = times_up 的定时器下来的时候，到Framework层">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android Browser打开多个窗口进行切换会闪烁">
-<meta property="og:url" content="http://www.ningshuran.tech/2015/09/01/Android-Browser打开多个窗口进行切换会闪烁/index.html">
+<meta property="og:title" content="Android 一些修改201711">
+<meta property="og:url" content="http://www.ningshuran.tech/2017/11/22/Android 一些修改/index.html">
 <meta property="og:site_name" content="ningshuran@一号线">
-<meta property="og:description" content="Android Browser打开多个窗口进行切换会闪烁原因分析浏览器的多标签切换功能, 还需要一个用户交互界面, 这个界面在Android Browser中就是NavScreen了
-在Android Browser中 用以和用户打交道的功能基本都被限制在了BaseUI中, 在手机上它的实现就是PhoneUI
-12345678910111213141516171819202122232425262">
-<meta property="og:updated_time" content="2017-09-13T16:09:13.274Z">
+<meta property="og:description" content="Android 一些修改201711[QUESTION]
+[时钟]设置5秒以内的倒计时,时间到后都会在第5秒开始响铃
+[ANSWER]
+这是因为倒计时开始之后，要等待接收AlarmManager的timers_up广播，而5.1原生AlarmManager的设计“5秒之内的都会调整到5秒的时间点上”上层闹钟应用在设置一个action = times_up 的定时器下来的时候，到Framework层">
+<meta property="og:updated_time" content="2017-11-23T02:23:26.711Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android Browser打开多个窗口进行切换会闪烁">
-<meta name="twitter:description" content="Android Browser打开多个窗口进行切换会闪烁原因分析浏览器的多标签切换功能, 还需要一个用户交互界面, 这个界面在Android Browser中就是NavScreen了
-在Android Browser中 用以和用户打交道的功能基本都被限制在了BaseUI中, 在手机上它的实现就是PhoneUI
-12345678910111213141516171819202122232425262">
+<meta name="twitter:title" content="Android 一些修改201711">
+<meta name="twitter:description" content="Android 一些修改201711[QUESTION]
+[时钟]设置5秒以内的倒计时,时间到后都会在第5秒开始响铃
+[ANSWER]
+这是因为倒计时开始之后，要等待接收AlarmManager的timers_up广播，而5.1原生AlarmManager的设计“5秒之内的都会调整到5秒的时间点上”上层闹钟应用在设置一个action = times_up 的定时器下来的时候，到Framework层">
 
 
 
@@ -136,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://www.ningshuran.tech/2015/09/01/Android-Browser打开多个窗口进行切换会闪烁/"/>
+  <link rel="canonical" href="http://www.ningshuran.tech/2017/11/22/Android 一些修改/"/>
 
 
 
 
 
-  <title> Android Browser打开多个窗口进行切换会闪烁 | ningshuran@一号线 </title>
+  <title> Android 一些修改201711 | ningshuran@一号线 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -325,7 +328,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.ningshuran.tech/2015/09/01/Android-Browser打开多个窗口进行切换会闪烁/">
+    <link itemprop="mainEntityOfPage" href="http://www.ningshuran.tech/2017/11/22/Android 一些修改/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="shuranning@163.com">
@@ -346,7 +349,7 @@
             
             
               
-                Android Browser打开多个窗口进行切换会闪烁
+                Android 一些修改201711
               
             
           </h1>
@@ -361,8 +364,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-01T22:27:40+08:00">
-                2015-09-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-22T22:27:40+08:00">
+                2017-11-22
               </time>
             
 
@@ -384,8 +387,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android-Browser/" itemprop="url" rel="index">
-                    <span itemprop="name">Android Browser</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -402,8 +405,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2015/09/01/Android-Browser打开多个窗口进行切换会闪烁/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/01/Android-Browser打开多个窗口进行切换会闪烁/" itemprop="commentCount"></span>
+                <a href="/2017/11/22/Android 一些修改/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/11/22/Android 一些修改/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -434,11 +437,257 @@
       
 
       
-        <h2 id="Android-Browser打开多个窗口进行切换会闪烁原因分析"><a href="#Android-Browser打开多个窗口进行切换会闪烁原因分析" class="headerlink" title="Android Browser打开多个窗口进行切换会闪烁原因分析"></a>Android Browser打开多个窗口进行切换会闪烁原因分析</h2><p>浏览器的多标签切换功能, 还需要一个用户交互界面, 这个界面在Android Browser中就是NavScreen了</p>
-<p>在Android Browser中 用以和用户打交道的功能基本都被限制在了BaseUI中, 在手机上它的实现就是PhoneUI</p>
-<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//点击按钮显示多窗口列表</span></div><div class="line">	 <span class="function"><span class="keyword">void</span> <span class="title">showNavScreen</span><span class="params">()</span> </span>&#123;</div><div class="line">     mUiController.setBlockEvents(<span class="keyword">true</span>); <span class="comment">//拦截多窗口外的其他操作</span></div><div class="line">     <span class="keyword">if</span> (mNavScreen == <span class="keyword">null</span>) &#123;</div><div class="line">         mNavScreen = <span class="keyword">new</span> NavScreen(mActivity, mUiController, <span class="keyword">this</span>);</div><div class="line">         mCustomViewContainer.addView(mNavScreen, COVER_SCREEN_PARAMS);</div><div class="line">     &#125; <span class="keyword">else</span> &#123;</div><div class="line">         mNavScreen.setVisibility(View.VISIBLE);</div><div class="line">         mNavScreen.setAlpha(<span class="number">1f</span>);</div><div class="line">         mNavScreen.refreshAdapter();</div><div class="line">     &#125;</div><div class="line">     mActiveTab.capture();</div><div class="line">     <span class="keyword">if</span> (mAnimScreen == <span class="keyword">null</span>) &#123;</div><div class="line">         <span class="comment">//这是动画的视图 ,多标签窗口切换的动画是phoneui来实现的而不是 navscreen ,也就是说我点击一个tab 剩下的看到的其实是</span></div><div class="line">         <span class="comment">//真正的web窗口</span></div><div class="line">         mAnimScreen = <span class="keyword">new</span> AnimScreen(mActivity);</div><div class="line">     &#125; <span class="keyword">else</span> &#123;</div><div class="line">         mAnimScreen.mMain.setAlpha(<span class="number">1f</span>);</div><div class="line">         mAnimScreen.mTitle.setAlpha(<span class="number">1f</span>);</div><div class="line">         mAnimScreen.setScaleFactor(<span class="number">1f</span>);</div><div class="line">     &#125;</div><div class="line">     <span class="comment">//设置动画需要截图的view</span></div><div class="line">     mAnimScreen.set(getTitleBar(), getWebView());</div><div class="line">     <span class="keyword">if</span> (mAnimScreen.mMain.getParent() == <span class="keyword">null</span>) &#123;</div><div class="line">         <span class="comment">//如果animscreen 的main没有父亲, 说明是执行了 全屏模式</span></div><div class="line">         mCustomViewContainer.addView(mAnimScreen.mMain, COVER_SCREEN_PARAMS);</div><div class="line">     &#125;</div><div class="line">     mCustomViewContainer.setVisibility(View.VISIBLE);</div><div class="line">     mCustomViewContainer.bringToFront();<span class="comment">//把这个view放到顶层</span></div><div class="line">     mAnimScreen.mMain.layout(<span class="number">0</span>, <span class="number">0</span>, mContentView.getWidth(),</div><div class="line">             mContentView.getHeight()); <span class="comment">//动画的宽度和contentview一样大</span></div><div class="line">     <span class="keyword">int</span> fromLeft = <span class="number">0</span>;</div><div class="line">     <span class="keyword">int</span> fromTop = getTitleBar().getHeight();</div><div class="line">     <span class="keyword">int</span> fromRight = mContentView.getWidth();</div><div class="line">     <span class="keyword">int</span> fromBottom = mContentView.getHeight();</div><div class="line">     <span class="keyword">int</span> width = mActivity.getResources().getDimensionPixelSize(R.dimen.nav_tab_width);</div><div class="line">     <span class="keyword">int</span> height = mActivity.getResources().getDimensionPixelSize(R.dimen.nav_tab_height);</div><div class="line">     <span class="keyword">int</span> ntth = mActivity.getResources().getDimensionPixelSize(R.dimen.nav_tab_titleheight);</div><div class="line">     <span class="keyword">int</span> toLeft = (mContentView.getWidth() - width) / <span class="number">2</span>;</div><div class="line">     <span class="keyword">int</span> toTop = ((fromBottom - (ntth + height)) / <span class="number">2</span> + ntth);</div><div class="line">     <span class="keyword">int</span> toRight = toLeft + width;</div><div class="line">     <span class="keyword">int</span> toBottom = toTop + height;</div><div class="line">     <span class="keyword">float</span> scaleFactor = width / (<span class="keyword">float</span>) mContentView.getWidth();</div><div class="line">     detachTab(mActiveTab);</div><div class="line">     mContentView.setVisibility(View.GONE);</div><div class="line">     AnimatorSet set1 = <span class="keyword">new</span> AnimatorSet();</div><div class="line">     AnimatorSet inanim = <span class="keyword">new</span> AnimatorSet();</div><div class="line">     <span class="comment">//使用上下左右的位置 使得  tab的运动轨迹 从整个屏幕 位置缩小到tab,无论当前tab在哪里</span></div><div class="line">     ObjectAnimator tx = ObjectAnimator.ofInt(mAnimScreen.mContent, <span class="string">"left"</span>,</div><div class="line">             fromLeft, toLeft);</div><div class="line">     ObjectAnimator ty = ObjectAnimator.ofInt(mAnimScreen.mContent, <span class="string">"top"</span>,</div><div class="line">             fromTop, toTop);</div><div class="line">     ObjectAnimator tr = ObjectAnimator.ofInt(mAnimScreen.mContent, <span class="string">"right"</span>,</div><div class="line">             fromRight, toRight);</div><div class="line">     ObjectAnimator tb = ObjectAnimator.ofInt(mAnimScreen.mContent, <span class="string">"bottom"</span>,</div><div class="line">             fromBottom, toBottom);</div><div class="line">     ObjectAnimator title = ObjectAnimator.ofFloat(mAnimScreen.mTitle, <span class="string">"alpha"</span>,</div><div class="line">             <span class="number">1f</span>, <span class="number">0f</span>);</div><div class="line">     ObjectAnimator sx = ObjectAnimator.ofFloat(mAnimScreen, <span class="string">"scaleFactor"</span>,</div><div class="line">             <span class="number">1f</span>, scaleFactor);</div><div class="line">     <span class="comment">//这个动画是透明动画</span></div><div class="line">     ObjectAnimator blend1 = ObjectAnimator.ofFloat(mAnimScreen.mMain,</div><div class="line">             <span class="string">"alpha"</span>, <span class="number">1f</span>, <span class="number">0f</span>);</div><div class="line">     blend1.setDuration(<span class="number">100</span>);</div><div class="line"></div><div class="line">     inanim.playTogether(tx, ty, tr, tb, sx, title);</div><div class="line">     inanim.setDuration(<span class="number">200</span>);</div><div class="line">     set1.addListener(<span class="keyword">new</span> AnimatorListenerAdapter() &#123;</div><div class="line">         <span class="meta">@Override</span></div><div class="line">         <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationEnd</span><span class="params">(Animator anim)</span> </span>&#123;</div><div class="line">             mCustomViewContainer.removeView(mAnimScreen.mMain);</div><div class="line">             finishAnimationIn();</div><div class="line">             mUiController.setBlockEvents(<span class="keyword">false</span>);</div><div class="line">         &#125;</div><div class="line">     &#125;);</div><div class="line">     set1.playSequentially(inanim, blend1);<span class="comment">//inanim播放ok后播放 blend1 也就是先缩放然后在透明 </span></div><div class="line">     set1.start();</div><div class="line"> 		&#125;</div></pre></td></tr></table></figure>
-</code></pre><p>看了代码，发现动画有个透明效果的动画。研究之后才发现，其实浏览器切换并不是“闪烁”，而是一个透明动画，这个动画造成了“闪烁”的现象，把这个动画去掉后，可以发现闪烁的现象没有了，而且切换窗口的时候更加平滑。</p>
+        <h2 id="Android-一些修改201711"><a href="#Android-一些修改201711" class="headerlink" title="Android 一些修改201711"></a>Android 一些修改201711</h2><p>[QUESTION]</p>
+<p>[<strong>时钟</strong>]设置5秒以内的倒计时,时间到后都会在第5秒开始响铃</p>
+<p>[ANSWER]</p>
+<p>这是因为倒计时开始之后，要等待接收AlarmManager的timers_up广播，而5.1原生AlarmManager的设计“5秒之内的都会调整到5秒的时间点上”<br>上层闹钟应用在设置一个action = times_up 的定时器下来的时候，到Framework层，会有相关判断</p>
+<p>在AlarmManagerService.java中</p>
+<pre><code>final long nowElapsed = SystemClock.elapsedRealtime();
+final long nominalTrigger = convertToElapsed(triggerAtTime, type);
+// Try to prevent spamming by making sure we aren&apos;t firing alarms in the immediate future
+final long minTrigger = nowElapsed + MIN_FUTURITY; //MIN_FUTURITY =5 ×1000
+final long triggerElapsed = (nominalTrigger &gt; minTrigger) ? nominalTrigger : minTrigger;
+</code></pre><p>这段代码说明，如果当前设置的alarm时间点低于5s的时候，会以最小的5s作为触发事件设置到底层。</p>
+<p>所以会出现上层alarm应用：即使设置小于5s的定时器，触发的时间同样是5s</p>
+<p>[SOLUTION]</p>
+<p>\frameworks\base\services\core\java\com\android\server\AlarmManagerService.java</p>
+<pre><code>// Try to prevent spamming by making sure we aren&apos;t firing alarms in the immediate future
+//去掉MIN_FUTURITY5秒
+final long minTrigger = nowElapsed ; 
+</code></pre><hr>
+<p>[QUESTION]</p>
+<p>[<strong>记事本</strong>]编辑记事本时低电至自动关机，开机后列表中有个空的记事本</p>
+<p>[ANSWER]</p>
+<p>NoteEditor.java每次进去编辑模式都会插入一条空的数据</p>
+<pre><code>onCreate(){
+    // Sets the Activity state to INSERT, gets the general note URI, and
+    // inserts an
+    // empty record in the provider
+    mState = STATE_INSERT;
+    //onCreate 每次进去都会向数据库插入一条空数据
+    mUri = getContentResolver().insert(intent.getData(), null);
+    setResult(RESULT_OK, (new Intent()).setAction(mUri.toString()));
+    Log.d(TAG, &quot;SetResult for EditNote&quot;);
+}
+</code></pre><p>所以在编辑还没更新数据时都会保存一条空的数据</p>
+<p>[SOLUTION]</p>
+<p>NotesList.java</p>
+<pre><code>public void UpdateAdapterData()
+{
 
+    StringBuilder path = new StringBuilder();
+    muri = Uri.withAppendedPath(Notes.CONTENT_URI, path.toString());
+
+    if (mCursorNotepad != null) {
+        mCursorNotepad.close();
+        mCursorNotepad = null;
+    }
+    //begin modified  查询数据库时只要是COLUMN_NAME_NOTE是“ ”就不显示出来，在这里过滤掉
+    mCursorNotepad = getContentResolver().query(muri, PROJECTION, Notes.COLUMN_NAME_NOTE+&quot;!=&apos;&apos;&quot;, null, null);
+    //end  modified 
+
+    if (mCursorNotepad != null) {
+        mListAdapter = new MyListViewAdapter(this, mCursorNotepad);
+        mListView.setAdapter(mListAdapter);
+    }
+}
+</code></pre><hr>
+<p>[QUESTION]</p>
+<p>[<strong>多媒体</strong>]开机后打开音乐加载MP3过慢</p>
+<p>[ANSWER]</p>
+<p>frameworks\base\media\java\android\media\MediaScanner.java:</p>
+<pre><code>public void scanDirectories(String[] directories, String volumeName) {
+
+            ...
+            // create MediaInserter for bulk inserts
+            mMediaInserter = new MediaInserter(mMediaProvider, mPackageName, 500);
+
+            //收集到500条数据，MediaInserter批量插入一次
+
+            ...
+         }
+</code></pre><p>frameworks\base\media\java\android\media\MediaInserter.java</p>
+<pre><code>private void insert(Uri tableUri, ContentValues values, boolean priority) throws RemoteException {
+
+    ......
+    if (list.size() &gt;= mBufferSizePerUri) { // mBufferSizePerUri即为500，当存放数据的list不小于500时，执行批量插入
+        flushAllPriority();
+        flush(tableUri, list);
+    }
+}
+</code></pre><p>当音乐文件总数小于500时，音乐文件的插入将在扫描的最后执行。导致在扫描过程中，音乐列表不显示音乐文件。</p>
+<p>此时可以减小每次批量插入的数量，较早地插入数据库，音乐列表较早得到数据。</p>
+<p>[SOLUTION]</p>
+<p>frameworks\base\media\java\android\media\MediaInserter.java</p>
+<pre><code>//add **********
+private final Uri mAudioUri = Audio.Media.getContentUri(&quot;external&quot;);
+private final Uri mVideoUri = Video.Media.getContentUri(&quot;external&quot;);
+private final Uri mImagesUri = Images.Media.getContentUri(&quot;external&quot;);
+...
+private void insert(Uri tableUri, ContentValues values, boolean priority) throws RemoteException {
+...
+//begin add **********
+if (mAudioUri.equals(tableUri ) || mVideoUri.equals(tableUri )) {
+        if (list.size() &gt;= 100) {
+            Log.v(&quot;mediaInserter&quot;, &quot;list.size() &gt;= 100&quot;);
+            flushAllPriority();
+            flush(tableUri, list);
+        }
+    } else if (mImagesUri.equals(tableUri)) {
+        if (list.size() &gt;= 200) {
+            Log.v(&quot;mediaInserter&quot;, &quot;list.size() &gt;= 200&quot;);
+            flushAllPriority();
+            flush(tableUri, list);
+        }
+//end add **********
+    } else if (list.size() &gt;= mBufferSizePerUri) {
+        flushAllPriority();
+        flush(tableUri, list);
+    }
+...
+
+}
+</code></pre><hr>
+<p>[QUESTION]</p>
+<p>[<strong>相机</strong>]内存空间已满，进入相机报停</p>
+<p>[ANSWER]</p>
+<p>java.io.IOException: write failed: ENOSPC (No space left on device)</p>
+<p>[SOLUTION]</p>
+<pre><code>onCreate｛
+
+    //begin modified
+    //获得可用内存 
+    StorageManager storageManager = this.getSystemService(StorageManager.class);
+    final List&lt;VolumeInfo&gt; volumes = storageManager.getVolumes();  
+    long privateFreeBytes = 0;            
+    for (VolumeInfo info : volumes) {
+        if (info.getType() != VolumeInfo.TYPE_PUBLIC
+            &amp;&amp; info.getType() != VolumeInfo.TYPE_PRIVATE) {
+             continue;
+         }
+        final File path = info.getPath();
+        privateFreeBytes = path.getFreeSpace();            
+    }
+    Log.d(TAG,&quot;add for hipad -----&quot;+privateFreeBytes+&quot;-----&quot;);
+    //LOW_STORAGE_THRESHOLD_BYTES 原为5000000 可根据实际修改
+    if (privateFreeBytes &lt;= Storage.LOW_STORAGE_THRESHOLD_BYTES) {
+        //弹出提示
+        final AlertDialog.Builder alertdialog = new AlertDialog.Builder(this);
+            alertdialog.setTitle(R.string.dialog_low_storage_title);
+            alertdialog.setMessage(R.string.dialog_low_storage_message);                                 
+            alertdialog.setCancelable(false);
+            alertdialog.setPositiveButton(R.string.dialog_low_storage_ok, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {  
+                    //点击确定直接finish                     
+                    finish();
+                }
+            });
+         alertdialog.show();                
+
+    }
+    //end modified 
+
+｝
+</code></pre><hr>
+<p>[QUESTION]</p>
+<p>[<strong>设置</strong>]受损的音频能设置为来电铃声</p>
+<p>[SOLUTION]</p>
+<p>\packages\providers\MediaProvider\src\com\android\providers\media\SdcardRingtonePickerActivity.java</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">//add</div><div class="line">private boolean mCanPlay = true;</div><div class="line"></div><div class="line">private DialogInterface.OnClickListener mRingtoneClickListener =</div><div class="line">           new DialogInterface.OnClickListener() &#123;</div><div class="line"></div><div class="line">       /*</div><div class="line">        * On item clicked</div><div class="line">        */</div><div class="line">       public void onClick(DialogInterface dialog, int which) &#123;</div><div class="line"></div><div class="line">	...</div><div class="line">	if(title2.equals(title))&#123;</div><div class="line">		//begin modified **************</div><div class="line">               MediaPlayer mediaPlayer = new MediaPlayer();</div><div class="line">               try &#123;</div><div class="line">                   mediaPlayer.setDataSource(mContext, uri);</div><div class="line">                   mediaPlayer.prepare();</div><div class="line">                   ringtone.play();</div><div class="line">                   mCanPlay = true;</div><div class="line">               &#125; catch (Exception e) &#123;</div><div class="line">                   mCanPlay = false;</div><div class="line">                   Toast toast = Toast.makeText(this, R.string.ringtone_default_message,Toast.LENGTH_SHORT);</div><div class="line">                   toast.show();</div><div class="line">               &#125; finally &#123;</div><div class="line">                   mediaPlayer.reset();</div><div class="line">                   mediaPlayer.release();</div><div class="line">                   mediaPlayer = null;</div><div class="line">               &#125;</div><div class="line">		//end modified **************</div><div class="line">           &#125; else &#123;</div><div class="line">              Toast toast = Toast.makeText(this, R.string.ringtone_default_message, Toast.LENGTH_SHORT);</div><div class="line">               toast.setGravity(Gravity.CENTER, 0, 0);</div><div class="line">               toast.show();</div><div class="line">           &#125;</div></pre></td></tr></table></figure>
+</code></pre><p>并且让弹出的对话框点击确定不让设置</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> /*</div><div class="line">    * On click of Ok/Cancel buttons</div><div class="line">    */</div><div class="line">   public void onClick(DialogInterface dialog, int which) &#123;</div><div class="line">       boolean positiveResult = which == DialogInterface.BUTTON_POSITIVE;</div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line"> else &#123;</div><div class="line">               uri = mRingtoneManager.getCustomeRingtoneUri(getRingtoneManagerPosition(mClickedPos));</div><div class="line">           &#125;</div><div class="line"></div><div class="line">		//begin add  **************</div><div class="line">           if (mClickedPos != -1 &amp;&amp; mCanPlay &amp;&amp; uri != null) &#123;</div><div class="line">           resultIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI, uri);</div><div class="line">           setResult(RESULT_OK, resultIntent);</div><div class="line">           &#125; else &#123;              </div><div class="line">               Toast toast = Toast.makeText(this, R.string.ringtone_default_message,Toast.LENGTH_SHORT);</div><div class="line">               toast.show();</div><div class="line">               setResult(RESULT_CANCELED);</div><div class="line">           &#125;</div><div class="line">           //end add  **************</div><div class="line">       &#125; else &#123;</div><div class="line">           setResult(RESULT_CANCELED);</div><div class="line">       &#125;</div></pre></td></tr></table></figure>
+</code></pre><hr>
+<p>[QUESTION]</p>
+<p>[<strong>时钟</strong>]通话中倒计时铃声的声音不停止</p>
+<p>[SOLUTION]</p>
+<p>\packages\apps\DeskClock\src\com\android\deskclock\AsyncRingtonePlayer.java</p>
+<pre><code>    //modified**************
+      mAudioManager.requestAudioFocus(mAudioFocusListener, AudioManager.STREAM_ALARM,
+                AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+        mRingtone.play();
+
+        return scheduleVolumeAdjustment;
+    }
+
+    /**
+     * Sets the volume of the ringtone.
+     *
+     * @param volume a raw scalar in range 0.0 to 1.0, where 0.0 mutes this player, and 1.0
+     *               corresponds to no attenuation being applied.
+     */
+    private void setRingtoneVolume(float volume) {
+        try {
+            mSetVolumeMethod.invoke(mRingtone, volume);
+        } catch (Exception e) {
+            LogUtils.e(TAG, &quot;Unable to set volume for android.media.Ringtone&quot;, e);
+        }
+    }
+
+    /**
+     * Stops the playback of the ringtone. Executes on the ringtone-thread.
+     */
+    @Override
+    public void stop(Context context) {
+        checkAsyncRingtonePlayerThread();
+
+        LogUtils.i(TAG, &quot;Stop ringtone via android.media.Ringtone.&quot;);
+
+        mCrescendoDuration = 0;
+        mCrescendoStopTime = 0;
+
+        if (mRingtone != null &amp;&amp; mRingtone.isPlaying()) {
+            LogUtils.d(TAG, &quot;Ringtone.stop() invoked.&quot;);
+            mRingtone.stop();
+        }
+
+        mRingtone = null;
+
+        if (mAudioManager != null) {
+            //modified**************
+            mAudioManager.abandonAudioFocus(mAudioFocusListener);
+        }
+    }
+
+...
+
+//begin add  **************
+    public OnAudioFocusChangeListener mAudioFocusListener = new OnAudioFocusChangeListener() {
+        public void onAudioFocusChange(int focusChange) {
+            switch (focusChange) {                             
+            case AudioManager.AUDIOFOCUS_LOSS:
+                AsyncRingtonePlayer.this.stop();
+                break;
+            }
+        }
+    };
+
+}
+//end add **************
+</code></pre><hr>
+<p>[QUESTION]</p>
+<p>[<strong>拨号盘</strong>]通话记录紧急呼救号码只显示紧急呼救号码不显示数字</p>
+<p>[SOLUTION]</p>
+<p>packages/apps/Dialer / src/com/android/dialer/calllog/PhoneCallDetailsHelper.java</p>
+<pre><code>setPhoneCallDetails（）｛
+...
+ if (TextUtils.isEmpty(details.getPreferredName())) {
+    //begin add **********
+        if (!TextUtils.isEmpty(phoneNum) &amp;&amp; PhoneNumberUtils.isEmergencyNumber(phoneNum)) {
+
+            nameText =  mContext.getResources().getString(R.string.emergency_call_dialog_number_for_display);
+
+
+        } else {
+            nameText = displayNumber;
+        }
+    //end add **********
+        // We have a real phone number as &quot;nameView&quot; so make it always LTR
+        views.nameView.setTextDirection(View.TEXT_DIRECTION_LTR);
+...    
+
+｝
+</code></pre>
       
     </div>
 
@@ -482,7 +731,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android-Browser/" rel="tag"># Android Browser</a>
+            <a href="/tags/Android/" rel="tag"># Android</a>
           
         </div>
       
@@ -495,15 +744,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/08/28/Android-编译环境初始化/" rel="next" title="Android-编译环境初始化">
+                <i class="fa fa-chevron-left"></i> Android-编译环境初始化
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/09/29/Android-Browser打开网页为源码原因分析/" rel="prev" title="Android Browser打开网页为源码原因分析">
-                Android Browser打开网页为源码原因分析 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -556,8 +805,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/09/01/Android-Browser打开多个窗口进行切换会闪烁/"
-           data-title="Android Browser打开多个窗口进行切换会闪烁" data-url="http://www.ningshuran.tech/2015/09/01/Android-Browser打开多个窗口进行切换会闪烁/">
+      <div class="ds-thread" data-thread-key="2017/11/22/Android 一些修改/"
+           data-title="Android 一些修改201711" data-url="http://www.ningshuran.tech/2017/11/22/Android 一些修改/">
       </div>
     
   </div>
@@ -663,7 +912,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Browser打开多个窗口进行切换会闪烁原因分析"><span class="nav-number">1.</span> <span class="nav-text">Android Browser打开多个窗口进行切换会闪烁原因分析</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-一些修改201711"><span class="nav-number">1.</span> <span class="nav-text">Android 一些修改201711</span></a></li></ol></div>
             
 
           </div>
