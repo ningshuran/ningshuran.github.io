@@ -93,19 +93,25 @@
 
 
 
-<meta name="description" content="Android-姓名过长的联系人无法复制到SIMSIM卡联系人姓名字段的长度是有限制的，这跟SIM卡的设据原理有关（根据SIM卡设计原理，能存储在SIM卡的单个联系人长度为28个字符，14个字符用于存储号码，另外14个字符用于存储联系人姓名），若为汉字，最多11个，若为英文字母，最多14个，是无法进行修改的。
-http://blog.csdn.net/wds1181977/article/deta">
+<meta name="description" content="Android-JNI的使用什么jni
+jni java native interface 是一套协议，提供一套编程框架，java和本地语言之相互调用。
+
+为什么需要jni操作系统下底层硬件，android下传感器程序运行效率有要求，图形渲染，音视频解码程序的安全性，用本地代实现核心逻辑使用成熟本地代码，Sqlite,OpenGL,OpenSSL,OpenCV,FFmpeg复用公司之前的本地代码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android-姓名过长的联系人无法复制到SIM">
-<meta property="og:url" content="http://www.ningshuran.tech/2017/06/02/Android-姓名过长的联系人无法复制到SIM/index.html">
+<meta property="og:title" content="Android-JNI的使用">
+<meta property="og:url" content="http://www.ningshuran.tech/2017/12/01/Android-JNI的使用/index.html">
 <meta property="og:site_name" content="ningshuran@一号线">
-<meta property="og:description" content="Android-姓名过长的联系人无法复制到SIMSIM卡联系人姓名字段的长度是有限制的，这跟SIM卡的设据原理有关（根据SIM卡设计原理，能存储在SIM卡的单个联系人长度为28个字符，14个字符用于存储号码，另外14个字符用于存储联系人姓名），若为汉字，最多11个，若为英文字母，最多14个，是无法进行修改的。
-http://blog.csdn.net/wds1181977/article/deta">
-<meta property="og:updated_time" content="2017-08-23T14:17:17.214Z">
+<meta property="og:description" content="Android-JNI的使用什么jni
+jni java native interface 是一套协议，提供一套编程框架，java和本地语言之相互调用。
+
+为什么需要jni操作系统下底层硬件，android下传感器程序运行效率有要求，图形渲染，音视频解码程序的安全性，用本地代实现核心逻辑使用成熟本地代码，Sqlite,OpenGL,OpenSSL,OpenCV,FFmpeg复用公司之前的本地代码">
+<meta property="og:updated_time" content="2017-12-12T13:56:52.085Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android-姓名过长的联系人无法复制到SIM">
-<meta name="twitter:description" content="Android-姓名过长的联系人无法复制到SIMSIM卡联系人姓名字段的长度是有限制的，这跟SIM卡的设据原理有关（根据SIM卡设计原理，能存储在SIM卡的单个联系人长度为28个字符，14个字符用于存储号码，另外14个字符用于存储联系人姓名），若为汉字，最多11个，若为英文字母，最多14个，是无法进行修改的。
-http://blog.csdn.net/wds1181977/article/deta">
+<meta name="twitter:title" content="Android-JNI的使用">
+<meta name="twitter:description" content="Android-JNI的使用什么jni
+jni java native interface 是一套协议，提供一套编程框架，java和本地语言之相互调用。
+
+为什么需要jni操作系统下底层硬件，android下传感器程序运行效率有要求，图形渲染，音视频解码程序的安全性，用本地代实现核心逻辑使用成熟本地代码，Sqlite,OpenGL,OpenSSL,OpenCV,FFmpeg复用公司之前的本地代码">
 
 
 
@@ -133,13 +139,13 @@ http://blog.csdn.net/wds1181977/article/deta">
 
 
 
-  <link rel="canonical" href="http://www.ningshuran.tech/2017/06/02/Android-姓名过长的联系人无法复制到SIM/"/>
+  <link rel="canonical" href="http://www.ningshuran.tech/2017/12/01/Android-JNI的使用/"/>
 
 
 
 
 
-  <title> Android-姓名过长的联系人无法复制到SIM | ningshuran@一号线 </title>
+  <title> Android-JNI的使用 | ningshuran@一号线 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -322,7 +328,7 @@ http://blog.csdn.net/wds1181977/article/deta">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.ningshuran.tech/2017/06/02/Android-姓名过长的联系人无法复制到SIM/">
+    <link itemprop="mainEntityOfPage" href="http://www.ningshuran.tech/2017/12/01/Android-JNI的使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="shuranning@163.com">
@@ -343,7 +349,7 @@ http://blog.csdn.net/wds1181977/article/deta">
             
             
               
-                Android-姓名过长的联系人无法复制到SIM
+                Android-JNI的使用
               
             
           </h1>
@@ -358,8 +364,8 @@ http://blog.csdn.net/wds1181977/article/deta">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-02T20:14:09+08:00">
-                2017-06-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-01T21:24:30+08:00">
+                2017-12-01
               </time>
             
 
@@ -399,8 +405,8 @@ http://blog.csdn.net/wds1181977/article/deta">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/02/Android-姓名过长的联系人无法复制到SIM/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/02/Android-姓名过长的联系人无法复制到SIM/" itemprop="commentCount"></span>
+                <a href="/2017/12/01/Android-JNI的使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/12/01/Android-JNI的使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -431,9 +437,78 @@ http://blog.csdn.net/wds1181977/article/deta">
       
 
       
-        <h2 id="Android-姓名过长的联系人无法复制到SIM"><a href="#Android-姓名过长的联系人无法复制到SIM" class="headerlink" title="Android-姓名过长的联系人无法复制到SIM"></a>Android-姓名过长的联系人无法复制到SIM</h2><p>SIM卡联系人姓名字段的长度是有限制的，这跟SIM卡的设据原理有关（根据SIM卡设计原理，能存储在SIM卡的单个联系人长度为28个字符，14个字符用于存储号码，另外14个字符用于存储联系人姓名），若为汉字，最多11个，若为英文字母，最多14个，是无法进行修改的。</p>
-<p><a href="http://blog.csdn.net/wds1181977/article/details/40620141" target="_blank" rel="external">http://blog.csdn.net/wds1181977/article/details/40620141</a></p>
-<p>如果对名字字符串截取,是否考虑名字保存不完全的情况,从用户角度来看，也属于BUG，对名字截取个人觉得没有必要，人都是外号的，小明小红什么的，就算是英文也不会写全名，毕竟sim卡已经有限定。</p>
+        <h2 id="Android-JNI的使用"><a href="#Android-JNI的使用" class="headerlink" title="Android-JNI的使用"></a>Android-JNI的使用</h2><h2 id="什么jni"><a href="#什么jni" class="headerlink" title="什么jni"></a>什么jni</h2><ul>
+<li>jni java native interface 是一套协议，提供一套编程框架，java和本地语言之相互调用。</li>
+</ul>
+<h2 id="为什么需要jni"><a href="#为什么需要jni" class="headerlink" title="为什么需要jni"></a>为什么需要jni</h2><p>操作系统下底层硬件，android下传感器<br>程序运行效率有要求，图形渲染，音视频解码<br>程序的安全性，用本地代实现核心逻辑<br>使用成熟本地代码，Sqlite,OpenGL,OpenSSL,OpenCV,FFmpeg<br>复用公司之前的本地代码</p>
+<h2 id="使用jni的前提"><a href="#使用jni的前提" class="headerlink" title="使用jni的前提"></a>使用jni的前提</h2><p>熟练使java<br>了解c的基本语法<br>jni使用规范<br>学习开发工具使用NDK</p>
+<h2 id="jni开发流程"><a href="#jni开发流程" class="headerlink" title="jni开发流程"></a>jni开发流程</h2><p>阶段一 编码<br>1.新建android工程，用natvie声明本地方法，调用本地方法</p>
+<pre><code>public class MainActivity extends Activity {
+
+static{
+            System.loadLibrary(&quot;hello&quot;);//写库名，不是库文件名
+        }
+
+//声明 native方法
+private native String getCString();
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    //调用native方法
+    Toast.makeText(this, getCString() , Toast.LENGTH_SHORT).show();
+
+}
+</code></pre><p>2.工程中新建jni文件夹，新建getcstring.c源文件，包含jni.h头文件</p>
+<pre><code>#include &lt;jni.h&gt;
+
+/**
+ * 实现本地方法对应的的c函数名:Java_包名_类名_本地方法名
+ * JNIEnv *env 代表java环境，提供各种函数
+ * jobject obj 调用本地方法类的对象
+ */
+jstring Java_com_example_jnidemo_MainActivity_getCString(JNIEnv *env,
+        jobject obj) {
+
+    char buf[] = &quot;getstring from c!&quot;;//c字符数组保存字符串
+
+    //env : JNIEnv * &lt;=&gt; struct JNINativeInterface* *
+    // (**env).NewStringUTF();
+    // (*env)-&gt;NewStringUTf();
+
+    //实现把c提供char *指向的字符串转换为java中String对象
+    //jstring     (*NewStringUTF)(JNIEnv*, const char*);
+    return (*env)-&gt;NewStringUTF(env, buf);
+}
+</code></pre><p>阶段2 编译<br>1.在jni文件夹下新建Android.mk指导编译的配置文件</p>
+<pre><code>LOCAL_PATH := $(call my-dir)            #指定路径为当前目录
+
+include $(CLEAR_VARS)                    #清除LOCAL_XXX,除了LOCAL_PATH
+
+LOCAL_MODULE    := getcstring                #指定最终生成的动态库名hello,生成的动态库文件名libgetcstring.so
+LOCAL_SRC_FILES := getcstring.c                #指定生成目标用到所有源文件
+
+include $(BUILD_SHARED_LIBRARY)            #指定最终生成动态库
+</code></pre><p>2.使用ndk-build.cmd进行编译，需要把ndk根路径添加到path环境变量<br>3.进入jni文件夹，执行ndk-build编译，生成libgetcstring.so动态库，安装libs/armeabi/目录下<br> 4.在调用本地方法类加载库</p>
+<pre><code>static{
+    System.loadLibrary(&quot;hello&quot;);//写库名，不是库文件名
+}
+</code></pre><h2 id="jni开发中错误及解决"><a href="#jni开发中错误及解决" class="headerlink" title="jni开发中错误及解决"></a>jni开发中错误及解决</h2><ul>
+<li>找不到库：Caused by: java.lang.UnsatisfiedLinkError: Couldn’t load calc-jn1: findLibrary returned null</li>
+<li><p>解决办法：</p>
+<blockquote>
+<p>检查加载的库名和实际库名是否一致<br>生成的动态库是为arm平生成，运行在x86处理器；在jni文件夹下添加Application.mk文件，写上APP_ABI := all</p>
+</blockquote>
+</li>
+<li><p>找不到方法： java.lang.UnsatisfiedLinkError: Native method not found: com.itheima.resultfromc.MainActivity.resultFromC:(II)I</p>
+</li>
+<li>解决办法：<blockquote>
+<p>本地方法对应本地函数名是否符合规范</p>
+<p>没有加载动态库</p>
+</blockquote>
+</li>
+</ul>
 
       
     </div>
@@ -491,8 +566,8 @@ http://blog.csdn.net/wds1181977/article/deta">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/17/Android-预置APK/" rel="next" title="Android 预置APK">
-                <i class="fa fa-chevron-left"></i> Android 预置APK
+              <a href="/2017/11/28/Android-预编译/" rel="next" title="Android-预编译">
+                <i class="fa fa-chevron-left"></i> Android-预编译
               </a>
             
           </div>
@@ -501,8 +576,8 @@ http://blog.csdn.net/wds1181977/article/deta">
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/10/Android-OTA差分包升级失败/" rel="prev" title="Android-OTA差分包升级失败">
-                Android-OTA差分包升级失败 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/09/Android-蓝牙配对无提示音/" rel="prev" title="Android-蓝牙配对无提示音">
+                Android-蓝牙配对无提示音 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -556,8 +631,8 @@ http://blog.csdn.net/wds1181977/article/deta">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/06/02/Android-姓名过长的联系人无法复制到SIM/"
-           data-title="Android-姓名过长的联系人无法复制到SIM" data-url="http://www.ningshuran.tech/2017/06/02/Android-姓名过长的联系人无法复制到SIM/">
+      <div class="ds-thread" data-thread-key="2017/12/01/Android-JNI的使用/"
+           data-title="Android-JNI的使用" data-url="http://www.ningshuran.tech/2017/12/01/Android-JNI的使用/">
       </div>
     
   </div>
@@ -663,7 +738,7 @@ http://blog.csdn.net/wds1181977/article/deta">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-姓名过长的联系人无法复制到SIM"><span class="nav-number">1.</span> <span class="nav-text">Android-姓名过长的联系人无法复制到SIM</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-JNI的使用"><span class="nav-number">1.</span> <span class="nav-text">Android-JNI的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么jni"><span class="nav-number">2.</span> <span class="nav-text">什么jni</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么需要jni"><span class="nav-number">3.</span> <span class="nav-text">为什么需要jni</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用jni的前提"><span class="nav-number">4.</span> <span class="nav-text">使用jni的前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jni开发流程"><span class="nav-number">5.</span> <span class="nav-text">jni开发流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jni开发中错误及解决"><span class="nav-number">6.</span> <span class="nav-text">jni开发中错误及解决</span></a></li></ol></div>
             
 
           </div>
