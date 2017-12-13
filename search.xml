@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Android-JNI的使用]]></title>
+    <url>%2F2017%2F12%2F12%2FAndroid-JNI%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[Android-JNI的使用什么jnijni java native interface 是一套协议，提供一套编程框架，java和本地语言之相互调用。 为什么需要jni操作系统下底层硬件，android下传感器程序运行效率有要求，图形渲染，音视频解码程序的安全性，用本地代实现核心逻辑使用成熟本地代码，Sqlite,OpenGL,OpenSSL,OpenCV,FFmpeg复用公司之前的本地代码 使用jni的前提熟练使java了解c的基本语法jni使用规范学习开发工具使用NDK jni开发流程阶段一 编码1.新建android工程，用natvie声明本地方法，调用本地方法 public class MainActivity extends Activity { static{ System.loadLibrary(&quot;getcstring&quot;);//写库名，不是库文件名 } //声明 native方法 private native String getCString(); @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); setContentView(R.layout.activity_main); //调用native方法 Toast.makeText(this, getCString() , Toast.LENGTH_SHORT).show(); } 2.工程中新建jni文件夹，新建getcstring.c源文件，包含jni.h头文件 #include &lt;jni.h&gt; /** * 实现本地方法对应的的c函数名:Java_包名_类名_本地方法名 * JNIEnv *env 代表java环境，提供各种函数 * jobject obj 调用本地方法类的对象 */ jstring Java_com_example_jnidemo_MainActivity_getCString(JNIEnv *env, jobject obj) { char buf[] = &quot;getstring from c!&quot;;//c字符数组保存字符串 //env : JNIEnv * &lt;=&gt; struct JNINativeInterface* * // (**env).NewStringUTF(); // (*env)-&gt;NewStringUTf(); //实现把c提供char *指向的字符串转换为java中String对象 //jstring (*NewStringUTF)(JNIEnv*, const char*); return (*env)-&gt;NewStringUTF(env, buf); } 阶段二 编译1.在jni文件夹下新建Android.mk指导编译的配置文件 LOCAL_PATH := $(call my-dir) #指定路径为当前目录 include $(CLEAR_VARS) #清除LOCAL_XXX,除了LOCAL_PATH LOCAL_MODULE := getcstring #指定最终生成的动态库名hello,生成的动态库文件名libgetcstring.so LOCAL_SRC_FILES := getcstring.c #指定生成目标用到所有源文件 include $(BUILD_SHARED_LIBRARY) #指定最终生成动态库 2.使用ndk-build.cmd进行编译，需要把ndk根路径添加到path环境变量3.进入jni文件夹，执行ndk-build编译，生成libgetcstring.so动态库，安装libs/armeabi/目录下 4.在调用本地方法类加载库 static{ System.loadLibrary(&quot;getcstring&quot;); } jni开发中错误及解决 找不到库：Caused by: java.lang.UnsatisfiedLinkError: Couldn’t load calc-jn1: findLibrary returned null 解决办法： 检查加载的库名和实际库名是否一致生成的动态库是为arm平生成，运行在x86处理器；在jni文件夹下添加Application.mk文件，写上APP_ABI := all 找不到方法： java.lang.UnsatisfiedLinkError: Native method not found: 解决办法： 本地方法对应本地函数名是否符合规范 没有加载动态库 Studio下加入 sourceSets { main { jniLibs.srcDirs = [&apos;libs&apos;] } }]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Android-蓝牙配对无提示音]]></title>
     <url>%2F2017%2F12%2F09%2FAndroid-%E8%93%9D%E7%89%99%E9%85%8D%E5%AF%B9%E6%97%A0%E6%8F%90%E7%A4%BA%E9%9F%B3%2F</url>
     <content type="text"><![CDATA[Android-蓝牙配对无提示音\packages\apps\Settings\src\com\android\settings\bluetooth\BluetoothPairingDialog.java onCreate{ ... //add ************************** if (isCreated) { Uri notification = RingtoneManager.getDefault(RingtoneManager.TYPE_NOTIFICATION); Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification); r.play(); } //end ************************** ... } 如果正在使用蓝牙听音乐，则可能出现音频焦点的问题。即在蓝牙听音乐时候，需要与其他设备进行配对操作，而触发配对提示音，则音乐会失去焦点暂停播放。 处理音频焦点的问题首先第一步要获得一个音频管理服务AudioManager mAudioManager = (AudioManager)getSystemService(AUDIO_SERVICE); 然后在合适的地方放置获得音频焦点的代码 mAudioManager.requestAudioFocus(mAudioFocusListener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN); 第三步实现音频焦点监听器OnAudioFocusChangeListener，这个监听器会根据当前音频焦点的变化，调用onAudioFocusChange(int focusChange)方法 最后在适当的时候注销掉这个监听器比如在onDestroy()中 mAudioManager.abandonAudioFocus(mAudioFocusListener); 完整的处理蓝牙无提示音问题 onCreate{ ... if (isCreated) { Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION); final Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification); if (mAudioManager == null) { mAudioManager = (AudioManager) getApplicationContext().getSystemService(Context.AUDIO_SERVICE); } mAudioManager.requestAudioFocus(null, AudioManager.STREAM_SYSTEM, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT); r.play(); Handler handler = new Handler(); handler.postDelayed(new Runnable() { @Override public void run() { r.stop(); if (mAudioManager != null) { mAudioManager.abandonAudioFocus(null); } } }, 1000); } /* * Leave this registered through pause/resume since we still want to * finish the activity in the background if pairing is canceled. */ registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_PAIRING_CANCEL)); registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_BOND_STATE_CHANGED)); mReceiverRegistered = true; ... }]]></content>
@@ -9,17 +20,6 @@
       </categories>
       <tags>
         <tag>Android Settings</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Android-JNI的使用]]></title>
-    <url>%2F2017%2F12%2F01%2FAndroid-JNI%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[Android-JNI的使用什么jni jni java native interface 是一套协议，提供一套编程框架，java和本地语言之相互调用。 为什么需要jni操作系统下底层硬件，android下传感器程序运行效率有要求，图形渲染，音视频解码程序的安全性，用本地代实现核心逻辑使用成熟本地代码，Sqlite,OpenGL,OpenSSL,OpenCV,FFmpeg复用公司之前的本地代码 使用jni的前提熟练使java了解c的基本语法jni使用规范学习开发工具使用NDK jni开发流程阶段一 编码1.新建android工程，用natvie声明本地方法，调用本地方法 public class MainActivity extends Activity { static{ System.loadLibrary(&quot;hello&quot;);//写库名，不是库文件名 } //声明 native方法 private native String getCString(); @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); setContentView(R.layout.activity_main); //调用native方法 Toast.makeText(this, getCString() , Toast.LENGTH_SHORT).show(); } 2.工程中新建jni文件夹，新建getcstring.c源文件，包含jni.h头文件 #include &lt;jni.h&gt; /** * 实现本地方法对应的的c函数名:Java_包名_类名_本地方法名 * JNIEnv *env 代表java环境，提供各种函数 * jobject obj 调用本地方法类的对象 */ jstring Java_com_example_jnidemo_MainActivity_getCString(JNIEnv *env, jobject obj) { char buf[] = &quot;getstring from c!&quot;;//c字符数组保存字符串 //env : JNIEnv * &lt;=&gt; struct JNINativeInterface* * // (**env).NewStringUTF(); // (*env)-&gt;NewStringUTf(); //实现把c提供char *指向的字符串转换为java中String对象 //jstring (*NewStringUTF)(JNIEnv*, const char*); return (*env)-&gt;NewStringUTF(env, buf); } 阶段2 编译1.在jni文件夹下新建Android.mk指导编译的配置文件 LOCAL_PATH := $(call my-dir) #指定路径为当前目录 include $(CLEAR_VARS) #清除LOCAL_XXX,除了LOCAL_PATH LOCAL_MODULE := getcstring #指定最终生成的动态库名hello,生成的动态库文件名libgetcstring.so LOCAL_SRC_FILES := getcstring.c #指定生成目标用到所有源文件 include $(BUILD_SHARED_LIBRARY) #指定最终生成动态库 2.使用ndk-build.cmd进行编译，需要把ndk根路径添加到path环境变量3.进入jni文件夹，执行ndk-build编译，生成libgetcstring.so动态库，安装libs/armeabi/目录下 4.在调用本地方法类加载库 static{ System.loadLibrary(&quot;hello&quot;);//写库名，不是库文件名 } jni开发中错误及解决 找不到库：Caused by: java.lang.UnsatisfiedLinkError: Couldn’t load calc-jn1: findLibrary returned null 解决办法： 检查加载的库名和实际库名是否一致生成的动态库是为arm平生成，运行在x86处理器；在jni文件夹下添加Application.mk文件，写上APP_ABI := all 找不到方法： java.lang.UnsatisfiedLinkError: Native method not found: com.itheima.resultfromc.MainActivity.resultFromC:(II)I 解决办法： 本地方法对应本地函数名是否符合规范 没有加载动态库]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
