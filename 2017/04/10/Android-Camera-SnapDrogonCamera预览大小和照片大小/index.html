@@ -1,0 +1,997 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android Camera," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Android Camera SnxxDrogxxCamera预览大小和照片大小预览大小和照片大小是在CameraSettings，
+初始化相机预览大小
+1234567891011121314151617181920212223242526272829303132333435   // 初始化相机预览大小public static void initialCameraPreviewSize(Con">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Camera SnapDrogonCamera预览大小和照片大小">
+<meta property="og:url" content="http://www.ningshuran.tech/2017/04/10/Android-Camera-SnapDrogonCamera预览大小和照片大小/index.html">
+<meta property="og:site_name" content="ningshuran@一号线">
+<meta property="og:description" content="Android Camera SnxxDrogxxCamera预览大小和照片大小预览大小和照片大小是在CameraSettings，
+初始化相机预览大小
+1234567891011121314151617181920212223242526272829303132333435   // 初始化相机预览大小public static void initialCameraPreviewSize(Con">
+<meta property="og:updated_time" content="2017-12-16T16:24:54.736Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android Camera SnapDrogonCamera预览大小和照片大小">
+<meta name="twitter:description" content="Android Camera SnxxDrogxxCamera预览大小和照片大小预览大小和照片大小是在CameraSettings，
+初始化相机预览大小
+1234567891011121314151617181920212223242526272829303132333435   // 初始化相机预览大小public static void initialCameraPreviewSize(Con">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.ningshuran.tech/2017/04/10/Android-Camera-SnapDrogonCamera预览大小和照片大小/"/>
+
+
+
+
+
+  <title> Android Camera SnapDrogonCamera预览大小和照片大小 | ningshuran@一号线 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5300d14831bc5e9bfe868dcbe7297295";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ningshuran@一号线</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">上青天</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.ningshuran.tech/2017/04/10/Android-Camera-SnapDrogonCamera预览大小和照片大小/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shuranning@163.com">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ningshuran@一号线">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android Camera SnapDrogonCamera预览大小和照片大小
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T23:14:10+08:00">
+                2017-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android-Camera/" itemprop="url" rel="index">
+                    <span itemprop="name">Android Camera</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/10/Android-Camera-SnapDrogonCamera预览大小和照片大小/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/10/Android-Camera-SnapDrogonCamera预览大小和照片大小/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Android-Camera-SnxxDrogxxCamera预览大小和照片大小"><a href="#Android-Camera-SnxxDrogxxCamera预览大小和照片大小" class="headerlink" title="Android Camera SnxxDrogxxCamera预览大小和照片大小"></a>Android Camera SnxxDrogxxCamera预览大小和照片大小</h2><p>预览大小和照片大小是在CameraSettings，</p>
+<p>初始化相机预览大小</p>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">   <span class="comment">// 初始化相机预览大小</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">initialCameraPreviewSize</span><span class="params">(Context context,</span></span></div><div class="line">		Parameters parameters) &#123;</div><div class="line">	<span class="comment">// When launching the camera app first time, we will set the picture</span></div><div class="line">	<span class="comment">// size to the first one in the list defined in "arrays.xml" and is also</span></div><div class="line">	<span class="comment">// supported by the driver.</span></div><div class="line">	<span class="comment">// 当第一次启动相机应用程序时，我们将将预览图片大小设置为“xml”中定义的列表中的第一个，并由驱动程序支持。</span></div><div class="line">	String previewSize = ComboPreferences.get(context).getString(</div><div class="line">			CameraSettings.KEY_PREVIEW_SIZE, <span class="keyword">null</span>);</div><div class="line">	<span class="comment">// 第一次设预览大小为"1920x1080"</span></div><div class="line">	<span class="keyword">if</span> (previewSize == <span class="keyword">null</span>) &#123;</div><div class="line">		previewSize = <span class="string">"1920x1080"</span>;</div><div class="line">		SharedPreferences.Editor editor = ComboPreferences.get(context)</div><div class="line">				.edit();</div><div class="line">		editor.putString(KEY_PREVIEW_SIZE, previewSize);</div><div class="line">		editor.apply();</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 获得可支持的预览大小</span></div><div class="line">	List&lt;Size&gt; supported = parameters.getSupportedPreviewSizes();</div><div class="line">	<span class="keyword">if</span> (supported == <span class="keyword">null</span>)</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	<span class="comment">// 获取可支持列表</span></div><div class="line">	<span class="comment">// for (String candidate : context.getResources().getStringArray(</span></div><div class="line">	<span class="comment">// R.array.pref_camera_previewsize_entryvalues)) &#123;</span></div><div class="line">	<span class="comment">// 匹配支持列表，设置为列表第一个</span></div><div class="line">	<span class="keyword">if</span> (setCameraPreviewSize(previewSize, supported, parameters)) &#123;</div><div class="line">		<span class="comment">// SharedPreferences.Editor editor = ComboPreferences</span></div><div class="line">		<span class="comment">// .get(context).edit();</span></div><div class="line">		<span class="comment">// editor.putString(KEY_PREVIEW_SIZE, candidate);</span></div><div class="line">		<span class="comment">// editor.apply();</span></div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// &#125;</span></div><div class="line">	Log.e(TAG, <span class="string">"No supported preview size found"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>这里强制设置第一次进入到相机的预览界面为1920x1080，但如果设备不支持的话是按array定义的第一个，其中List<size> supported = parameters.getSupportedPreviewSizes();可以获得设备支持的预览大小，而context.getResources().getStringArray(<br>R.array.pref_camera_previewsize_entryvalues) 可以获得array定义的预览大小列表，这是有区别的。</size></p>
+<p>初始化拍照后图片的大小</p>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 初始化拍照后图片的大小</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">initialCameraPictureSize</span><span class="params">(Context context,</span></span></div><div class="line">		Parameters parameters) &#123;</div><div class="line">	<span class="comment">// When launching the camera app first time, we will set the picture</span></div><div class="line">	<span class="comment">// size to the first one in the list defined in "arrays.xml" and is also</span></div><div class="line">	<span class="comment">// supported by the driver.</span></div><div class="line">	<span class="comment">// 当第一次启动相机应用程序时，我们将将图片大小设置为“xml”中定义的列表中的第一个，并由驱动程序支持</span></div><div class="line">	List&lt;Size&gt; supported = parameters.getSupportedPictureSizes();</div><div class="line">	<span class="keyword">for</span> (String candidate : context.getResources().getStringArray(</div><div class="line">			R.array.pref_camera_picturesize_entryvalues)) &#123;</div><div class="line">		<span class="keyword">if</span> (setCameraPictureSize(candidate, supported, parameters)) &#123;</div><div class="line">			SharedPreferences.Editor editor = ComboPreferences.get(context)</div><div class="line">					.edit();</div><div class="line">			editor.putString(KEY_PICTURE_SIZE, candidate);</div><div class="line">			editor.apply();</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	Log.e(TAG, <span class="string">"No supported picture size found"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>List<size> supported = parameters.getSupportedPictureSizes();先获取支持的图片大小，<br>再遍历array列表，再通过setCameraPictureSize(candidate, supported, parameters)匹配设备可支持的，第一次匹配则return,达到设置array列表第一个的效果。</size></p>
+<p>判断是否匹配支持列表，并且设置相机预览大小</p>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// 判断是否匹配支持列表，并且设置相机预览大小</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">setCameraPreviewSize</span><span class="params">(String candidate,</span></span></div><div class="line">		List&lt;Size&gt; supported, Parameters parameters) &#123;</div><div class="line">	<span class="comment">// 传入备选大小 ，获得x位置索引</span></div><div class="line">	<span class="keyword">int</span> index = candidate.indexOf(<span class="string">'x'</span>);</div><div class="line">	<span class="keyword">if</span> (index == NOT_FOUND)</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	<span class="keyword">int</span> width = Integer.parseInt(candidate.substring(<span class="number">0</span>, index));</div><div class="line">	<span class="keyword">int</span> height = Integer.parseInt(candidate.substring(index + <span class="number">1</span>));</div><div class="line">	<span class="comment">// 匹配支持列表</span></div><div class="line">	<span class="keyword">for</span> (Size size : supported) &#123;</div><div class="line">		<span class="keyword">if</span> (size.width == width &amp;&amp; size.height == height) &#123;</div><div class="line">			<span class="comment">//匹配则设置预览大小</span></div><div class="line">			parameters.setPreviewSize(width, height);				</div><div class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line"></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>这个返回的是一个boolean值，这样写有一个好处，一个可以用来做判断是否可以匹配列表，再一个可以设置相机预览大小。candidate是传入的一个字符串的”1920x1080”这样的字符串。</p>
+<p>判断是否匹配支持列表，并且设置相机预览大小</p>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//判断是否匹配支持列表，并且设置相机预览大小</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">setCameraPictureSize</span><span class="params">(String candidate,</span></span></div><div class="line">		List&lt;Size&gt; supported, Parameters parameters) &#123;</div><div class="line">	<span class="keyword">int</span> index = candidate.indexOf(<span class="string">'x'</span>);</div><div class="line">	<span class="keyword">if</span> (index == NOT_FOUND)</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	<span class="keyword">int</span> width = Integer.parseInt(candidate.substring(<span class="number">0</span>, index));</div><div class="line">	<span class="keyword">int</span> height = Integer.parseInt(candidate.substring(index + <span class="number">1</span>));</div><div class="line">	<span class="keyword">for</span> (Size size : supported) &#123;</div><div class="line">		<span class="keyword">if</span> (size.width == width &amp;&amp; size.height == height) &#123;</div><div class="line">			parameters.setPictureSize(width, height);				</div><div class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</div></pre></td></tr></table></figure>
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>既然撞见,赏口饭吃</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/image/wechat.png" alt="shuranning@163.com WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/image/alipay.png" alt="shuranning@163.com Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android-Camera/" rel="tag"># Android Camera</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/02/Android-Launcher3预置文件夹、快捷方式、桌面小部件/" rel="next" title="Android Launcher3预置文件夹、快捷方式、桌面小部件">
+                <i class="fa fa-chevron-left"></i> Android Launcher3预置文件夹、快捷方式、桌面小部件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/17/Android-预置APK/" rel="prev" title="Android 预置APK">
+                Android 预置APK <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/04/10/Android-Camera-SnapDrogonCamera预览大小和照片大小/"
+           data-title="Android Camera SnapDrogonCamera预览大小和照片大小" data-url="http://www.ningshuran.tech/2017/04/10/Android-Camera-SnapDrogonCamera预览大小和照片大小/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="shuranning@163.com" />
+          <p class="site-author-name" itemprop="name">shuranning@163.com</p>
+           
+              <p class="site-description motion-element" itemprop="description">锄禾日当午</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Camera-SnxxDrogxxCamera预览大小和照片大小"><span class="nav-number">1.</span> <span class="nav-text">Android Camera SnxxDrogxxCamera预览大小和照片大小</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shuranning@163.com</span>
+</div>
+<!--
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+-->
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"codingpeasanter"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
