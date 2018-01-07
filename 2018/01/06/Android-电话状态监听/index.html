@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android Framework," />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -93,22 +93,45 @@
 
 
 
-<meta name="description" content="Android 修改默认亮度太暗修改屏幕默认亮度frameworks\base\packages\SettingsProvider\res\values\defaults.xml
-&amp;lt;integer name=&amp;quot;def_screen_brightness&amp;quot;&amp;gt;102&amp;lt;/integer&amp;gt;
-这个值的取值范围为0~255，按照实际需求修改”def_screen_b">
+<meta name="description" content="Android 电话状态监听
+CALL_STATE_IDLE  挂断状态
+CALL_STATE_OFFHOOK  接通状态
+CALL_STATE_RINGING    来电状态
+[QUESTION]
+[通话]来电时，进入通话设置或者系统设置-&amp;gt;声音,点击手机铃声可以试听铃声
+[ANSWER]没有来电时的判断，添加电话监听
+[SOLUTION]
+一、Settings中
+packages/app">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android 修改默认亮度太暗">
-<meta property="og:url" content="http://www.ningshuran.tech/2017/03/20/Android-修改默认亮度太暗/index.html">
+<meta property="og:title" content="Android-电话状态监听">
+<meta property="og:url" content="http://www.ningshuran.tech/2018/01/06/Android-电话状态监听/index.html">
 <meta property="og:site_name" content="ningshuran@一号线">
-<meta property="og:description" content="Android 修改默认亮度太暗修改屏幕默认亮度frameworks\base\packages\SettingsProvider\res\values\defaults.xml
-&amp;lt;integer name=&amp;quot;def_screen_brightness&amp;quot;&amp;gt;102&amp;lt;/integer&amp;gt;
-这个值的取值范围为0~255，按照实际需求修改”def_screen_b">
-<meta property="og:updated_time" content="2017-08-23T10:17:35.122Z">
+<meta property="og:description" content="Android 电话状态监听
+CALL_STATE_IDLE  挂断状态
+CALL_STATE_OFFHOOK  接通状态
+CALL_STATE_RINGING    来电状态
+[QUESTION]
+[通话]来电时，进入通话设置或者系统设置-&amp;gt;声音,点击手机铃声可以试听铃声
+[ANSWER]没有来电时的判断，添加电话监听
+[SOLUTION]
+一、Settings中
+packages/app">
+<meta property="og:image" content="http://omovxaylz.bkt.clouddn.com/%E6%8D%95%E8%8E%B7.PNG">
+<meta property="og:updated_time" content="2018-01-07T16:53:06.955Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 修改默认亮度太暗">
-<meta name="twitter:description" content="Android 修改默认亮度太暗修改屏幕默认亮度frameworks\base\packages\SettingsProvider\res\values\defaults.xml
-&amp;lt;integer name=&amp;quot;def_screen_brightness&amp;quot;&amp;gt;102&amp;lt;/integer&amp;gt;
-这个值的取值范围为0~255，按照实际需求修改”def_screen_b">
+<meta name="twitter:title" content="Android-电话状态监听">
+<meta name="twitter:description" content="Android 电话状态监听
+CALL_STATE_IDLE  挂断状态
+CALL_STATE_OFFHOOK  接通状态
+CALL_STATE_RINGING    来电状态
+[QUESTION]
+[通话]来电时，进入通话设置或者系统设置-&amp;gt;声音,点击手机铃声可以试听铃声
+[ANSWER]没有来电时的判断，添加电话监听
+[SOLUTION]
+一、Settings中
+packages/app">
+<meta name="twitter:image" content="http://omovxaylz.bkt.clouddn.com/%E6%8D%95%E8%8E%B7.PNG">
 
 
 
@@ -136,13 +159,13 @@
 
 
 
-  <link rel="canonical" href="http://www.ningshuran.tech/2017/03/20/Android-修改默认亮度太暗/"/>
+  <link rel="canonical" href="http://www.ningshuran.tech/2018/01/06/Android-电话状态监听/"/>
 
 
 
 
 
-  <title> Android 修改默认亮度太暗 | ningshuran@一号线 </title>
+  <title> Android-电话状态监听 | ningshuran@一号线 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -325,7 +348,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.ningshuran.tech/2017/03/20/Android-修改默认亮度太暗/">
+    <link itemprop="mainEntityOfPage" href="http://www.ningshuran.tech/2018/01/06/Android-电话状态监听/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="shuranning@163.com">
@@ -346,7 +369,7 @@
             
             
               
-                Android 修改默认亮度太暗
+                Android-电话状态监听
               
             
           </h1>
@@ -361,8 +384,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T21:17:51+08:00">
-                2017-03-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-06T20:14:31+08:00">
+                2018-01-06
               </time>
             
 
@@ -384,8 +407,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android-Framework/" itemprop="url" rel="index">
-                    <span itemprop="name">Android Framework</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -402,8 +425,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/20/Android-修改默认亮度太暗/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/20/Android-修改默认亮度太暗/" itemprop="commentCount"></span>
+                <a href="/2018/01/06/Android-电话状态监听/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/06/Android-电话状态监听/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -434,17 +457,113 @@
       
 
       
-        <h2 id="Android-修改默认亮度太暗"><a href="#Android-修改默认亮度太暗" class="headerlink" title="Android 修改默认亮度太暗"></a>Android 修改默认亮度太暗</h2><p>修改屏幕默认亮度<br>frameworks\base\packages\SettingsProvider\res\values\defaults.xml</p>
-<pre><code>&lt;integer name=&quot;def_screen_brightness&quot;&gt;102&lt;/integer&gt;
-</code></pre><p>这个值的取值范围为0~255，按照实际需求修改”def_screen_brightness”的值。</p>
-<p>很多项目会在/device/对应平台/对应工程/overlay/frameworks/base/packages/SettingsProvider/res/values/defaults.xml  overlay 这个xml文件，所以会导致只修改frameworks中的值并不会起作用。因此，需要优先检查是否存在overlay的情况。</p>
-<p>修改最小,最大亮度值，以及开机启动的默认亮度值<br>最小值，不得小于0：</p>
-<pre><code>&lt;integer name=&quot;config_screenBrightnessSettingMinimum&quot;&gt;30&lt;/integer&gt;
-</code></pre><p>最大值，建议不大于255：</p>
-<pre><code>&lt;integer name=&quot;config_screenBrightnessSettingMaximum&quot;&gt;255&lt;/integer&gt;
-</code></pre><p>默认值，介于最大值及最小值中间：</p>
-<pre><code>&lt;integer name=&quot;config_screenBrightnessSettingDefault&quot;&gt;100&lt;/integer&gt;
-</code></pre>
+        <h2 id="Android-电话状态监听"><a href="#Android-电话状态监听" class="headerlink" title="Android 电话状态监听"></a>Android 电话状态监听</h2><p><img src="http://omovxaylz.bkt.clouddn.com/%E6%8D%95%E8%8E%B7.PNG" alt=""></p>
+<pre><code>CALL_STATE_IDLE  挂断状态
+CALL_STATE_OFFHOOK  接通状态
+CALL_STATE_RINGING    来电状态
+</code></pre><p>[QUESTION]</p>
+<p>[<strong>通话</strong>]来电时，进入通话设置或者系统设置-&gt;声音,点击手机铃声可以试听铃声</p>
+<p>[ANSWER]<br>没有来电时的判断，添加电话监听</p>
+<p>[SOLUTION]</p>
+<p>一、Settings中</p>
+<p>packages/apps/Settings/src/com/android/settings/SoundSettings.java</p>
+<p>添加电话监听onCallStateChanged(),如果是来电，则不可点击置灰。</p>
+<pre><code>//add**************************
+//TelephonyManager成员
+private TelephonyManager mTelephonyManager;
+
+//判断是否处于响铃状态    
+//tm.getCallState() == TelephonyManager.CALL_STATE_RINGING
+private static boolean isRinging(Context context) {
+      final TelephonyManager tm = (TelephonyManager)
+              context.getSystemService(Context.TELEPHONY_SERVICE);
+      return tm.getCallState() == TelephonyManager.CALL_STATE_RINGING;
+  }
+
+//定义电话状态监听器
+private PhoneStateListener mPhoneStateListener = new PhoneStateListener() {
+
+    //监听状态改变
+    @Override
+    public void onCallStateChanged(int state, String ignored) {
+        Log.d(TAG, &quot;onCallStateChanged state: &quot; + state);
+
+        //如果处于响铃不可点击
+        if (isRinging(mContext)) {
+
+                mPhoneRingtonePreference_sim1.setEnabled(false);
+                mPhoneRingtonePreference_sim2.setEnabled(false);
+                mNotificationRingtonePreference.setEnabled(false);
+                mAlarmRingtonePreference.setEnabled(false);
+
+        }else{
+                mPhoneRingtonePreference_sim1.setEnabled(true);
+                mPhoneRingtonePreference_sim2.setEnabled(true);
+                mNotificationRingtonePreference.setEnabled(true);
+                mAlarmRingtonePreference.setEnabled(true);
+        }
+
+    }
+};
+
+
+//end**************************
+
+initRingtones()｛
+    ...
+//add**************************
+    //onCreate时就设置监听器
+    mTelephonyManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+    if (mTelephonyManager != null) {
+        mTelephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_CALL_STATE);
+//end**************************        
+    ...
+｝
+
+//end**************************
+</code></pre><p>二、Dialer中</p>
+<p>DialerSettingsActivity.java</p>
+<p>因为此layout中，加载布局的方法为</p>
+<pre><code>@Override
+public void onBuildHeaders(List&lt;Header&gt; target) {    
+    ...
+    Header soundSettingsHeader = new Header();
+    soundSettingsHeader.titleRes = R.string.sounds_and_vibration_title;
+    soundSettingsHeader.fragment = SoundSettingsFragment.class.getName();
+    soundSettingsHeader.id = R.id.settings_header_sounds_and_vibration;
+    target.add(soundSettingsHeader);
+    ...
+｝
+</code></pre><p>着实找不到控件不可点击的方法，故来电点击时弹出不允许提示。</p>
+<p>因点击时做判断，所以不用添加监听器，修改如下：</p>
+<pre><code>//同设置添加判断响铃方法
+
+private static boolean isRinging(Context context) {
+      final TelephonyManager tm = (TelephonyManager)
+              context.getSystemService(Context.TELEPHONY_SERVICE);
+      return tm.getCallState() == TelephonyManager.CALL_STATE_RINGING;
+  }
+
+private TelephonyManager mTelephonyManager;
+
+  @Override
+public void onHeaderClick(Header header, int position) {
+    ...
+    //如果处于响铃状态，点击弹提示并return
+    //add**************************
+    if(isRinging(mContext)){
+            Toast.makeText(
+                            this,
+                            getResources().getString(R.string.hapid_ringing_click),
+                            Toast.LENGTH_SHORT).show();
+            return;                
+        }else{
+    //end**************************
+            if (header.id == R.id.settings_header_sounds_and_vibration) {
+    ...    
+｝
+</code></pre><hr>
+
       
     </div>
 
@@ -488,7 +607,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android-Framework/" rel="tag"># Android Framework</a>
+            <a href="/tags/Android/" rel="tag"># Android</a>
           
         </div>
       
@@ -501,8 +620,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/26/adb命令/" rel="next" title="adb命令">
-                <i class="fa fa-chevron-left"></i> adb命令
+              <a href="/2017/12/30/Android-一些修改201712/" rel="next" title="Android-一些修改201712">
+                <i class="fa fa-chevron-left"></i> Android-一些修改201712
               </a>
             
           </div>
@@ -510,10 +629,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/22/SPM工作流程/" rel="prev" title="SPM">
-                SPM <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -566,8 +681,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/20/Android-修改默认亮度太暗/"
-           data-title="Android 修改默认亮度太暗" data-url="http://www.ningshuran.tech/2017/03/20/Android-修改默认亮度太暗/">
+      <div class="ds-thread" data-thread-key="2018/01/06/Android-电话状态监听/"
+           data-title="Android-电话状态监听" data-url="http://www.ningshuran.tech/2018/01/06/Android-电话状态监听/">
       </div>
     
   </div>
@@ -673,7 +788,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-修改默认亮度太暗"><span class="nav-number">1.</span> <span class="nav-text">Android 修改默认亮度太暗</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-电话状态监听"><span class="nav-number">1.</span> <span class="nav-text">Android 电话状态监听</span></a></li></ol></div>
             
 
           </div>
